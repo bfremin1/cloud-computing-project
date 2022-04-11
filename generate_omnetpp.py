@@ -1,5 +1,6 @@
-import math, random
+import math, random, copy
 import numpy as np
+import networkx as nx
 
 WORKING_DIRECTORY = "C:/Users/bfrem/Documents/CloudComputing/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/DatacenterTopologies"
 
@@ -99,6 +100,9 @@ class Flow:
         ini_str += "\n"
 
         return ini_str
+    
+    def get_endpoints(self):
+        return (self._src, self._dest)
 
 class Line:
     def __init__(self, channel=DEFAULT_CHANNEL, params=DEFAULT_LINE_PARAMS):
@@ -156,7 +160,7 @@ class Node:
         self._y = int(y)
         self._links = []
         self._flows = []
-        self._ip = None
+        self._ip_root = None
     
     @staticmethod
     def encode_link(link):
@@ -166,6 +170,15 @@ class Node:
     def connect(node_a, node_b, channel=DEFAULT_CHANNEL, index=0):
         node_a.add_link(node_b.get_name(), channel, index)
         node_b.add_link(node_a.get_name(), channel, index)
+
+    def get_nx_edges(self):
+        return [(self._name, link[0]) for link in self._links]
+    
+    def gate_index_to(self, other):
+        for i, link in enumerate(self._links):
+            if link[0] == other.get_name():
+                return i
+        return -1
 
     def add_link(self, other="", channel="", index=0, link=None):
         link = link if link else (other, channel, index)
@@ -194,12 +207,15 @@ class Node:
     def add_flow(self, dest, amount, delay):
         self._flows.append(Flow(self._name, dest.get_name(), amount, delay))
 
-    def get_flows(self):
+    def get_flows_ini_str(self):
         ini_str = f"**.{self._name}.numApps = {len(self._flows)}\n"
         for index, flow in enumerate(self._flows):
             ini_str += flow.ini_flow(index)
         return ini_str
     
+    def get_flows_endpoints(self):
+        return [flow.get_endpoints() for flow in self._flows]   
+
     def get_name(self):
         return self._name
     
@@ -248,18 +264,26 @@ class Router(Node):
         self._size = SIZE_SMALL
 
 class Source(Node):
-    def __init__(self, name, x, y):
+    def __init__(self, name, server_name, x, y):
         super().__init__(name, x, y)
         self._ned = NED_STANDARD_HOST
         self._icon = ICON_SOURCE
         self._size = SIZE_VERY_SMALL
+        self._server_name = server_name
+    
+    def get_server_name(self):
+        return self._server_name
 
 class Sink(Node):
-    def __init__(self, name, x, y):
+    def __init__(self, name, server_name, x, y):
         super().__init__(name, x, y)
         self._ned = NED_STANDARD_HOST
         self._icon = ICON_SINK
         self._size = SIZE_VERY_SMALL
+        self._server_name = server_name
+    
+    def get_server_name(self):
+        return self._server_name
 
 class Server(Node):
     def __init__(self, name, x, y):
@@ -284,6 +308,97 @@ class Server(Node):
     self._links = []
     self._flows = []
 """
+
+class RoutingAlgorithm:
+    @staticmethod
+    def get_nx_graph(network):
+        G = nx.Graph()
+        for node in sorted(network._node_map.values(), key=lambda n: n.get_name()):
+            G.add_node(node.get_name())
+        for node in sorted(network._node_map.values(), key=lambda n: n.get_name()):
+            for edge in node.get_nx_edges():
+                if not G.has_edge(*edge):
+                    G.add_edge(*edge)
+        return G
+
+    @staticmethod
+    def k_shortest_paths(G, source, target, k):
+        shortest_paths = [path for path in nx.shortest_simple_paths(G, source, target)]
+        if k > len(shortest_paths):
+            return shortest_paths
+        else:
+            return shortest_paths[0:k]
+    
+    @staticmethod
+    def all_shortest_paths(G, source, target):
+        shortest_paths = [path for path in nx.shortest_simple_paths(G, source, target)]
+        min_path_length = len(shortest_paths[0])
+        paths = []
+        for path in shortest_paths:
+            if len(path) == min_path_length:
+                paths.append(path)
+            else:
+                break
+        return paths
+
+    @staticmethod
+    def xml_route(from_node, to_node, dest_node):
+        from_gate_index = from_node.gate_index_to(to_node)
+        to_gate_index = to_node.gate_index_to(from_node)
+        return f"<route hosts='{from_node.get_name()}' destination='{dest_node._ip_root}.0.8' netmask='255.255.255.255' gateway='{to_node._ip_root}.{to_gate_index}.8' interface='ppp{from_gate_index}' metric='0'/>"
+
+    @staticmethod
+    def path_route_xml_generator(network, path_finder, flow_src, flow_dest):
+        routes = [f"<!-- Route for flow from {flow_src} to {flow_dest} -->"]
+        server_src = network._node_map[flow_src].get_server_name()
+        server_dest = network._node_map[flow_dest].get_server_name()
+        path = path_finder(server_src, server_dest)
+        path.insert(0, flow_src)
+        path.append(flow_dest)
+        flow_dest_node = network._node_map[flow_dest]
+        for i in range(len(path) - 1):
+            from_node = network._node_map[path[i]]
+            to_node = network._node_map[path[i + 1]]
+            routes.append(RoutingAlgorithm.xml_route(from_node, to_node, flow_dest_node))
+        return routes
+
+    @staticmethod
+    def network_route_xml_generator(network, path_finder):
+        routes = []
+        # routes have the form below:
+        # <route hosts="router0" destination="1.0.1.8" netmask="255.255.255.255" gateway="1.0.7.8" interface="ppp2" metric="0"/>
+        for node in sorted(network._node_map.values(), key=lambda n: n.get_name()):
+            for flow_src, flow_dest in node.get_flows_endpoints():
+                routes.extend(RoutingAlgorithm.path_route_xml_generator(network, path_finder, flow_src, flow_dest))
+                routes.extend(RoutingAlgorithm.path_route_xml_generator(network, path_finder, flow_dest, flow_src))
+        return routes
+
+    @staticmethod
+    def ecmp_xml_routes(network):
+        graph = RoutingAlgorithm.get_nx_graph(network)
+        shortest_paths_sets = {}
+        def path_finder(server_src, server_dest):
+            server_src_dest = (server_src, server_dest) 
+            if server_src_dest not in shortest_paths_sets.keys():
+                shortest_paths_sets[server_src_dest] = RoutingAlgorithm.all_shortest_paths(graph, server_src, server_dest)
+            return copy.deepcopy(random.sample(shortest_paths_sets[server_src_dest], 1)[0])
+        return RoutingAlgorithm.network_route_xml_generator(network, path_finder)
+    
+    @staticmethod
+    def ksp_xml_routes(network, k):
+        graph = RoutingAlgorithm.get_nx_graph(network)
+        shortest_paths_sets = {}
+        def path_finder(server_src, server_dest):
+            server_src_dest = (server_src, server_dest) 
+            if server_src_dest not in shortest_paths_sets.keys():
+                shortest_paths_sets[server_src_dest] = RoutingAlgorithm.k_shortest_paths(graph, server_src, server_dest, k)
+            return copy.deepcopy(random.sample(shortest_paths_sets[server_src_dest], 1)[0])
+        return RoutingAlgorithm.network_route_xml_generator(network, path_finder)
+    
+    @staticmethod
+    def vlb_xml_routes(network):
+        # TODO
+        return []
     
 class Network:
     def __init__(self, name, package=PACKAGE, imports=IMPORTS, width=800, height=500, use_visualizer=False):
@@ -339,9 +454,9 @@ class Network:
         source_name = f"source{self._source_sink_counter}"
         sink_name = f"sink{self._source_sink_counter}"
         self._source_sink_counter += 1
-        source = Source(source_name, send._x - 25, send._y + 50)
+        source = Source(source_name, send._name, send._x - 25, send._y + 50)
         Node.connect(source, send, INFINITE_CHANNEL)
-        sink = Sink(sink_name, recv._x + 25, recv._y + 50)
+        sink = Sink(sink_name, recv._name, recv._x + 25, recv._y + 50)
         Node.connect(sink, recv, INFINITE_CHANNEL)
         source.add_flow(sink, amount, start)
         self.add_node(source)
@@ -371,12 +486,14 @@ class Network:
         ip_major = 1
         ip_minor = 0
         for node in sorted(self._node_map.values(), key=lambda n: n.get_name()):
+            node._ip_root = f"{ip_major}.{ip_minor}"
+            ip_minor += 1
+            if ip_minor == 256:
+                ip_minor = 0
+                ip_major += 1
             for i in range(node.get_num_gates()):
-                interfaces.append(f"<interface hosts='{node.get_name()}' names='ppp{i}' address='{ip_major}.{ip_minor}.{i}.8' netmask='255.255.255.x'/>")
-                ip_minor += 1
-                if ip_minor == 256:
-                    ip_minor = 0
-                    ip_major += 1
+                interfaces.append(f"<interface hosts='{node.get_name()}' names='ppp{i}' address='{node._ip_root}.{i}.8' netmask='255.255.255.x'/>")
+                
         interfaces.append(f"<interface hosts='**' address='255.x.x.x' netmask='255.255.255.x'/>")
         return interfaces
 
@@ -439,14 +556,15 @@ class Network:
         ini_str += "\n"
 
         ini_str += "# Configurator settings\n"
-        ini_str += "*.configurator.dumpAddresses = true\n"
-        ini_str += "*.configurator.dumpTopology = true\n"
-        ini_str += "*.configurator.dumpLinks = true\n"
-        ini_str += "*.configurator.dumpRoutes = true\n"
         ini_str += f"*.configurator.config = xmldoc(\"{self._name}.xml\")\n"
         ini_str += "\n"
 
         if (self._visualizer):
+            ini_str += "*.configurator.dumpAddresses = true\n"
+            ini_str += "*.configurator.dumpTopology = true\n"
+            ini_str += "*.configurator.dumpLinks = true\n"
+            ini_str += "*.configurator.dumpRoutes = true\n"
+
             ini_str += "# Visualizer settings\n"
             ini_str += "*.visualizer.*.interfaceTableVisualizer.displayInterfaceTables = true\n"
             ini_str += "\n"
@@ -465,7 +583,7 @@ class Network:
         for name, node in self._node_map.items():
             if isinstance(node, Source):
                 ini_str += f"# Setup TCP client \"{node.get_name()}\"\n"
-                ini_str += node.get_flows()
+                ini_str += node.get_flows_ini_str()
                 if (node.get_num_flows() == 0):
                     ini_str += "\n"
 
@@ -482,6 +600,8 @@ class Network:
         xml_str += "<config>\n"
         for interface in self.xml_interfaces():
             xml_str += f"{TAB}{interface}\n"
+        for route in RoutingAlgorithm.ecmp_xml_routes(self):
+            xml_str += f"{TAB}{route}\n"
         xml_str += "</config>\n"
         fd = open(f"{WORKING_DIRECTORY}/{self._name}.xml", "w")
         fd.write(xml_str)

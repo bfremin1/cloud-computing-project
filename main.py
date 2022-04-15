@@ -11,10 +11,13 @@ from flow_generator import FlowGenerator
 def main():
     print(sys.argv)
     if (len(sys.argv) > 2):
-        print("Usage: main.py [omnet_working_dir]")
-    if (len(sys.argv) == 2):
+        print("Usage: main.py [omnet_working_dir] [omnet_package_name]")
+    if (len(sys.argv) >= 2):
         set_working_directory(sys.argv[1])    
+    if (len(sys.argv) >= 3):
+        set_package_name(sys.argv[2]) 
     print(f"Working directory set to: \'{get_working_directory()}\'")
+    print(f"Package name set to: \'{get_package_name()}\'")
 
     topologies_file = open(f"{get_working_directory()}/topologies.txt", "w")
 

@@ -146,7 +146,7 @@ class Network:
 
         ned_str += "}"
 
-        fd = open(f"{WORKING_DIRECTORY}/{self._name}.ned", "w")
+        fd = open(f"{get_working_directory()}/{self._name}.ned", "w")
         fd.write(ned_str)
         fd.close()
 
@@ -209,7 +209,7 @@ class Network:
 
         ini_str += "**.app[*].dataTransferMode = \"object\"\n"
 
-        fd = open(f"{WORKING_DIRECTORY}/{self._name}.ini", "w")
+        fd = open(f"{get_working_directory()}/{self._name}.ini", "w")
         fd.write(ini_str)
         fd.close()
 
@@ -224,7 +224,7 @@ class Network:
         for route in RoutingAlgorithm.ecmp_xml_routes(self):
             xml_str += f"{TAB}{route}\n"
         xml_str += "</config>\n"
-        fd = open(f"{WORKING_DIRECTORY}/{self._name}.xml", "w")
+        fd = open(f"{get_working_directory()}/{self._name}.xml", "w")
         fd.write(xml_str)
         fd.close()
 

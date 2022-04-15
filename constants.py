@@ -1,10 +1,14 @@
-WORKING_DIRECTORY = None
+__WORKING_DIRECTORY = None
 
 def set_working_directory(working_dir):
-    global WORKING_DIRECTORY
-    WORKING_DIRECTORY = working_dir
+    global __WORKING_DIRECTORY
+    __WORKING_DIRECTORY = working_dir
 
-if WORKING_DIRECTORY is None:
+def get_working_directory():
+    global __WORKING_DIRECTORY
+    return __WORKING_DIRECTORY
+
+if __WORKING_DIRECTORY is None:
     set_working_directory("C:/Users/bfrem/Documents/CloudComputing/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/DatacenterTopologies")
 
 PACKAGE = "inet.examples.inet.DatacenterTopologies"

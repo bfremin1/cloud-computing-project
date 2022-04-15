@@ -9,13 +9,14 @@ from vl2_ned import VL2
 from flow_generator import FlowGenerator
 
 def main():
+    print(sys.argv)
     if (len(sys.argv) > 2):
         print("Usage: main.py [omnet_working_dir]")
     if (len(sys.argv) == 2):
         set_working_directory(sys.argv[1])    
-    print(f"Working directory set to: \'{WORKING_DIRECTORY}\'")
+    print(f"Working directory set to: \'{get_working_directory()}\'")
 
-    topologies_file = open(f"{WORKING_DIRECTORY}/topologies.txt", "w")
+    topologies_file = open(f"{get_working_directory()}/topologies.txt", "w")
 
     # Fix randomness for reproducability
     random.seed(0)

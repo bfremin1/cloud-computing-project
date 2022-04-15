@@ -1,0 +1,57 @@
+<config>
+    <interface hosts='core_0' names='ppp0' address='1.0.0.8' netmask='255.255.255.x'/>
+    <interface hosts='core_0' names='ppp1' address='1.0.1.8' netmask='255.255.255.x'/>
+    <interface hosts='core_1' names='ppp0' address='1.1.0.8' netmask='255.255.255.x'/>
+    <interface hosts='core_1' names='ppp1' address='1.1.1.8' netmask='255.255.255.x'/>
+    <interface hosts='core_2' names='ppp0' address='1.2.0.8' netmask='255.255.255.x'/>
+    <interface hosts='core_2' names='ppp1' address='1.2.1.8' netmask='255.255.255.x'/>
+    <interface hosts='host_0' names='ppp0' address='1.3.0.8' netmask='255.255.255.x'/>
+    <interface hosts='host_0' names='ppp1' address='1.3.1.8' netmask='255.255.255.x'/>
+    <interface hosts='host_0' names='ppp2' address='1.3.2.8' netmask='255.255.255.x'/>
+    <interface hosts='host_0' names='ppp3' address='1.3.3.8' netmask='255.255.255.x'/>
+    <interface hosts='host_0' names='ppp4' address='1.3.4.8' netmask='255.255.255.x'/>
+    <interface hosts='host_0' names='ppp5' address='1.3.5.8' netmask='255.255.255.x'/>
+    <interface hosts='host_1' names='ppp0' address='1.4.0.8' netmask='255.255.255.x'/>
+    <interface hosts='host_1' names='ppp1' address='1.4.1.8' netmask='255.255.255.x'/>
+    <interface hosts='host_1' names='ppp2' address='1.4.2.8' netmask='255.255.255.x'/>
+    <interface hosts='host_1' names='ppp3' address='1.4.3.8' netmask='255.255.255.x'/>
+    <interface hosts='host_1' names='ppp4' address='1.4.4.8' netmask='255.255.255.x'/>
+    <interface hosts='host_1' names='ppp5' address='1.4.5.8' netmask='255.255.255.x'/>
+    <interface hosts='sink_0' names='ppp0' address='1.5.0.8' netmask='255.255.255.x'/>
+    <interface hosts='sink_1' names='ppp0' address='1.6.0.8' netmask='255.255.255.x'/>
+    <interface hosts='sink_2' names='ppp0' address='1.7.0.8' netmask='255.255.255.x'/>
+    <interface hosts='source_0' names='ppp0' address='1.8.0.8' netmask='255.255.255.x'/>
+    <interface hosts='source_1' names='ppp0' address='1.9.0.8' netmask='255.255.255.x'/>
+    <interface hosts='source_2' names='ppp0' address='1.10.0.8' netmask='255.255.255.x'/>
+    <interface hosts='**' address='255.x.x.x' netmask='255.255.255.x'/>
+    <!-- Route [ source_0, host_0, core_1, host_1, sink_0 ] -->
+    <route hosts='source_0' destination='1.5.0.8' netmask='255.255.255.255' gateway='1.3.3.8' interface='ppp0' metric='0'/>
+    <route hosts='host_0' destination='1.5.0.8' netmask='255.255.255.255' gateway='1.1.0.8' interface='ppp1' metric='0'/>
+    <route hosts='core_1' destination='1.5.0.8' netmask='255.255.255.255' gateway='1.4.1.8' interface='ppp1' metric='0'/>
+    <route hosts='host_1' destination='1.5.0.8' netmask='255.255.255.255' gateway='1.5.0.8' interface='ppp3' metric='0'/>
+    <!-- Route [ sink_0, host_1, core_1, host_0, source_0 ] -->
+    <route hosts='sink_0' destination='1.8.0.8' netmask='255.255.255.255' gateway='1.4.3.8' interface='ppp0' metric='0'/>
+    <route hosts='host_1' destination='1.8.0.8' netmask='255.255.255.255' gateway='1.1.1.8' interface='ppp1' metric='0'/>
+    <route hosts='core_1' destination='1.8.0.8' netmask='255.255.255.255' gateway='1.3.1.8' interface='ppp0' metric='0'/>
+    <route hosts='host_0' destination='1.8.0.8' netmask='255.255.255.255' gateway='1.8.0.8' interface='ppp3' metric='0'/>
+    <!-- Route [ source_1, host_0, core_0, host_1, sink_1 ] -->
+    <route hosts='source_1' destination='1.6.0.8' netmask='255.255.255.255' gateway='1.3.4.8' interface='ppp0' metric='0'/>
+    <route hosts='host_0' destination='1.6.0.8' netmask='255.255.255.255' gateway='1.0.0.8' interface='ppp0' metric='0'/>
+    <route hosts='core_0' destination='1.6.0.8' netmask='255.255.255.255' gateway='1.4.0.8' interface='ppp1' metric='0'/>
+    <route hosts='host_1' destination='1.6.0.8' netmask='255.255.255.255' gateway='1.6.0.8' interface='ppp4' metric='0'/>
+    <!-- Route [ sink_1, host_1, core_1, host_0, source_1 ] -->
+    <route hosts='sink_1' destination='1.9.0.8' netmask='255.255.255.255' gateway='1.4.4.8' interface='ppp0' metric='0'/>
+    <route hosts='host_1' destination='1.9.0.8' netmask='255.255.255.255' gateway='1.1.1.8' interface='ppp1' metric='0'/>
+    <route hosts='core_1' destination='1.9.0.8' netmask='255.255.255.255' gateway='1.3.1.8' interface='ppp0' metric='0'/>
+    <route hosts='host_0' destination='1.9.0.8' netmask='255.255.255.255' gateway='1.9.0.8' interface='ppp4' metric='0'/>
+    <!-- Route [ source_2, host_0, core_2, host_1, sink_2 ] -->
+    <route hosts='source_2' destination='1.7.0.8' netmask='255.255.255.255' gateway='1.3.5.8' interface='ppp0' metric='0'/>
+    <route hosts='host_0' destination='1.7.0.8' netmask='255.255.255.255' gateway='1.2.0.8' interface='ppp2' metric='0'/>
+    <route hosts='core_2' destination='1.7.0.8' netmask='255.255.255.255' gateway='1.4.2.8' interface='ppp1' metric='0'/>
+    <route hosts='host_1' destination='1.7.0.8' netmask='255.255.255.255' gateway='1.7.0.8' interface='ppp5' metric='0'/>
+    <!-- Route [ sink_2, host_1, core_1, host_0, source_2 ] -->
+    <route hosts='sink_2' destination='1.10.0.8' netmask='255.255.255.255' gateway='1.4.5.8' interface='ppp0' metric='0'/>
+    <route hosts='host_1' destination='1.10.0.8' netmask='255.255.255.255' gateway='1.1.1.8' interface='ppp1' metric='0'/>
+    <route hosts='core_1' destination='1.10.0.8' netmask='255.255.255.255' gateway='1.3.1.8' interface='ppp0' metric='0'/>
+    <route hosts='host_0' destination='1.10.0.8' netmask='255.255.255.255' gateway='1.10.0.8' interface='ppp5' metric='0'/>
+</config>

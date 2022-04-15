@@ -3,6 +3,7 @@ import numpy as np
 import networkx as nx
 
 WORKING_DIRECTORY = "C:/Users/bfrem/Documents/CloudComputing/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/DatacenterTopologies"
+GENERATED_FILES_DIR = "generated_files"
 
 PACKAGE = "inet.examples.inet.DatacenterTopologies"
 
@@ -41,6 +42,7 @@ ICON_LAPTOP = "device/laptop"
 ICON_SERVER = "device/server"
 ICON_CONFIGURATOR = "block/cogwheel"
 ICON_VISUALIZER = "block/app"
+ICON_SWITCH = "device/switch"
 
 NED_CONFIGURATOR = "Ipv4NetworkConfigurator"
 NED_VISUALIZER = "IntegratedVisualizer"
@@ -286,10 +288,31 @@ class Sink(Node):
         return self._server_name
 
 class Server(Node):
-    def __init__(self, name, x, y):
+    def __init__(self, name, x, y, source_coords=None, sink_coords=None):
         super().__init__(name, x, y)
         self._ned = NED_ROUTER
         self._icon = ICON_SERVER
+        self._size = SIZE_SMALL
+        if source_coords:
+            self._source_coords = source_coords
+        else:
+            self._source_coords = (x - 25, y + 50)
+        if sink_coords:
+            self._sink_coords = sink_coords
+        else:
+            self._sink_coords = (x + 25, y + 50)
+    
+    def get_source_coords(self):
+        return self._source_coords
+
+    def get_sink_coords(self):
+        return self._sink_coords
+
+class Tor(Node):
+    def __init__(self, name, x, y):
+        super().__init__(name, x, y)
+        self._ned = NED_ROUTER
+        self._icon = ICON_SWITCH
         self._size = SIZE_SMALL
 
 """
@@ -323,19 +346,23 @@ class RoutingAlgorithm:
 
     @staticmethod
     def k_shortest_paths(G, source, target, k):
-        shortest_paths = [path for path in nx.shortest_simple_paths(G, source, target)]
-        if k > len(shortest_paths):
-            return shortest_paths
-        else:
-            return shortest_paths[0:k]
+        paths = []
+        for path in nx.shortest_simple_paths(G, source, target):
+            if len(paths) < k:
+                paths.append(path)
+            else:
+                break
+        return paths
     
     @staticmethod
     def all_shortest_paths(G, source, target):
-        shortest_paths = [path for path in nx.shortest_simple_paths(G, source, target)]
-        min_path_length = len(shortest_paths[0])
         paths = []
-        for path in shortest_paths:
-            if len(path) == min_path_length:
+        min_path_length = 999
+        for path in nx.shortest_simple_paths(G, source, target):
+            if len(path) < min_path_length:
+                min_path_length = len(path)
+                paths.append(path)
+            elif len(path) == min_path_length:
                 paths.append(path)
             else:
                 break
@@ -349,13 +376,14 @@ class RoutingAlgorithm:
 
     @staticmethod
     def path_route_xml_generator(network, path_finder, flow_src, flow_dest):
-        routes = [f"<!-- Route for flow from {flow_src} to {flow_dest} -->"]
         server_src = network._node_map[flow_src].get_server_name()
         server_dest = network._node_map[flow_dest].get_server_name()
         path = path_finder(server_src, server_dest)
         path.insert(0, flow_src)
         path.append(flow_dest)
         flow_dest_node = network._node_map[flow_dest]
+
+        routes = [f"<!-- Route [ {', '.join(path)} ] -->"]
         for i in range(len(path) - 1):
             from_node = network._node_map[path[i]]
             to_node = network._node_map[path[i + 1]]
@@ -380,8 +408,9 @@ class RoutingAlgorithm:
         def path_finder(server_src, server_dest):
             server_src_dest = (server_src, server_dest) 
             if server_src_dest not in shortest_paths_sets.keys():
-                shortest_paths_sets[server_src_dest] = RoutingAlgorithm.all_shortest_paths(graph, server_src, server_dest)
-            return copy.deepcopy(random.sample(shortest_paths_sets[server_src_dest], 1)[0])
+                shortest_paths_sets[server_src_dest] = RoutingAlgorithm.all_shortest_paths(graph, server_src_dest[0], server_src_dest[1])
+            randomly_selected_path = random.sample(shortest_paths_sets[server_src_dest], 1)[0]
+            return copy.deepcopy(randomly_selected_path)
         return RoutingAlgorithm.network_route_xml_generator(network, path_finder)
     
     @staticmethod
@@ -391,14 +420,36 @@ class RoutingAlgorithm:
         def path_finder(server_src, server_dest):
             server_src_dest = (server_src, server_dest) 
             if server_src_dest not in shortest_paths_sets.keys():
-                shortest_paths_sets[server_src_dest] = RoutingAlgorithm.k_shortest_paths(graph, server_src, server_dest, k)
-            return copy.deepcopy(random.sample(shortest_paths_sets[server_src_dest], 1)[0])
+                shortest_paths_sets[server_src_dest] = RoutingAlgorithm.k_shortest_paths(graph, server_src_dest[0], server_src_dest[1], k)
+            randomly_selected_path = random.sample(shortest_paths_sets[server_src_dest], 1)[0]
+            return copy.deepcopy(randomly_selected_path)
         return RoutingAlgorithm.network_route_xml_generator(network, path_finder)
     
     @staticmethod
     def vlb_xml_routes(network):
-        # TODO
-        return []
+        graph = RoutingAlgorithm.get_nx_graph(network)
+        shortest_paths_sets = {}
+        intermediate_nodes = [node for node in filter(lambda n: "intermediate" in n, graph.nodes)]
+        def path_finder(server_src, server_dest):
+            # Select a random intermeddiate node
+            randomly_selected_intermediate = random.sample(intermediate_nodes, 1)[0]
+
+            # ECMP routing from source to intermeddiate node
+            src_dest = (server_src, randomly_selected_intermediate)
+            if src_dest not in shortest_paths_sets.keys():
+                shortest_paths_sets[src_dest] = RoutingAlgorithm.all_shortest_paths(graph, src_dest[0], src_dest[1])
+            randomly_selected_path = random.sample(shortest_paths_sets[src_dest], 1)[0]
+            path = copy.deepcopy(randomly_selected_path)
+            path = path[:-1]  # remove last element because so that intermeddiate node isn't dupliacted
+
+            # ECMP routing from intermediate node to dest
+            src_dest = (randomly_selected_intermediate, server_dest)
+            if src_dest not in shortest_paths_sets.keys():
+                shortest_paths_sets[src_dest] = RoutingAlgorithm.all_shortest_paths(graph, src_dest[0], src_dest[1])
+            randomly_selected_path = random.sample(shortest_paths_sets[src_dest], 1)[0]
+            path.extend(copy.deepcopy(randomly_selected_path))
+            return path
+        return RoutingAlgorithm.network_route_xml_generator(network, path_finder)
     
 class Network:
     def __init__(self, name, package=PACKAGE, imports=IMPORTS, width=800, height=500, use_visualizer=False):
@@ -413,6 +464,7 @@ class Network:
         self._source_sink_counter = 0
         self._lines = []
         self._flows = []
+        self._categorized_host_names = None
     
     def get_name(self):
         return self._name
@@ -429,34 +481,51 @@ class Network:
             Line(INFINITE_CHANNEL, INFINITE_LINE_PARAMS)
         ]
         self._node_map = {}
-        self.add_node(Server("server0", 1 / 4 * self._width, self._height / 2))
-        self.add_node(Server("server1", 3 / 4 * self._width, self._height / 2))
-        self.add_node(Router("router0", 2 / 4 * self._width, self._height * 1 / 4))
-        self.add_node(Router("router1", 2 / 4 * self._width, self._height * 2 / 4))
-        self.add_node(Router("router2", 2 / 4 * self._width, self._height * 3 / 4))
+        self.add_node(Server("host_0", 1 / 4 * self._width, self._height / 2))
+        self.add_node(Server("host_1", 3 / 4 * self._width, self._height / 2))
+        self.add_node(Router("core_0", 2 / 4 * self._width, self._height * 1 / 4))
+        self.add_node(Router("core_1", 2 / 4 * self._width, self._height * 2 / 4))
+        self.add_node(Router("core_2", 2 / 4 * self._width, self._height * 3 / 4))
 
-        Node.connect(self._node_map["server0"], self._node_map["router0"], DEFAULT_CHANNEL)
-        Node.connect(self._node_map["server0"], self._node_map["router1"], DEFAULT_CHANNEL)
-        Node.connect(self._node_map["server0"], self._node_map["router2"], DEFAULT_CHANNEL)
-        Node.connect(self._node_map["server1"], self._node_map["router0"], DEFAULT_CHANNEL)
-        Node.connect(self._node_map["server1"], self._node_map["router1"], DEFAULT_CHANNEL)
-        Node.connect(self._node_map["server1"], self._node_map["router2"], DEFAULT_CHANNEL)
+        Node.connect(self._node_map["host_0"], self._node_map["core_0"], DEFAULT_CHANNEL)
+        Node.connect(self._node_map["host_0"], self._node_map["core_1"], DEFAULT_CHANNEL)
+        Node.connect(self._node_map["host_0"], self._node_map["core_2"], DEFAULT_CHANNEL)
+        Node.connect(self._node_map["host_1"], self._node_map["core_0"], DEFAULT_CHANNEL)
+        Node.connect(self._node_map["host_1"], self._node_map["core_1"], DEFAULT_CHANNEL)
+        Node.connect(self._node_map["host_1"], self._node_map["core_2"], DEFAULT_CHANNEL)
 
-        # self._node_map["client"].add_flow(self._node_map["server"], 1000000, 0)
+        # self._node_map["client"].add_flow(self._node_map["host"], 1000000, 0)
 
-        self.add_flow(self._node_map["server0"], self._node_map["server1"], 1000000, 0)
-        self.add_flow(self._node_map["server0"], self._node_map["server1"], 1000000, 0)
-        self.add_flow(self._node_map["server0"], self._node_map["server1"], 1000000, 0)
+        self.add_flow(self._node_map["host_0"], self._node_map["host_1"], 1000000, 0)
+        self.add_flow(self._node_map["host_0"], self._node_map["host_1"], 1000000, 0)
+        self.add_flow(self._node_map["host_0"], self._node_map["host_1"], 1000000, 0)
 
         return self
 
+    def get_categorized_host_names(self):
+        if self._categorized_host_names:
+            return self._categorized_host_names
+        self._categorized_host_names = {}
+        for node_name in self._node_map.keys():
+            node_type = node_name.split("_")[0]
+            if node_type not in self._categorized_host_names:
+                self._categorized_host_names[node_type] = []
+            self._categorized_host_names[node_type].append(node_name)
+        for node_type in self._categorized_host_names.keys():
+            self._categorized_host_names[node_type] = sorted(self._categorized_host_names[node_type])
+        return self._categorized_host_names
+
     def add_flow(self, send, recv, amount, start):
-        source_name = f"source{self._source_sink_counter}"
-        sink_name = f"sink{self._source_sink_counter}"
+        if isinstance(send, str):
+            send = self._node_map[send]
+        if isinstance(recv, str):
+            recv = self._node_map[recv]
+        source_name = f"source_{self._source_sink_counter}"
+        sink_name = f"sink_{self._source_sink_counter}"
         self._source_sink_counter += 1
-        source = Source(source_name, send._name, send._x - 25, send._y + 50)
+        source = Source(source_name, send._name, *send.get_source_coords())
         Node.connect(source, send, INFINITE_CHANNEL)
-        sink = Sink(sink_name, recv._name, recv._x + 25, recv._y + 50)
+        sink = Sink(sink_name, recv._name, *recv.get_sink_coords())
         Node.connect(sink, recv, INFINITE_CHANNEL)
         source.add_flow(sink, amount, start)
         self.add_node(source)
@@ -530,6 +599,10 @@ class Network:
         fd.write(ned_str)
         fd.close()
 
+        fd = open(f"{GENERATED_FILES_DIR}/{self._name}.ned", "w")
+        fd.write(ned_str)
+        fd.close()
+
         return ned_str
 
     def create_ini_file(self):
@@ -593,6 +666,10 @@ class Network:
         fd.write(ini_str)
         fd.close()
 
+        fd = open(f"{GENERATED_FILES_DIR}/{self._name}.ini", "w")
+        fd.write(ini_str)
+        fd.close()
+
         return ini_str
     
     def create_xml_file(self):
@@ -600,6 +677,7 @@ class Network:
         xml_str += "<config>\n"
         for interface in self.xml_interfaces():
             xml_str += f"{TAB}{interface}\n"
+        print("Generating Routes")
         for route in RoutingAlgorithm.ecmp_xml_routes(self):
             xml_str += f"{TAB}{route}\n"
         xml_str += "</config>\n"
@@ -607,9 +685,12 @@ class Network:
         fd.write(xml_str)
         fd.close()
 
+        fd = open(f"{GENERATED_FILES_DIR}/{self._name}.xml", "w")
+        fd.write(xml_str)
+        fd.close()
+
         return xml_str
 
-"""
 class FatTree(Network):
     def __init__(self, name, switch_degree, package=PACKAGE, imports=IMPORTS, width=800, height=500):
         super().__init__(name, package, imports, width, height)
@@ -623,27 +704,24 @@ class FatTree(Network):
         def z(num, n=2):
             return f"{num}".zfill(n)
 
-        self._lines = [Line()]
-        channel = self._lines[0].get_channel()
+        self._lines = [
+            Line(DEFAULT_CHANNEL, DEFAULT_LINE_PARAMS), 
+            Line(INFINITE_CHANNEL, INFINITE_LINE_PARAMS)
+        ]
 
-        for i in range(self._k ** 2 // 2):
-            self._node_map[f"agg_{z(i)}"] = Node(f"agg_{z(i)}", ROUTER_TYPE, (i + 0.5) * self._width / (self._k ** 2 / 2), 200)
-            self._node_map[f"edge_{z(i)}"] = Node(f"edge_{z(i)}", ROUTER_TYPE, (i + 0.5) *  self._width / (self._k ** 2 / 2), 300)
         for i in range(self._k ** 2 // 4):
-            self._node_map[f"core_{z(i)}"] = Node(f"core_{z(i)}", ROUTER_TYPE, (i + 0.5) * self._width / (self._k ** 2 / 4), 100)
+            self._node_map[f"core_{z(i)}"] = Router(f"core_{z(i)}", (i + 0.5) * self._width / (self._k ** 2 / 4), 100)
+        for i in range(self._k ** 2 // 2):
+            self._node_map[f"agg_{z(i)}"] = Router(f"agg_{z(i)}", (i + 0.5) * self._width / (self._k ** 2 / 2), 200)
+            self._node_map[f"edge_{z(i)}"] = Router(f"edge_{z(i)}", (i + 0.5) *  self._width / (self._k ** 2 / 2), 300)
         for i in range(self._k ** 3 // 4):
-            node_type = SERVER_TYPE if i % 2 == 1 else CLIENT_TYPE
-            self._node_map[f"host_{z(i)}"] = Node(f"host_{z(i)}", node_type, (i + 0.5) * self._width / (self._k ** 3 / 4), 400)
-            if i % 2 == 1:
-                self._servers.append(self._node_map[f"host_{z(i)}"])
-            else:
-                self._clients.append(self._node_map[f"host_{z(i)}"])
+            self._node_map[f"host_{z(i)}"] = Server(f"host_{z(i)}", (i + 0.5) * self._width / (self._k ** 3 / 4), 400)
 
         # Connect hosts to edge routers
         edge_index = 0
         edge_counter = 0
         for i in range(self._k ** 3 // 4):
-            Node.connect(self._node_map[f"host_{z(i)}"], self._node_map[f"edge_{z(edge_index)}"], channel)
+            Node.connect(self._node_map[f"host_{z(i)}"], self._node_map[f"edge_{z(edge_index)}"], DEFAULT_CHANNEL)
             edge_counter += 1
             if edge_counter == self._k // 2:
                 edge_index += 1
@@ -653,16 +731,16 @@ class FatTree(Network):
         for i in range(self._k ** 2 // 2):
             group = i // (self._k // 2)
             for j in range(group * self._k // 2, (group + 1) * self._k // 2):
-                Node.connect(self._node_map[f"edge_{z(i)}"], self._node_map[f"agg_{z(j)}"], channel)
+                Node.connect(self._node_map[f"edge_{z(i)}"], self._node_map[f"agg_{z(j)}"], DEFAULT_CHANNEL)
 
         # Connect aggreagte to core
         core_counter = 0
         for i in range(self._k ** 2 // 2):
             for j in range(self._k // 2):
-                Node.connect(self._node_map[f"agg_{z(i)}"], self._node_map[f"core_{z(core_counter)}"], channel)
+                Node.connect(self._node_map[f"agg_{z(i)}"], self._node_map[f"core_{z(core_counter)}"], DEFAULT_CHANNEL)
                 core_counter = (core_counter + 1) % (self._k ** 2 // 4)
         
-        generate_random_flows(self._clients, self._servers, 10)
+        # generate_random_flows(self, 10)
 
         return self
 
@@ -673,6 +751,7 @@ class Jellyfish(Network):
         self._n = num_switches  # number of routers
         self._k = ports_per_switch  # number of ports per router
         self._r = internal_ports  # number of ports connecting to other routers
+        assert(internal_ports >= 2)  # core needs to be connected
         self._servers = []
         self._clients = []
 
@@ -680,38 +759,39 @@ class Jellyfish(Network):
         def z(num, n=2):
             return f"{num}".zfill(n)
 
-        self._lines = [Line()]
-        channel = self._lines[0].get_channel()
+        self._lines = [
+            Line(DEFAULT_CHANNEL, DEFAULT_LINE_PARAMS), 
+            Line(INFINITE_CHANNEL, INFINITE_LINE_PARAMS)
+        ]
 
         for i in range(self._n):
-            self._node_map[f"core_{z(i)}"] = Node(f"core_{z(i)}", ROUTER_TYPE, 
+            self._node_map[f"core_{z(i)}"] = Router(f"core_{z(i)}", 
                 self._width / 2 + 150 * math.cos(2 * math.pi * i / self._n), 
                 self._height / 2 + 150 * math.sin(2 * math.pi * i / self._n))
 
         num_hosts = self._n * (self._k - self._r)
         slide = 0 if self._k == self._r + 1  else 0.5
         for i in range(num_hosts):
-            node_type = SERVER_TYPE if i % 4 == 3 else CLIENT_TYPE
-            self._node_map[f"host_{z(i)}"] = Node(f"host_{z(i)}", node_type, 
-                self._width / 2 + 200 * math.cos(2 * math.pi * (i - slide) / num_hosts), 
-                self._height / 2 + 200 * math.sin(2 * math.pi * (i - slide) / num_hosts))
-            if i % 4 == 3:
-                self._servers.append(self._node_map[f"host_{z(i)}"])
-            else:
-                self._clients.append(self._node_map[f"host_{z(i)}"])
+            server_x = self._width / 2 + 200 * math.cos(2 * math.pi * (i - slide) / num_hosts)
+            server_y = self._height / 2 + 200 * math.sin(2 * math.pi * (i - slide) / num_hosts)
+            server_src_x = self._width / 2 + 250 * math.cos(2 * math.pi * (i - slide - 0.25) / num_hosts)
+            server_src_y = self._height / 2 + 250 * math.sin(2 * math.pi * (i - slide - 0.25) / num_hosts)
+            server_sink_x = self._width / 2 + 250 * math.cos(2 * math.pi * (i - slide + 0.25) / num_hosts)
+            server_sink_y = self._height / 2 + 250 * math.sin(2 * math.pi * (i - slide + 0.25) / num_hosts)
+            self._node_map[f"host_{z(i)}"] = Server(f"host_{z(i)}", 
+                server_x, server_y, (server_src_x, server_src_y), (server_sink_x, server_sink_y))
 
         # make sure there is at least one cycle in the graph
         rands = [idx for idx in range(self._n)]
         random.shuffle(rands)
-        # print(rands)
         for i in range(self._n):
-            Node.connect(self._node_map[f"core_{z(rands[i])}"], self._node_map[f"core_{z(rands[(i + 1) % self._n])}"], channel)
+            Node.connect(self._node_map[f"core_{z(rands[i])}"], self._node_map[f"core_{z(rands[(i + 1) % self._n])}"], DEFAULT_CHANNEL)
 
         for i in range(self._n):
             core_node = self._node_map[f"core_{z(i)}"]
             if (self._r == core_node.get_num_gates()):
                 continue  # router is already fully connected
-            potential_neighbors = [node for node in filter(lambda node: node.get_type() == ROUTER_TYPE, self._node_map.values())]
+            potential_neighbors = [self._node_map[node_name] for node_name in self.get_categorized_host_names()['core']]
             potential_neighbors = [node for node in filter(lambda node: node.get_num_gates() < self._r, potential_neighbors)]
             potential_neighbors = [node for node in filter(lambda node: not core_node.is_connected_to(node), potential_neighbors)]
 
@@ -722,14 +802,12 @@ class Jellyfish(Network):
                 print(f"Not enough potential neighbors for node {i}")
             
             for neighbor in neighbors:
-                Node.connect(core_node, neighbor, channel)
+                Node.connect(core_node, neighbor, DEFAULT_CHANNEL)
         
         for i in range(num_hosts):
             host_node = self._node_map[f"host_{z(i)}"]
             router_node = self._node_map[f"core_{z(int(i / (self._k - self._r)))}"]
-            Node.connect(host_node, router_node, channel)
-        
-        generate_random_flows(self._clients, self._servers, 10)
+            Node.connect(host_node, router_node, DEFAULT_CHANNEL)
 
         return self
 
@@ -747,35 +825,32 @@ class VL2(Network):
         def z(num, n=2):
             return f"{num}".zfill(n)
 
-        self._lines = [Line()]
-        channel = self._lines[0].get_channel()
+        self._lines = [
+            Line(DEFAULT_CHANNEL, DEFAULT_LINE_PARAMS), 
+            Line(INFINITE_CHANNEL, INFINITE_LINE_PARAMS)
+        ]
 
         for i in range(self._a // 2):
-            self._node_map[f"core_{z(i)}"] = Node(f"core_{z(i)}", ROUTER_TYPE, 
+            self._node_map[f"core_{z(i)}"] = Router(f"core_{z(i)}", 
                 self._width * (i + 0.5) / (self._a // 2), 100)
         
         for i in range(self._c):
-            self._node_map[f"agg_{z(i)}"] = Node(f"agg_{z(i)}", ROUTER_TYPE, 
+            self._node_map[f"agg_{z(i)}"] = Router(f"agg_{z(i)}",  
                 self._width * (i + 0.5) / (self._c), 200)
         
         for i in range(self._a * self._c // 4):
-            self._node_map[f"tor_{z(i)}"] = Node(f"tor_{z(i)}", ROUTER_TYPE, 
+            self._node_map[f"tor_{z(i)}"] = Tor(f"tor_{z(i)}", 
                 self._width * (i + 0.5) / (self._a * self._c // 4), 300)
 
         for i in range(self._s * self._a * self._c // 4):
-            node_type = SERVER_TYPE if i % 4 == 3 else CLIENT_TYPE
-            self._node_map[f"host_{z(i)}"] = Node(f"host_{z(i)}", node_type, 
+            self._node_map[f"host_{z(i)}"] = Server(f"host_{z(i)}", 
                 self._width * (i + 0.5) / (self._s * self._a * self._c // 4), 400)
-            if i % 4 == 3:
-                self._servers.append(self._node_map[f"host_{z(i)}"])
-            else:
-                self._clients.append(self._node_map[f"host_{z(i)}"])
 
         # Connect hosts to tor routers
         tor_index = 0
         tor_counter = 0
         for i in range(self._s * self._a * self._c // 4):
-            Node.connect(self._node_map[f"host_{z(i)}"], self._node_map[f"tor_{z(tor_index)}"], channel)
+            Node.connect(self._node_map[f"host_{z(i)}"], self._node_map[f"tor_{z(tor_index)}"], DEFAULT_CHANNEL)
             tor_counter += 1
             if tor_counter == self._s:
                 tor_index += 1
@@ -785,14 +860,12 @@ class VL2(Network):
         for i in range(self._a * self._c // 4):
             group = i // (self._a // 2)
             for j in range(group * 2, (group + 1) * 2):
-                Node.connect(self._node_map[f"tor_{z(i)}"], self._node_map[f"agg_{z(j)}"], channel)
+                Node.connect(self._node_map[f"tor_{z(i)}"], self._node_map[f"agg_{z(j)}"], DEFAULT_CHANNEL)
 
         # Connect aggregate to core
         for i in range(self._c):
             for j in range(self._a // 2):
-                Node.connect(self._node_map[f"agg_{z(i)}"], self._node_map[f"core_{z(j)}"], channel)
-        
-        generate_random_flows(self._clients, self._servers, 10)
+                Node.connect(self._node_map[f"agg_{z(i)}"], self._node_map[f"core_{z(j)}"], DEFAULT_CHANNEL)
 
         return self
 
@@ -814,7 +887,6 @@ def generate_random_flows(clients, servers, n):
     #    server = random.sample(servers, 1)[0]
     #    # client.add_flow(server, flows[i], 0)
     #    client.add_flow(server, 1250000, 0)  # 1 Mbit flow
-"""
 
 def main():
     random.seed(0)
@@ -826,25 +898,39 @@ def main():
     xml_str = network.create_xml_file()
     print(f"{ned_str}\n{ini_str}\n{xml_str}\n")
 
-    """
+
     network = FatTree(name="FatTree", switch_degree=4).initialize()
+    def z(num, n=2):
+        return f"{num}".zfill(n)
+    for i in range(8):
+        src = f"host_{z(i)}"
+        dest = f"host_{z((i + 8) % 16)}"
+        network.add_flow(src, dest, 1000000, 0)
     ned_str = network.create_ned_file()
     ini_str = network.create_ini_file()
-    print(f"{ned_str}\n{ini_str}\n\n")
+    xml_str = network.create_xml_file()
+    print(f"{ned_str}\n{ini_str}\n{xml_str}\n")
 
     network = Jellyfish(name="Jelly", num_switches=16, ports_per_switch=4, internal_ports=3).initialize()
+    for i in range(8):
+        src = f"host_{z(i)}"
+        dest = f"host_{z((i + 8) % 16)}"
+        network.add_flow(src, dest, 1000000, 0)
     ned_str = network.create_ned_file()
     ini_str = network.create_ini_file()
-    print(f"{ned_str}\n{ini_str}\n\n")
+    xml_str = network.create_xml_file()
+    print(f"{ned_str}\n{ini_str}\n{xml_str}\n")
 
     network = VL2(name="VL2", ports_per_core_switch=4, ports_per_aggregate_switch=4, hosts_per_tor=4).initialize()
+    for i in range(8):
+        src = f"host_{z(i)}"
+        dest = f"host_{z((i + 8) % 16)}"
+        network.add_flow(src, dest, 1000000, 0)
     ned_str = network.create_ned_file()
     ini_str = network.create_ini_file()
-    print(f"{ned_str}\n{ini_str}")
-    """
+    xml_str = network.create_xml_file()
+    print(f"{ned_str}\n{ini_str}\n{xml_str}\n")
     return
-
-
 
 if __name__ == "__main__":
     main()

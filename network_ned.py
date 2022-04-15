@@ -4,7 +4,9 @@ from nodes_ned import Node, Router, Server, Tor, Source, Sink
 from routing_algorithms import RoutingAlgorithm
 
 class Network:
-    def __init__(self, name, package=PACKAGE, imports=IMPORTS, width=1200, height=500, use_visualizer=False):
+    def __init__(self, name, package=None, imports=IMPORTS, width=1200, height=500, use_visualizer=False):
+        if package is None:
+            package = get_package_name()
         self._name = name
         self._package = package
         self._imports = imports

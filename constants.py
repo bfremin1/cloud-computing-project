@@ -11,7 +11,18 @@ def get_working_directory():
 if __WORKING_DIRECTORY is None:
     set_working_directory("C:/Users/bfrem/Documents/CloudComputing/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/DatacenterTopologies")
 
-PACKAGE = "inet.examples.inet.DatacenterTopologies"
+__PACKAGE = None
+
+def set_package_name(package_name):
+    global __PACKAGE
+    __PACKAGE = package_name
+
+def get_package_name():
+    global __PACKAGE
+    return __PACKAGE
+
+if __PACKAGE is None:
+    set_working_directory("inet.examples.inet.DatacenterTopologies")
 
 IMPORTS = [
     "inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator",

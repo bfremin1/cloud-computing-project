@@ -1,5 +1,5 @@
 from constants import *
-import math
+import math, random, copy
 
 class Flow:
     def __init__(self, src, dest, send_amount, start_delay):
@@ -29,3 +29,27 @@ class Flow:
     
     def get_endpoints(self):
         return (self._src, self._dest)
+
+class FlowGenerator:
+    @staticmethod
+    def add_k_random_flows(network, k, flow_size):
+        hosts = network.get_categorized_nodes()['host']
+        for _ in range(k):
+            src, dest = random.sample(hosts, 2)
+            network.add_flow(src, dest, flow_size, 0)
+        return
+
+    @staticmethod
+    def add_random_paired_flows(network, flow_size):
+        hosts = network.get_categorized_nodes()['host']
+        if len(hosts) % 2 != 0:
+            print(f"Cannot add paired flows with odd number of hosts [{len(hosts)}]")
+        indices = [i for i in range(len(hosts))]
+        for _ in range(len(hosts) // 2):
+            src_idx, dest_idx = random.sample(indices, 2)
+            src = hosts[src_idx]
+            dest = hosts[dest_idx]
+            network.add_flow(src, dest, flow_size, 0)
+            indices.remove(src_idx)
+            indices.remove(dest_idx)
+        return

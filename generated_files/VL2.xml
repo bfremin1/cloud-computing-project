@@ -96,148 +96,112 @@
     <interface hosts='tor_03' names='ppp4' address='1.41.4.8' netmask='255.255.255.x'/>
     <interface hosts='tor_03' names='ppp5' address='1.41.5.8' netmask='255.255.255.x'/>
     <interface hosts='**' address='255.x.x.x' netmask='255.255.255.x'/>
-    <!-- Route [ source_0, host_00, tor_00, agg_00, core_00, agg_03, tor_02, host_08, sink_0 ] -->
-    <route hosts='source_0' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.6.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_00' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.38.2.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_00' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.0.2.8' interface='ppp0' metric='0'/>
-    <route hosts='agg_00' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.4.0.8' interface='ppp0' metric='0'/>
-    <route hosts='core_00' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.3.0.8' interface='ppp3' metric='0'/>
-    <route hosts='agg_03' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.40.1.8' interface='ppp2' metric='0'/>
-    <route hosts='tor_02' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.14.1.8' interface='ppp2' metric='0'/>
-    <route hosts='host_08' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.22.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ sink_0, host_08, tor_02, agg_03, core_01, agg_00, tor_00, host_00, source_0 ] -->
-    <route hosts='sink_0' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.14.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_08' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.40.2.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_02' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.3.2.8' interface='ppp1' metric='0'/>
-    <route hosts='agg_03' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.5.3.8' interface='ppp1' metric='0'/>
-    <route hosts='core_01' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.0.1.8' interface='ppp0' metric='0'/>
-    <route hosts='agg_00' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.38.0.8' interface='ppp2' metric='0'/>
-    <route hosts='tor_00' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.6.1.8' interface='ppp2' metric='0'/>
-    <route hosts='host_00' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.30.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ source_1, host_01, tor_00, agg_01, core_01, agg_03, tor_02, host_09, sink_1 ] -->
+    <!-- Route [ source_0, host_10, tor_02, host_09, sink_0 ] -->
+    <route hosts='source_0' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.16.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_10' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.40.4.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_02' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.15.1.8' interface='ppp3' metric='0'/>
+    <route hosts='host_09' destination='1.22.0.8' netmask='255.255.255.255' gateway='1.22.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ sink_0, host_09, tor_02, host_10, source_0 ] -->
+    <route hosts='sink_0' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.15.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_09' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.40.3.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_02' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.16.1.8' interface='ppp4' metric='0'/>
+    <route hosts='host_10' destination='1.30.0.8' netmask='255.255.255.255' gateway='1.30.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ source_1, host_01, tor_00, agg_01, tor_01, host_07, sink_1 ] -->
     <route hosts='source_1' destination='1.23.0.8' netmask='255.255.255.255' gateway='1.7.0.8' interface='ppp0' metric='0'/>
     <route hosts='host_01' destination='1.23.0.8' netmask='255.255.255.255' gateway='1.38.3.8' interface='ppp1' metric='0'/>
     <route hosts='tor_00' destination='1.23.0.8' netmask='255.255.255.255' gateway='1.1.2.8' interface='ppp1' metric='0'/>
-    <route hosts='agg_01' destination='1.23.0.8' netmask='255.255.255.255' gateway='1.5.1.8' interface='ppp1' metric='0'/>
-    <route hosts='core_01' destination='1.23.0.8' netmask='255.255.255.255' gateway='1.3.1.8' interface='ppp3' metric='0'/>
-    <route hosts='agg_03' destination='1.23.0.8' netmask='255.255.255.255' gateway='1.40.1.8' interface='ppp2' metric='0'/>
-    <route hosts='tor_02' destination='1.23.0.8' netmask='255.255.255.255' gateway='1.15.1.8' interface='ppp3' metric='0'/>
-    <route hosts='host_09' destination='1.23.0.8' netmask='255.255.255.255' gateway='1.23.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ sink_1, host_09, tor_02, agg_03, core_00, agg_00, tor_00, host_01, source_1 ] -->
-    <route hosts='sink_1' destination='1.31.0.8' netmask='255.255.255.255' gateway='1.15.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_09' destination='1.31.0.8' netmask='255.255.255.255' gateway='1.40.3.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_02' destination='1.31.0.8' netmask='255.255.255.255' gateway='1.3.2.8' interface='ppp1' metric='0'/>
-    <route hosts='agg_03' destination='1.31.0.8' netmask='255.255.255.255' gateway='1.4.3.8' interface='ppp0' metric='0'/>
-    <route hosts='core_00' destination='1.31.0.8' netmask='255.255.255.255' gateway='1.0.0.8' interface='ppp0' metric='0'/>
+    <route hosts='agg_01' destination='1.23.0.8' netmask='255.255.255.255' gateway='1.39.1.8' interface='ppp3' metric='0'/>
+    <route hosts='tor_01' destination='1.23.0.8' netmask='255.255.255.255' gateway='1.13.1.8' interface='ppp5' metric='0'/>
+    <route hosts='host_07' destination='1.23.0.8' netmask='255.255.255.255' gateway='1.23.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ sink_1, host_07, tor_01, agg_00, tor_00, host_01, source_1 ] -->
+    <route hosts='sink_1' destination='1.31.0.8' netmask='255.255.255.255' gateway='1.13.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_07' destination='1.31.0.8' netmask='255.255.255.255' gateway='1.39.5.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_01' destination='1.31.0.8' netmask='255.255.255.255' gateway='1.0.3.8' interface='ppp0' metric='0'/>
     <route hosts='agg_00' destination='1.31.0.8' netmask='255.255.255.255' gateway='1.38.0.8' interface='ppp2' metric='0'/>
     <route hosts='tor_00' destination='1.31.0.8' netmask='255.255.255.255' gateway='1.7.1.8' interface='ppp3' metric='0'/>
     <route hosts='host_01' destination='1.31.0.8' netmask='255.255.255.255' gateway='1.31.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ source_2, host_02, tor_00, agg_00, core_01, agg_03, tor_02, host_10, sink_2 ] -->
-    <route hosts='source_2' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.8.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_02' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.38.4.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_00' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.0.2.8' interface='ppp0' metric='0'/>
-    <route hosts='agg_00' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.5.0.8' interface='ppp1' metric='0'/>
-    <route hosts='core_01' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.3.1.8' interface='ppp3' metric='0'/>
-    <route hosts='agg_03' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.40.1.8' interface='ppp2' metric='0'/>
-    <route hosts='tor_02' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.16.1.8' interface='ppp4' metric='0'/>
-    <route hosts='host_10' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.24.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ sink_2, host_10, tor_02, agg_03, core_00, agg_01, tor_00, host_02, source_2 ] -->
-    <route hosts='sink_2' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.16.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_10' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.40.4.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_02' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.3.2.8' interface='ppp1' metric='0'/>
-    <route hosts='agg_03' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.4.3.8' interface='ppp0' metric='0'/>
-    <route hosts='core_00' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.1.0.8' interface='ppp1' metric='0'/>
-    <route hosts='agg_01' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.38.1.8' interface='ppp2' metric='0'/>
-    <route hosts='tor_00' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.8.1.8' interface='ppp4' metric='0'/>
-    <route hosts='host_02' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.32.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ source_3, host_03, tor_00, agg_00, core_00, agg_03, tor_02, host_11, sink_3 ] -->
-    <route hosts='source_3' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.9.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_03' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.38.5.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_00' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.0.2.8' interface='ppp0' metric='0'/>
-    <route hosts='agg_00' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.4.0.8' interface='ppp0' metric='0'/>
-    <route hosts='core_00' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.3.0.8' interface='ppp3' metric='0'/>
-    <route hosts='agg_03' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.40.1.8' interface='ppp2' metric='0'/>
-    <route hosts='tor_02' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.17.1.8' interface='ppp5' metric='0'/>
-    <route hosts='host_11' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.25.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ sink_3, host_11, tor_02, agg_03, core_01, agg_00, tor_00, host_03, source_3 ] -->
-    <route hosts='sink_3' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.17.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_11' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.40.5.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_02' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.3.2.8' interface='ppp1' metric='0'/>
-    <route hosts='agg_03' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.5.3.8' interface='ppp1' metric='0'/>
-    <route hosts='core_01' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.0.1.8' interface='ppp0' metric='0'/>
-    <route hosts='agg_00' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.38.0.8' interface='ppp2' metric='0'/>
-    <route hosts='tor_00' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.9.1.8' interface='ppp5' metric='0'/>
-    <route hosts='host_03' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.33.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ source_4, host_04, tor_01, agg_00, core_01, agg_02, tor_03, host_12, sink_4 ] -->
-    <route hosts='source_4' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.10.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_04' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.39.2.8' interface='ppp1' metric='0'/>
+    <!-- Route [ source_2, host_13, tor_03, host_14, sink_2 ] -->
+    <route hosts='source_2' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.19.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_13' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.41.3.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_03' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.20.1.8' interface='ppp4' metric='0'/>
+    <route hosts='host_14' destination='1.24.0.8' netmask='255.255.255.255' gateway='1.24.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ sink_2, host_14, tor_03, host_13, source_2 ] -->
+    <route hosts='sink_2' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.20.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_14' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.41.4.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_03' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.19.1.8' interface='ppp3' metric='0'/>
+    <route hosts='host_13' destination='1.32.0.8' netmask='255.255.255.255' gateway='1.32.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ source_3, host_06, tor_01, host_04, sink_3 ] -->
+    <route hosts='source_3' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.12.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_06' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.39.4.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_01' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.10.1.8' interface='ppp2' metric='0'/>
+    <route hosts='host_04' destination='1.25.0.8' netmask='255.255.255.255' gateway='1.25.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ sink_3, host_04, tor_01, host_06, source_3 ] -->
+    <route hosts='sink_3' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.10.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_04' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.39.2.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_01' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.12.1.8' interface='ppp4' metric='0'/>
+    <route hosts='host_06' destination='1.33.0.8' netmask='255.255.255.255' gateway='1.33.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ source_4, host_05, tor_01, agg_00, tor_00, host_00, sink_4 ] -->
+    <route hosts='source_4' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.11.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_05' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.39.3.8' interface='ppp1' metric='0'/>
     <route hosts='tor_01' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.0.3.8' interface='ppp0' metric='0'/>
-    <route hosts='agg_00' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.5.0.8' interface='ppp1' metric='0'/>
-    <route hosts='core_01' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.2.1.8' interface='ppp2' metric='0'/>
-    <route hosts='agg_02' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.41.0.8' interface='ppp3' metric='0'/>
-    <route hosts='tor_03' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.18.1.8' interface='ppp2' metric='0'/>
-    <route hosts='host_12' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.26.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ sink_4, host_12, tor_03, agg_02, core_00, agg_01, tor_01, host_04, source_4 ] -->
-    <route hosts='sink_4' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.18.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_12' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.41.2.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_03' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.2.3.8' interface='ppp0' metric='0'/>
-    <route hosts='agg_02' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.4.2.8' interface='ppp0' metric='0'/>
-    <route hosts='core_00' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.1.0.8' interface='ppp1' metric='0'/>
-    <route hosts='agg_01' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.39.1.8' interface='ppp3' metric='0'/>
-    <route hosts='tor_01' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.10.1.8' interface='ppp2' metric='0'/>
-    <route hosts='host_04' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.34.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ source_5, host_05, tor_01, agg_00, core_01, agg_02, tor_03, host_13, sink_5 ] -->
-    <route hosts='source_5' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.11.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_05' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.39.3.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_01' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.0.3.8' interface='ppp0' metric='0'/>
-    <route hosts='agg_00' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.5.0.8' interface='ppp1' metric='0'/>
-    <route hosts='core_01' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.2.1.8' interface='ppp2' metric='0'/>
-    <route hosts='agg_02' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.41.0.8' interface='ppp3' metric='0'/>
-    <route hosts='tor_03' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.19.1.8' interface='ppp3' metric='0'/>
-    <route hosts='host_13' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.27.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ sink_5, host_13, tor_03, agg_02, core_00, agg_00, tor_01, host_05, source_5 ] -->
-    <route hosts='sink_5' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.19.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_13' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.41.3.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_03' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.2.3.8' interface='ppp0' metric='0'/>
-    <route hosts='agg_02' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.4.2.8' interface='ppp0' metric='0'/>
-    <route hosts='core_00' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.0.0.8' interface='ppp0' metric='0'/>
-    <route hosts='agg_00' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.39.0.8' interface='ppp3' metric='0'/>
-    <route hosts='tor_01' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.11.1.8' interface='ppp3' metric='0'/>
-    <route hosts='host_05' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.35.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ source_6, host_06, tor_01, agg_01, core_01, agg_02, tor_03, host_14, sink_6 ] -->
-    <route hosts='source_6' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.12.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_06' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.39.4.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_01' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.1.3.8' interface='ppp1' metric='0'/>
-    <route hosts='agg_01' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.5.1.8' interface='ppp1' metric='0'/>
-    <route hosts='core_01' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.2.1.8' interface='ppp2' metric='0'/>
-    <route hosts='agg_02' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.41.0.8' interface='ppp3' metric='0'/>
-    <route hosts='tor_03' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.20.1.8' interface='ppp4' metric='0'/>
-    <route hosts='host_14' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.28.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ sink_6, host_14, tor_03, agg_03, core_01, agg_01, tor_01, host_06, source_6 ] -->
-    <route hosts='sink_6' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.20.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_14' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.41.4.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_03' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.3.3.8' interface='ppp1' metric='0'/>
-    <route hosts='agg_03' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.5.3.8' interface='ppp1' metric='0'/>
+    <route hosts='agg_00' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.38.0.8' interface='ppp2' metric='0'/>
+    <route hosts='tor_00' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.6.1.8' interface='ppp2' metric='0'/>
+    <route hosts='host_00' destination='1.26.0.8' netmask='255.255.255.255' gateway='1.26.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ sink_4, host_00, tor_00, agg_00, tor_01, host_05, source_4 ] -->
+    <route hosts='sink_4' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.6.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_00' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.38.2.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_00' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.0.2.8' interface='ppp0' metric='0'/>
+    <route hosts='agg_00' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.39.0.8' interface='ppp3' metric='0'/>
+    <route hosts='tor_01' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.11.1.8' interface='ppp3' metric='0'/>
+    <route hosts='host_05' destination='1.34.0.8' netmask='255.255.255.255' gateway='1.34.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ source_5, host_15, tor_03, agg_02, tor_02, host_08, sink_5 ] -->
+    <route hosts='source_5' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.21.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_15' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.41.5.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_03' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.2.3.8' interface='ppp0' metric='0'/>
+    <route hosts='agg_02' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.40.0.8' interface='ppp2' metric='0'/>
+    <route hosts='tor_02' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.14.1.8' interface='ppp2' metric='0'/>
+    <route hosts='host_08' destination='1.27.0.8' netmask='255.255.255.255' gateway='1.27.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ sink_5, host_08, tor_02, agg_02, tor_03, host_15, source_5 ] -->
+    <route hosts='sink_5' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.14.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_08' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.40.2.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_02' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.2.2.8' interface='ppp0' metric='0'/>
+    <route hosts='agg_02' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.41.0.8' interface='ppp3' metric='0'/>
+    <route hosts='tor_03' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.21.1.8' interface='ppp5' metric='0'/>
+    <route hosts='host_15' destination='1.35.0.8' netmask='255.255.255.255' gateway='1.35.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ source_6, host_02, tor_00, agg_01, core_00, agg_02, tor_02, host_11, sink_6 ] -->
+    <route hosts='source_6' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.8.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_02' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.38.4.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_00' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.1.2.8' interface='ppp1' metric='0'/>
+    <route hosts='agg_01' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.4.1.8' interface='ppp0' metric='0'/>
+    <route hosts='core_00' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.2.0.8' interface='ppp2' metric='0'/>
+    <route hosts='agg_02' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.40.0.8' interface='ppp2' metric='0'/>
+    <route hosts='tor_02' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.17.1.8' interface='ppp5' metric='0'/>
+    <route hosts='host_11' destination='1.28.0.8' netmask='255.255.255.255' gateway='1.28.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ sink_6, host_11, tor_02, agg_02, core_01, agg_01, tor_00, host_02, source_6 ] -->
+    <route hosts='sink_6' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.17.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_11' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.40.5.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_02' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.2.2.8' interface='ppp0' metric='0'/>
+    <route hosts='agg_02' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.5.2.8' interface='ppp1' metric='0'/>
     <route hosts='core_01' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.1.1.8' interface='ppp1' metric='0'/>
-    <route hosts='agg_01' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.39.1.8' interface='ppp3' metric='0'/>
-    <route hosts='tor_01' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.12.1.8' interface='ppp4' metric='0'/>
-    <route hosts='host_06' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.36.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ source_7, host_07, tor_01, agg_01, core_00, agg_02, tor_03, host_15, sink_7 ] -->
-    <route hosts='source_7' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.13.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_07' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.39.5.8' interface='ppp1' metric='0'/>
-    <route hosts='tor_01' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.1.3.8' interface='ppp1' metric='0'/>
+    <route hosts='agg_01' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.38.1.8' interface='ppp2' metric='0'/>
+    <route hosts='tor_00' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.8.1.8' interface='ppp4' metric='0'/>
+    <route hosts='host_02' destination='1.36.0.8' netmask='255.255.255.255' gateway='1.36.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ source_7, host_03, tor_00, agg_01, core_00, agg_02, tor_03, host_12, sink_7 ] -->
+    <route hosts='source_7' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.9.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_03' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.38.5.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_00' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.1.2.8' interface='ppp1' metric='0'/>
     <route hosts='agg_01' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.4.1.8' interface='ppp0' metric='0'/>
     <route hosts='core_00' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.2.0.8' interface='ppp2' metric='0'/>
     <route hosts='agg_02' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.41.0.8' interface='ppp3' metric='0'/>
-    <route hosts='tor_03' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.21.1.8' interface='ppp5' metric='0'/>
-    <route hosts='host_15' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.29.0.8' interface='ppp0' metric='0'/>
-    <!-- Route [ sink_7, host_15, tor_03, agg_03, core_00, agg_00, tor_01, host_07, source_7 ] -->
-    <route hosts='sink_7' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.21.0.8' interface='ppp0' metric='0'/>
-    <route hosts='host_15' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.41.5.8' interface='ppp1' metric='0'/>
+    <route hosts='tor_03' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.18.1.8' interface='ppp2' metric='0'/>
+    <route hosts='host_12' destination='1.29.0.8' netmask='255.255.255.255' gateway='1.29.0.8' interface='ppp0' metric='0'/>
+    <!-- Route [ sink_7, host_12, tor_03, agg_03, core_00, agg_01, tor_00, host_03, source_7 ] -->
+    <route hosts='sink_7' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.18.0.8' interface='ppp0' metric='0'/>
+    <route hosts='host_12' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.41.2.8' interface='ppp1' metric='0'/>
     <route hosts='tor_03' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.3.3.8' interface='ppp1' metric='0'/>
     <route hosts='agg_03' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.4.3.8' interface='ppp0' metric='0'/>
-    <route hosts='core_00' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.0.0.8' interface='ppp0' metric='0'/>
-    <route hosts='agg_00' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.39.0.8' interface='ppp3' metric='0'/>
-    <route hosts='tor_01' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.13.1.8' interface='ppp5' metric='0'/>
-    <route hosts='host_07' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.37.0.8' interface='ppp0' metric='0'/>
+    <route hosts='core_00' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.1.0.8' interface='ppp1' metric='0'/>
+    <route hosts='agg_01' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.38.1.8' interface='ppp2' metric='0'/>
+    <route hosts='tor_00' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.9.1.8' interface='ppp5' metric='0'/>
+    <route hosts='host_03' destination='1.37.0.8' netmask='255.255.255.255' gateway='1.37.0.8' interface='ppp0' metric='0'/>
 </config>

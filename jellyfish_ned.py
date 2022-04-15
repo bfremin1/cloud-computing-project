@@ -2,8 +2,8 @@ from network_ned import *
 import math, random
 
 class Jellyfish(Network):
-    def __init__(self, name, num_switches, ports_per_switch, internal_ports, package=PACKAGE, imports=IMPORTS, width=800, height=500):
-        super().__init__(name, package, imports, width, height)
+    def __init__(self, name, num_switches, ports_per_switch, internal_ports, **kwargs):
+        super().__init__(name, **kwargs)
         assert ports_per_switch > internal_ports
         self._n = num_switches  # number of routers
         self._k = ports_per_switch  # number of ports per router
@@ -48,7 +48,7 @@ class Jellyfish(Network):
             core_node = self._node_map[f"core_{z(i)}"]
             if (self._r == core_node.get_num_gates()):
                 continue  # router is already fully connected
-            potential_neighbors = [self._node_map[node_name] for node_name in self.get_categorized_host_names()['core']]
+            potential_neighbors = self.get_categorized_nodes()['core']
             potential_neighbors = [node for node in filter(lambda node: node.get_num_gates() < self._r, potential_neighbors)]
             potential_neighbors = [node for node in filter(lambda node: not core_node.is_connected_to(node), potential_neighbors)]
 

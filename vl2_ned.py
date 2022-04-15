@@ -1,8 +1,8 @@
 from network_ned import *
 
 class VL2(Network):
-    def __init__(self, name, ports_per_core_switch, ports_per_aggregate_switch, hosts_per_tor, package=PACKAGE, imports=IMPORTS, width=800, height=500):
-        super().__init__(name, package, imports, width, height)
+    def __init__(self, name, ports_per_core_switch, ports_per_aggregate_switch, hosts_per_tor, **kwargs):
+        super().__init__(name, **kwargs)
         assert ports_per_core_switch % 4 == 0
         self._c = ports_per_core_switch  # degree of core routers
         self._a = ports_per_aggregate_switch  # degree of aggregate routers

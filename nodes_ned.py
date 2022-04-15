@@ -1,6 +1,6 @@
 from constants import *
 from basic_ned import Connection
-from flow import Flow
+from flow_generator import Flow
 
 class Node:
     def __init__(self, name, x, y):

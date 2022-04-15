@@ -4,7 +4,7 @@ from nodes_ned import Node, Router, Server, Tor, Source, Sink
 from routing_algorithms import RoutingAlgorithm
 
 class Network:
-    def __init__(self, name, package=PACKAGE, imports=IMPORTS, width=800, height=500, use_visualizer=False):
+    def __init__(self, name, package=PACKAGE, imports=IMPORTS, width=1200, height=500, use_visualizer=False):
         self._name = name
         self._package = package
         self._imports = imports
@@ -16,7 +16,7 @@ class Network:
         self._source_sink_counter = 0
         self._lines = []
         self._flows = []
-        self._categorized_host_names = None
+        self._categorized_nodes = None
     
     def get_name(self):
         return self._name
@@ -46,26 +46,25 @@ class Network:
         Node.connect(self._node_map["host_1"], self._node_map["core_1"], DEFAULT_CHANNEL)
         Node.connect(self._node_map["host_1"], self._node_map["core_2"], DEFAULT_CHANNEL)
 
-        # self._node_map["client"].add_flow(self._node_map["host"], 1000000, 0)
-
-        self.add_flow(self._node_map["host_0"], self._node_map["host_1"], 1000000, 0)
-        self.add_flow(self._node_map["host_0"], self._node_map["host_1"], 1000000, 0)
-        self.add_flow(self._node_map["host_0"], self._node_map["host_1"], 1000000, 0)
-
         return self
 
-    def get_categorized_host_names(self):
-        if self._categorized_host_names:
-            return self._categorized_host_names
-        self._categorized_host_names = {}
+    def get_categorized_nodes(self):
+        if self._categorized_nodes:
+            return self._categorized_nodes
+        self._categorized_nodes = {}
+        # Add all node names to map
         for node_name in self._node_map.keys():
             node_type = node_name.split("_")[0]
-            if node_type not in self._categorized_host_names:
-                self._categorized_host_names[node_type] = []
-            self._categorized_host_names[node_type].append(node_name)
-        for node_type in self._categorized_host_names.keys():
-            self._categorized_host_names[node_type] = sorted(self._categorized_host_names[node_type])
-        return self._categorized_host_names
+            if node_type not in self._categorized_nodes:
+                self._categorized_nodes[node_type] = []
+            self._categorized_nodes[node_type].append(node_name)
+        # sort node names within category
+        for node_type in self._categorized_nodes.keys():
+            self._categorized_nodes[node_type] = sorted(self._categorized_nodes[node_type])
+        # covnert node names to actual nodes
+        for node_type in self._categorized_nodes.keys():
+            self._categorized_nodes[node_type] = [self._node_map[node_name] for node_name in self._categorized_nodes[node_type]]
+        return self._categorized_nodes
 
     def add_flow(self, send, recv, amount, start):
         if isinstance(send, str):

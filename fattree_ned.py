@@ -1,8 +1,8 @@
 from network_ned import *
 
 class FatTree(Network):
-    def __init__(self, name, switch_degree, package=PACKAGE, imports=IMPORTS, width=800, height=500):
-        super().__init__(name, package, imports, width, height)
+    def __init__(self, name, switch_degree, **kwargs):
+        super().__init__(name, **kwargs)
         assert switch_degree % 4 == 0
         assert switch_degree >= 4
         self._k = switch_degree

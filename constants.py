@@ -1,5 +1,11 @@
-WORKING_DIRECTORY = "C:/Users/bfrem/Documents/CloudComputing/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/DatacenterTopologies"
-GENERATED_FILES_DIR = "generated_files"
+WORKING_DIRECTORY = None
+
+def set_working_directory(working_dir):
+    global WORKING_DIRECTORY
+    WORKING_DIRECTORY = working_dir
+
+if WORKING_DIRECTORY is None:
+    set_working_directory("C:/Users/bfrem/Documents/CloudComputing/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/DatacenterTopologies")
 
 PACKAGE = "inet.examples.inet.DatacenterTopologies"
 

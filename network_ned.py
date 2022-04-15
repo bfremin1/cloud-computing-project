@@ -13,7 +13,7 @@ class Network:
         self._node_map = {}
         self._configurator = Configurator(50, 50)
         self._visualizer = Visualizer(50, 100) if use_visualizer else None
-        self._source_sink_counter = 0
+        self._flow_counter = 0
         self._lines = []
         self._flows = []
         self._categorized_nodes = None
@@ -71,9 +71,9 @@ class Network:
             send = self._node_map[send]
         if isinstance(recv, str):
             recv = self._node_map[recv]
-        source_name = f"source_{self._source_sink_counter}"
-        sink_name = f"sink_{self._source_sink_counter}"
-        self._source_sink_counter += 1
+        source_name = f"source_{self._flow_counter}"
+        sink_name = f"sink_{self._flow_counter}"
+        self._flow_counter += 1
         source = Source(source_name, send._name, *send.get_source_coords())
         Node.connect(source, send, INFINITE_CHANNEL)
         sink = Sink(sink_name, recv._name, *recv.get_sink_coords())
@@ -150,10 +150,6 @@ class Network:
         fd.write(ned_str)
         fd.close()
 
-        fd = open(f"{GENERATED_FILES_DIR}/{self._name}.ned", "w")
-        fd.write(ned_str)
-        fd.close()
-
         return ned_str
 
     def create_ini_file(self):
@@ -217,10 +213,6 @@ class Network:
         fd.write(ini_str)
         fd.close()
 
-        fd = open(f"{GENERATED_FILES_DIR}/{self._name}.ini", "w")
-        fd.write(ini_str)
-        fd.close()
-
         return ini_str
     
     def create_xml_file(self):
@@ -233,10 +225,6 @@ class Network:
             xml_str += f"{TAB}{route}\n"
         xml_str += "</config>\n"
         fd = open(f"{WORKING_DIRECTORY}/{self._name}.xml", "w")
-        fd.write(xml_str)
-        fd.close()
-
-        fd = open(f"{GENERATED_FILES_DIR}/{self._name}.xml", "w")
         fd.write(xml_str)
         fd.close()
 

@@ -1,5 +1,6 @@
 from constants import *
-import math, random, copy
+import math, random
+import numpy as np
 
 class Flow:
     def __init__(self, src, dest, send_amount, start_delay):
@@ -52,4 +53,16 @@ class FlowGenerator:
             network.add_flow(src, dest, flow_size, 0)
             indices.remove(src_idx)
             indices.remove(dest_idx)
+        return
+    
+    @staticmethod
+    def add_k_normal_random_flows(network, k):
+        hosts = network.get_categorized_nodes()['host']
+        for _ in range(k):
+            p = np.random.normal(4, 1)
+            while p < 3:
+                p = np.random.normal(4, 1)
+            flow_size = 10 ** p
+            src, dest = random.sample(hosts, 2)
+            network.add_flow(src, dest, flow_size, 0)
         return

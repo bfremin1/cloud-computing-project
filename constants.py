@@ -22,7 +22,7 @@ def get_package_name():
     return __PACKAGE
 
 if __PACKAGE is None:
-    set_working_directory("inet.examples.inet.DatacenterTopologies")
+    set_package_name("inet.examples.inet.DatacenterTopologies")
 
 IMPORTS = [
     "inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator",

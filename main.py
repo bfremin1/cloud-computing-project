@@ -31,15 +31,15 @@ def main():
     ini_str = network.create_ini_file()
     xml_str = network.create_xml_file()
     print(f"{ned_str}\n{ini_str}\n{xml_str}\n")
-    topologies_file.write(f"{network.get_name()}\n")
+    topologies_file.write(f"{network.get_name()} dummy\n")
 
-    network = FatTree(name="FatTree", switch_degree=4).initialize()
+    network = FatTree(name="FatTree", switch_degree=6).initialize()
     FlowGenerator.add_random_paired_flows(network, 1000000)
     ned_str = network.create_ned_file()
     ini_str = network.create_ini_file()
     xml_str = network.create_xml_file()
     print(f"{ned_str}\n{ini_str}\n{xml_str}\n")
-    topologies_file.write(f"{network.get_name()}\n")
+    topologies_file.write(f"{network.get_name()} dummy\n")
 
     network = Jellyfish(name="Jelly", num_switches=16, ports_per_switch=4, internal_ports=3).initialize()
     FlowGenerator.add_random_paired_flows(network, 1000000)
@@ -47,7 +47,7 @@ def main():
     ini_str = network.create_ini_file()
     xml_str = network.create_xml_file()
     print(f"{ned_str}\n{ini_str}\n{xml_str}\n")
-    topologies_file.write(f"{network.get_name()}\n")
+    topologies_file.write(f"{network.get_name()} dummy\n")
 
     network = VL2(name="VL2", ports_per_core_switch=4, ports_per_aggregate_switch=4, hosts_per_tor=4).initialize()
     FlowGenerator.add_random_paired_flows(network, 1000000)
@@ -55,7 +55,7 @@ def main():
     ini_str = network.create_ini_file()
     xml_str = network.create_xml_file()
     print(f"{ned_str}\n{ini_str}\n{xml_str}\n")
-    topologies_file.write(f"{network.get_name()}\n")
+    topologies_file.write(f"{network.get_name()} dummy\n")
 
     topologies_file.close()
     return

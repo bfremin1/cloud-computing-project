@@ -63,6 +63,12 @@ class Node:
             ini_str += flow.ini_flow(index)
         return ini_str
     
+    def get_flows_cfg_str(self, network_name):
+        cfg_str = ""
+        for flow in self._flows:
+            cfg_str += f"{flow.cfg_str(network_name)}\n"
+        return cfg_str
+    
     def get_flows_endpoints(self):
         return [flow.get_endpoints() for flow in self._flows]   
 

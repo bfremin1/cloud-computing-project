@@ -2,6 +2,7 @@ from constants import *
 from basic_ned import Connection, Configurator, Visualizer, Line
 from nodes_ned import Node, Router, Server, Tor, Source, Sink
 from routing_algorithms import RoutingAlgorithm
+import pickle as pkl
 
 class Network:
     def __init__(self, name, package=None, imports=IMPORTS, width=1200, height=500, use_visualizer=False):
@@ -73,8 +74,9 @@ class Network:
             send = self._node_map[send]
         if isinstance(recv, str):
             recv = self._node_map[recv]
-        source_name = f"source_{self._flow_counter}"
-        sink_name = f"sink_{self._flow_counter}"
+        
+        source_name = f"source_{zfill(self._flow_counter, 3)}"
+        sink_name = f"sink_{zfill(self._flow_counter, 3)}"
         self._flow_counter += 1
         source = Source(source_name, send._name, *send.get_source_coords())
         Node.connect(source, send, INFINITE_CHANNEL)
@@ -105,7 +107,7 @@ class Network:
 
     def xml_interfaces(self):
         interfaces = []
-        ip_major = 1
+        ip_major = 128
         ip_minor = 0
         for node in sorted(self._node_map.values(), key=lambda n: n.get_name()):
             node._ip_root = f"{ip_major}.{ip_minor}"
@@ -148,10 +150,6 @@ class Network:
 
         ned_str += "}"
 
-        fd = open(f"{get_working_directory()}/{self._name}.ned", "w")
-        fd.write(ned_str)
-        fd.close()
-
         return ned_str
 
     def create_ini_file(self):
@@ -163,6 +161,7 @@ class Network:
         ini_str += "sim-time-limit = 1000s\n"
         ini_str += "simtime-resolution = us\n"
         ini_str += "total-stack = 7MiB\n"
+        ini_str += "**.cmdenv-log-level = warn\n"
         ini_str += "\n"
 
         ini_str += "# For TCP\n"
@@ -210,24 +209,33 @@ class Network:
                     ini_str += "\n"
 
         ini_str += "**.app[*].dataTransferMode = \"object\"\n"
-
-        fd = open(f"{get_working_directory()}/{self._name}.ini", "w")
-        fd.write(ini_str)
-        fd.close()
-
         return ini_str
     
-    def create_xml_file(self):
+    def create_xml_file(self, routing_algorithm):
         xml_str = ""
         xml_str += "<config>\n"
         for interface in self.xml_interfaces():
             xml_str += f"{TAB}{interface}\n"
-        print("Generating Routes")
-        for route in RoutingAlgorithm.ecmp_xml_routes(self):
+        for route in routing_algorithm(self):
             xml_str += f"{TAB}{route}\n"
         xml_str += "</config>\n"
-        fd = open(f"{get_working_directory()}/{self._name}.xml", "w")
-        fd.write(xml_str)
-        fd.close()
 
         return xml_str
+
+    def create_files(self, working_directory, routing_algorithm=RoutingAlgorithm.ecmp_xml_routes):
+        ned_str = self.create_ned_file()
+        fd = open(f"{working_directory}/{self._name}.ned", "w")
+        fd.write(ned_str)
+        fd.close()
+        ini_str = self.create_ini_file()
+        fd = open(f"{working_directory}/{self._name}.ini", "w")
+        fd.write(ini_str)
+        fd.close()
+        xml_str = self.create_xml_file(routing_algorithm)
+        fd = open(f"{working_directory}/{self._name}.xml", "w")
+        fd.write(xml_str)
+        fd.close()
+        fd = open(f"{working_directory}/{self._name}.pkl", "wb")
+        pkl.dump(self, fd)
+        fd.close()
+        return

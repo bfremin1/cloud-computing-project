@@ -46,6 +46,10 @@ INFINITE_LINE_PARAMS = {
     "per": "0"
 }
 
+KB = 1000
+MB = 1000000
+GB = 1000000000
+
 TAB = "    "
 
 SIZE_SMALL = "s"
@@ -84,3 +88,6 @@ SERVER_PORT = 1100
 REQUEST_SIZE = 1300
 RESPONSE_SIZE = 20
 SIMULATION_TIME = 1000
+
+def zfill(num, n=2):
+    return f"{num}".zfill(n)

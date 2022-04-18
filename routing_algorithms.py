@@ -2,6 +2,10 @@ import networkx as nx
 import random, copy
 
 class RoutingAlgorithm:
+    ECMP = "ECMP"
+    KSP = "KSP"
+    VLB = "VLB"
+
     @staticmethod
     def get_nx_graph(network):
         G = nx.Graph()
@@ -50,8 +54,9 @@ class RoutingAlgorithm:
         path = path_finder(server_src, server_dest)
         path.insert(0, flow_src)
         path.append(flow_dest)
+        if "source" in flow_src:
+            network._node_map[flow_src]._flows[0]._path = path
         flow_dest_node = network._node_map[flow_dest]
-
         routes = [f"<!-- Route [ {', '.join(path)} ] -->"]
         for i in range(len(path) - 1):
             from_node = network._node_map[path[i]]
@@ -98,7 +103,7 @@ class RoutingAlgorithm:
     def vlb_xml_routes(network):
         graph = RoutingAlgorithm.get_nx_graph(network)
         shortest_paths_sets = {}
-        intermediate_nodes = [node for node in filter(lambda n: "intermediate" in n, graph.nodes)]
+        intermediate_nodes = [node.get_name() for node in network.get_categorized_nodes()['core']]
         def path_finder(server_src, server_dest):
             # Select a random intermeddiate node
             randomly_selected_intermediate = random.sample(intermediate_nodes, 1)[0]
@@ -117,6 +122,33 @@ class RoutingAlgorithm:
                 shortest_paths_sets[src_dest] = RoutingAlgorithm.all_shortest_paths(graph, src_dest[0], src_dest[1])
             randomly_selected_path = random.sample(shortest_paths_sets[src_dest], 1)[0]
             path.extend(copy.deepcopy(randomly_selected_path))
+            
+            # remove cycles
+            if len(path) != len(set(path)):
+                for i, vertex in enumerate(path):
+                    if vertex in path[i+1:]:
+                        front = copy.deepcopy(path[0:i+1])
+                        back = copy.deepcopy(path[i+1:])
+                        path_start = front
+                        path_end = copy.deepcopy(back[back.index(vertex) + 1:])
+                        path_start.extend(path_end)
+                        path = path_start
+                        break           
+
             return path
         return RoutingAlgorithm.network_route_xml_generator(network, path_finder)
+    
+def routing_algorithm(algorithm, **kwargs):
+    if algorithm == RoutingAlgorithm.ECMP:
+        return RoutingAlgorithm.ecmp_xml_routes
+    elif algorithm == RoutingAlgorithm.KSP and 'k' in kwargs.keys():
+        def algo(network):
+            return RoutingAlgorithm.ksp_xml_routes(network, kwargs['k'])
+        return algo
+    elif algorithm == RoutingAlgorithm.VLB:
+        return RoutingAlgorithm.vlb_xml_routes
+    else:
+        print("ERROR: Unknown Algorithm or kwargs")
+        print(algorithm)
+        print(kwargs)
     

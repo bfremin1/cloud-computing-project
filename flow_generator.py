@@ -7,8 +7,14 @@ class Flow:
         assert (send_amount > 0)
         self._src = src
         self._dest = dest
+        self._send_amount = send_amount
         self._num_packets = math.ceil(send_amount/REQUEST_SIZE)
         self._start_delay = int(start_delay)
+        self._path = None
+    
+    def cfg_str(self, network_name):
+        return (f"module={network_name}.{self._src}.app[0] src={self._src} dest={self._dest}" + 
+                f" num_bytes={self._send_amount} start_delay={self._start_delay} simtime={SIMULATION_TIME}")
     
     def ini_flow(self, app_idx):
         root = f"**.{self._src}.app[{app_idx}]"
@@ -37,11 +43,11 @@ class FlowGenerator:
         hosts = network.get_categorized_nodes()['host']
         for _ in range(k):
             src, dest = random.sample(hosts, 2)
-            network.add_flow(src, dest, flow_size, 0)
+            network.add_flow(src, dest, flow_size, 5)
         return
 
     @staticmethod
-    def add_random_paired_flows(network, flow_size):
+    def add_single_random_paired_flow(network, flow_size):
         hosts = network.get_categorized_nodes()['host']
         if len(hosts) % 2 != 0:
             print(f"Cannot add paired flows with odd number of hosts [{len(hosts)}]")
@@ -50,7 +56,27 @@ class FlowGenerator:
             src_idx, dest_idx = random.sample(indices, 2)
             src = hosts[src_idx]
             dest = hosts[dest_idx]
-            network.add_flow(src, dest, flow_size, 0)
+            network.add_flow(src, dest, flow_size, 5)
+            indices.remove(src_idx)
+            indices.remove(dest_idx)
+        return
+    
+    @staticmethod
+    def add_random_paired_flows(network, total_flow, flow_size):
+        assert flow_size >= 1000
+        hosts = network.get_categorized_nodes()['host']
+        if len(hosts) % 2 != 0:
+            print(f"Cannot add paired flows with odd number of hosts [{len(hosts)}]")
+        indices = [i for i in range(len(hosts))]
+        for _ in range(len(hosts) // 2):
+            src_idx, dest_idx = random.sample(indices, 2)
+            src = hosts[src_idx]
+            dest = hosts[dest_idx]
+            flow_to_send = total_flow
+            while (flow_to_send > 0):
+                num_bytes = flow_size if flow_to_send > flow_size else flow_to_send
+                network.add_flow(src, dest, num_bytes, 5)
+                flow_to_send -= flow_size
             indices.remove(src_idx)
             indices.remove(dest_idx)
         return
@@ -64,5 +90,5 @@ class FlowGenerator:
                 p = np.random.normal(4, 1)
             flow_size = 10 ** p
             src, dest = random.sample(hosts, 2)
-            network.add_flow(src, dest, flow_size, 0)
+            network.add_flow(src, dest, flow_size, 5)
         return

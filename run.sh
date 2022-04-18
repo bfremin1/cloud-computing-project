@@ -1,16 +1,21 @@
 # Root of OMNET++
 OMNET_PATH="/c/Users/shrav/Documents/_Docs_/JHU/Classes/omnetpp-5.7-windows-x86_64/omnetpp-5.7"
+#OMNET_PATH="/c/Users/bfrem/Documents/CloudComputing/omnetpp-5.7-windows-x86_64/omnetpp-5.7"
 # Root of OMNET++ working directory for project. Should have inet support. 
 OMNET_WORKINGDIR_PATH="/c/Users/shrav/Documents/_Docs_/JHU/Classes/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/cc_datacenter";
+#OMNET_WORKINGDIR_PATH="$OMNET_PATH/samples/inet4/examples/inet/DatacenterTopologies"
 # Package name of OMNET++ working directory. 
 OMNET_WORKINGDIR_PACKAGE="inet.examples.inet.cc_datacenter"
+#OMNET_WORKINGDIR_PACKAGE="inet.examples.inet.DatacenterTopologies"
 # Python generation script for .ned, .ini, .xml files
-GENERATOR_PATH="/c/Users/shrav/Documents/_Docs_/JHU/Classes/cloud-computing-project/main.py";
+SCRIPTS_DIR="/c/Users/shrav/Documents/_Docs_/JHU/Classes/cloud-computing-project";
+#SCRIPTS_DIR="/c/Users/bfrem/BlueFloor/Assets/cloud-computing-project"
 # Desired output directory
 OUTPUT_PATH="/c/Users/shrav/Documents/_Docs_/JHU/Classes/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/cc_datacenter/results"
+#OUTPUT_PATH="$OMNET_WORKINGDIR_PATH/results"
 
 echo "********** Running topology generation script... **********"
-python $GENERATOR_PATH $OMNET_WORKINGDIR_PATH $OMNET_WORKINGDIR_PACKAGE
+python $SCRIPTS_DIR/m_omnetpp_file_generator.py $OMNET_WORKINGDIR_PATH $OMNET_WORKINGDIR_PACKAGE
 
 echo "********** Making inet4 module... **********"
 cd "${OMNET_PATH}/samples/inet4"
@@ -20,11 +25,15 @@ cd "${OMNET_WORKINGDIR_PATH}"
 while read -r -a line; do
     TOPO=${line[0]}
     echo "********** Running ${TOPO} simulation... **********"
-    ${OMNET_PATH}/bin/opp_run.exe -r 0 -m -u Cmdenv -n "../../;../../../src;../../../tutorials;../../../showcases" --image-path="$../../../images" -l "../../../src/INET" "${TOPO}.ini" --output-scalar-file="${OUTPUT_PATH}/${TOPO}.sca" --output-vector-file="${OUTPUT_PATH}/${TOPO}.vec"
+    ${OMNET_PATH}/bin/opp_run.exe -r 0 -m -u Cmdenv -n "../../;../../../src;../../../tutorials;../../../showcases" --image-path="$../../../images" -l "../../../src/INET" "${TOPO}.ini" --output-scalar-file="${OUTPUT_PATH}/${TOPO}.sca" --output-vector-file="${OUTPUT_PATH}/${TOPO}.vec" --cmdenv-express-mode=true
 done < "${OMNET_WORKINGDIR_PATH}/topologies.txt"
 
-echo "********** Collecting results... **********"
-cd "${OUTPUT_PATH}"
-scavetool x *.sca *.vec -o "${OUTPUT_PATH}/results.csv"
+while read -r -a line; do
+    TOPO=${line[0]}
+    echo "********** Collecting ${TOPO} results... **********"
+    cd "${OUTPUT_PATH}"
+    scavetool x ${TOPO}.sca ${TOPO}.vec -o "${OUTPUT_PATH}/${TOPO}.csv"
+done < "${OMNET_WORKINGDIR_PATH}/topologies.txt"
+
 
 echo "********** Done. :D **********"

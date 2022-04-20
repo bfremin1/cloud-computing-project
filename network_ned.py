@@ -52,8 +52,8 @@ class Network:
         return self
 
     def get_categorized_nodes(self):
-        if self._categorized_nodes:
-            return self._categorized_nodes
+        #if self._categorized_nodes:
+        #    return self._categorized_nodes
         self._categorized_nodes = {}
         # Add all node names to map
         for node_name in self._node_map.keys():
@@ -160,7 +160,7 @@ class Network:
 
         ini_str += "sim-time-limit = 1000s\n"
         ini_str += "simtime-resolution = us\n"
-        ini_str += "total-stack = 7MiB\n"
+        ini_str += "total-stack = 32MiB\n"
         ini_str += "**.cmdenv-log-level = warn\n"
         ini_str += "\n"
 

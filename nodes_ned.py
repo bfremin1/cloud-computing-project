@@ -20,6 +20,11 @@ class Node:
     def connect(node_a, node_b, channel=DEFAULT_CHANNEL, index=0):
         node_a.add_link(node_b.get_name(), channel, index)
         node_b.add_link(node_a.get_name(), channel, index)
+    
+    @staticmethod
+    def disconnect(node_a, node_b, channel=DEFAULT_CHANNEL, index=0):
+        node_a.remove_link(node_b.get_name(), channel, index)
+        node_b.remove_link(node_a.get_name(), channel, index)
 
     def get_nx_edges(self):
         return [(self._name, link[0]) for link in self._links]
@@ -34,10 +39,17 @@ class Node:
         link = link if link else (other, channel, index)
         if link not in self._links:
             self._links.append(link)
-            # print(f"  {self._name} connected with {link[0]} --- current links: {self._links}")
             return (self._name, channel, index)
         else:
-            # print(f"  {self._name} could not connect with {link[0]}")
+            # print(f"ERROR: Couldn't add link because link already exists {self._name} {other} {self._links}")
+            return None
+    
+    def remove_link(self, other="", channel="", index=0, link=None):
+        link = link if link else (other, channel, index)
+        if link in self._links:
+            self._links.remove(link)
+        else:
+            # print(f"ERROR: No link to remove?")
             return None
     
     def remove_link(self, other="", channel=DEFAULT_CHANNEL, index=0, link=None):

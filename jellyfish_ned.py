@@ -20,8 +20,8 @@ class Jellyfish(Network):
 
         for i in range(self._n):
             self._node_map[f"core_{zfill(i)}"] = Router(f"core_{zfill(i)}", 
-                self._width / 2 + 150 * math.cos(2 * math.pi * i / self._n), 
-                self._height / 2 + 150 * math.sin(2 * math.pi * i / self._n))
+                self._width / 2 + 125 * math.cos(2 * math.pi * i / self._n), 
+                self._height / 2 + 125 * math.sin(2 * math.pi * i / self._n))
 
         num_hosts = self._n * (self._k - self._r)
         slide = 0 if self._k == self._r + 1  else 0.5
@@ -62,5 +62,30 @@ class Jellyfish(Network):
             host_node = self._node_map[f"host_{zfill(i)}"]
             router_node = self._node_map[f"core_{zfill(int(i / (self._k - self._r)))}"]
             Node.connect(host_node, router_node, DEFAULT_CHANNEL)
+
+        return self
+    
+    def add_n_fully_connected_core_routers(self, n, k):
+        if k % 2 != 0 or n == 0:
+            print(f"k={k} n={n} --- Cannot add using Jellyfish protocol")
+            return
+
+        first_index = len(self.get_categorized_nodes()['core'])
+        for i in range(n):
+            router_name = f"core_{zfill(first_index + i)}"
+            self._node_map[router_name] = Router(router_name,
+                self._width / 2 + 50 * math.cos(2 * math.pi * i / n), 
+                self._height / 2 + 50 * math.sin(2 * math.pi * i / n)
+            )
+            for _ in range(k // 2):
+                graph = RoutingAlgorithm.get_nx_graph(self)
+                neighbors = graph.neighbors(router_name)
+                def connectable(edge):
+                    return edge[0] not in neighbors and edge[1] not in neighbors and 'core' in edge[0] and 'core' in edge[1]
+                edges = [e for e in filter(connectable, graph.edges())]
+                rand_edge = random.sample(edges, 1)[0]
+                Node.disconnect(self._node_map[rand_edge[0]], self._node_map[rand_edge[1]])
+                Node.connect(self._node_map[router_name], self._node_map[rand_edge[0]])
+                Node.connect(self._node_map[router_name], self._node_map[rand_edge[1]])
 
         return self

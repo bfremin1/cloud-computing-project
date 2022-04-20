@@ -61,6 +61,15 @@ def jelly(topologies_file):
         network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=k))
         topologies_file.write(f"{network.get_name()} seed={seed} root={root}\n")
 
+def jelly_add(topologies_file):
+    root = f"Jellyfish"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=8, ports_per_switch=4, internal_ports=3).initialize()
+    network.add_n_fully_connected_core_routers(4, 4)
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 1 * MB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=2))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
 
 def main():
     print(sys.argv)
@@ -75,7 +84,7 @@ def main():
 
     topologies_file = open(f"{get_working_directory()}/topologies.txt", "w")
 
-    jelly(topologies_file)
+    jelly_add(topologies_file)
 
     topologies_file.close()
     return

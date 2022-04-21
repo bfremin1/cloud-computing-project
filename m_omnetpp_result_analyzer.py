@@ -31,6 +31,9 @@ def main():
         server_throughputs = {}
         server_latencies = {}
         server_lengths = {}
+        server_flow_sizes = {}
+        xs = []
+        ys = []
         for node in network._node_map.values():
             if isinstance(node, Source):
                 server_name = node.get_server_name()
@@ -38,15 +41,25 @@ def main():
                     m_name = f"{topo}.{flow._src}.app[0]"
                     throughput_kb = flow._send_amount / runtimes[m_name] / 1000
                     fd.write(f"module={m_name} server={server_name} src={flow._src} dest={flow._dest} path_len={len(flow._path) - 3} throughput_kb={throughput_kb} latency_ms={latencies[m_name]} runtime={runtimes[m_name]} num_bytes={flow._send_amount}\n")  
+                    xs.append(flow._send_amount)
+                    ys.append(latencies[m_name])
                     if server_name in server_throughputs.keys():
                         server_throughputs[server_name] += throughput_kb
                         server_latencies[server_name].append(latencies[m_name])
                         server_lengths[server_name].append(len(flow._path) - 3)
+                        server_flow_sizes[server_name].append(flow._send_amount)
                     else:
                         server_throughputs[server_name] = throughput_kb
                         server_latencies[server_name] = [latencies[m_name]]
                         server_lengths[server_name] = [len(flow._path) - 3]
+                        server_flow_sizes[server_name] = [flow._send_amount]
         fd.close()
+        if 'normal' in topo:
+            plt.scatter(xs, ys)
+            plt.title(topo)
+            plt.xlabel('flow size (B)')
+            plt.ylabel('latency (ms)')
+            plt.show()
         for key, value in stats.items():
             if key in topo:
                 print(key, topo)
@@ -55,8 +68,8 @@ def main():
         
     for key, value in stats.items():
         plt.scatter(value['x'], value['y'], label=key)
-        #plt.errorbar(np.mean(value['x']), np.mean(value['y']), xerr=np.std(value['x']), yerr=np.std(value['y']), capsize=4)
-    plt.xlabel("Throughput (kB)")
+        plt.errorbar(np.mean(value['x']), np.mean(value['y']), xerr=np.std(value['x']), yerr=np.std(value['y']), capsize=4, alpha=0.5)
+    plt.xlabel("Throughput (kB/sec)")
     plt.ylabel("Latency (ms)")
     plt.legend()
     plt.show()

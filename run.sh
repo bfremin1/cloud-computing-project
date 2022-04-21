@@ -8,7 +8,7 @@ OMNET_WORKINGDIR_PATH="/c/Users/shrav/Documents/_Docs_/JHU/Classes/omnetpp-5.7-w
 OMNET_WORKINGDIR_PACKAGE="inet.examples.inet.cc_datacenter"
 #OMNET_WORKINGDIR_PACKAGE="inet.examples.inet.DatacenterTopologies"
 # Python generation script for .ned, .ini, .xml files
-SCRIPTS_DIR="/c/Users/shrav/Documents/_Docs_/JHU/Classes/cloud-computing-project";
+SCRIPTS_DIR="/c/Users/shrav/Documents/_Docs_/JHU/Classes/cloud-computing-project"
 #SCRIPTS_DIR="/c/Users/bfrem/BlueFloor/Assets/cloud-computing-project"
 # Desired output directory
 OUTPUT_PATH="/c/Users/shrav/Documents/_Docs_/JHU/Classes/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/cc_datacenter/results"

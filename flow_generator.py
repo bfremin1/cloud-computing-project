@@ -82,6 +82,37 @@ class FlowGenerator:
         return
     
     @staticmethod
+    def add_random_paired_normal_flows(network, total_flow):
+        hosts = network.get_categorized_nodes()['host']
+        if len(hosts) % 2 != 0:
+            print(f"Cannot add paired flows with odd number of hosts [{len(hosts)}]")
+        indices = [i for i in range(len(hosts))]
+        for _ in range(len(hosts) // 2):
+            src_idx, dest_idx = random.sample(indices, 2)
+            src = hosts[src_idx]
+            dest = hosts[dest_idx]
+            flow_to_send = total_flow
+            counter = 0
+            while (flow_to_send > 0):
+                flow_size = FlowGenerator.flow_size_sample()
+                num_bytes = flow_size if flow_to_send > flow_size else flow_to_send
+                network.add_flow(src, dest, num_bytes, 5)
+                flow_to_send -= flow_size
+                counter += 1
+            print(f"Num flows added {counter}")
+            indices.remove(src_idx)
+            indices.remove(dest_idx)
+
+        return
+    
+    @staticmethod
+    def flow_size_sample():
+        p = np.random.normal(4, 1)
+        while p < 3:
+            p = np.random.normal(4, 1)
+        return 10 ** p
+    
+    @staticmethod
     def add_k_normal_random_flows(network, k):
         hosts = network.get_categorized_nodes()['host']
         for _ in range(k):

@@ -71,6 +71,154 @@ def jelly_add(topologies_file):
     network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=2))
     topologies_file.write(f"{network.get_name()} root={root}\n")
 
+def test_brandon_1(topologies_file):
+    root = f"Jellyfish_16_4_3"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=16, ports_per_switch=4, internal_ports=3).initialize()
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+
+    root = f"Jellyfish_16_4_3_fill"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=16, ports_per_switch=4, internal_ports=3).initialize()
+    network.add_n_fully_connected_core_routers(4, 4)
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+
+    root = f"FatTree_4"
+    random.seed(0)
+    np.random.seed(0)
+    network = FatTree(name=f"{root}", switch_degree=4).initialize()
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.ECMP))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+
+    root = f"VL2_8_8_1"
+    random.seed(0)
+    np.random.seed(0)
+    network = VL2(name=f"{root}", ports_per_core_switch=8, ports_per_aggregate_switch=8, hosts_per_tor=1).initialize()
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.VLB))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+
+def test_brandon_2(topologies_file):
+    root = f"Jellyfish_16_4_3_1pct"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=16, ports_per_switch=4, internal_ports=3).initialize()
+    network._lines[0]._params['per'] = '0.001'
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+    
+    root = f"Jellyfish_16_4_3_01pct"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=16, ports_per_switch=4, internal_ports=3).initialize()
+    network._lines[0]._params['per'] = '0.0001'
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+    
+    root = f"Jellyfish_16_4_3_001pct"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=16, ports_per_switch=4, internal_ports=3).initialize()
+    network._lines[0]._params['per'] = '0.00001'
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+
+def test_brandon_3(topologies_file):
+    root = f"Jellyfish_4_4_3"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=4, ports_per_switch=4, internal_ports=3).initialize()
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+    
+    root = f"Jellyfish_8_4_3"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=8, ports_per_switch=4, internal_ports=3).initialize()
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+    
+    root = f"Jellyfish_12_4_3"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=12, ports_per_switch=4, internal_ports=3).initialize()
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+
+    root = f"Jellyfish_16_4_3"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=16, ports_per_switch=4, internal_ports=3).initialize()
+    network._lines[0]._params['per'] = '0.001'
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+
+def test_brandon_4(topologies_file):
+    root = f"Jellyfish_12_6_5"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=12, ports_per_switch=6, internal_ports=5).initialize()
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+    
+    root = f"Jellyfish_6_6_4"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=6, ports_per_switch=6, internal_ports=4).initialize()
+    network.add_n_fully_connected_core_routers(6, 6)
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+    
+    root = f"Jellyfish_4_6_3"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=4, ports_per_switch=6, internal_ports=3).initialize()
+    network.add_n_fully_connected_core_routers(8, 6)
+    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+
+def test_brandon_5(topologies_file):
+    root = f"FatTree_4"
+    random.seed(0)
+    np.random.seed(0)
+    network = FatTree(name=f"{root}", switch_degree=4).initialize()
+    FlowGenerator.add_random_paired_flows(network, 3 * MB, 300 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.ECMP))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+
+    root = f"Jellyfish_16_4_3_normal"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=16, ports_per_switch=4, internal_ports=3).initialize()
+    FlowGenerator.add_random_paired_normal_flows(network, 3 * MB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+
+    root = f"Jellyfish_16_4_3_flat"
+    random.seed(0)
+    np.random.seed(0)
+    network = Jellyfish(name=f"{root}", num_switches=16, ports_per_switch=4, internal_ports=3).initialize()
+    FlowGenerator.add_random_paired_flows(network, 3 * MB, 300 * KB)
+    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+    topologies_file.write(f"{network.get_name()} root={root}\n")
+
 def main():
     print(sys.argv)
     if (len(sys.argv) > 2):
@@ -83,9 +231,7 @@ def main():
     print(f"Package name set to: \'{get_package_name()}\'")
 
     topologies_file = open(f"{get_working_directory()}/topologies.txt", "w")
-
-    jelly_add(topologies_file)
-
+    test_brandon_5(topologies_file)
     topologies_file.close()
     return
 

@@ -3,9 +3,13 @@ from basic_ned import Connection, Configurator, Visualizer, Line
 from nodes_ned import Node, Router, Server, Tor, Source, Sink
 from routing_algorithms import RoutingAlgorithm
 import pickle as pkl
+import random
+import numpy as np
 
 class Network:
-    def __init__(self, name, package=None, imports=IMPORTS, width=1200, height=500, use_visualizer=False):
+    def __init__(self, name, package=None, imports=IMPORTS, width=1200, height=500, use_visualizer=False, seed=0):
+        random.seed(seed)
+        np.random.seed(seed)
         if package is None:
             package = get_package_name()
         self._name = name
@@ -158,17 +162,10 @@ class Network:
         ini_str += "[General]\n"
         ini_str += f"network = {self._name}\n\n"
 
-        ini_str += "sim-time-limit = 1000s\n"
+        ini_str += f"sim-time-limit = {SIMULATION_TIME}s\n"
         ini_str += "simtime-resolution = us\n"
         ini_str += "total-stack = 32MiB\n"
         ini_str += "**.cmdenv-log-level = warn\n"
-        ini_str += "\n"
-
-        ini_str += "# For TCP\n"
-        ini_str += "**.tcp.mss = 1400\n"
-        # Options: "TcpVegas","TcpWestwood","TcpNewReno","TcpReno","TcpTahoe","TcpNoCongestionControl"
-        ini_str += "**.tcp.tcpAlgorithmClass = \"TcpReno\"\n"
-        ini_str += "**.tcp.crcMode = \"computed\"\n"
         ini_str += "\n"
 
         ini_str += "# For router\n"
@@ -208,7 +205,26 @@ class Network:
                 if (node.get_num_flows() == 0):
                     ini_str += "\n"
 
+        ini_str += "# For TCP\n"
+        ini_str += "**.tcp.mss = 1400\n"
+        # Options: "TcpVegas","TcpWestwood","TcpNewReno","TcpReno","TcpTahoe","TcpNoCongestionControl"
+        ini_str += "**.tcp.tcpAlgorithmClass = \"TcpReno\"\n"
+        ini_str += "**.tcp.crcMode = \"computed\"\n"
+        ini_str += "\n"
         ini_str += "**.app[*].dataTransferMode = \"object\"\n"
+        ini_str += "\n"
+
+        ini_str += "# For statistics recording\n"
+        ini_str += "**.source*.**.numActiveSessions*.scalar-recording = true\n"
+        ini_str += "**.source*.**.numActiveSessions*.vector-recording = true\n"
+        ini_str += "**.source*.**.endToEndDelay*.scalar-recording = true\n"
+        ini_str += "**.source*.**.endToEndDelay*.vector-recording = true\n"
+        ini_str += "**.sink*.**.numActiveSessions*.scalar-recording = true\n"
+        ini_str += "**.sink*.**.numActiveSessions*.vector-recording = true\n"
+        ini_str += "**.sink*.**.endToEndDelay*.scalar-recording = true\n"
+        ini_str += "**.sink*.**.endToEndDelay*.vector-recording = true\n"
+        ini_str += "**.scalar-recording = false\n"
+        ini_str += "**.vector-recording = false\n"
         return ini_str
     
     def create_xml_file(self, routing_algorithm):

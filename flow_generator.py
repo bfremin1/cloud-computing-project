@@ -43,7 +43,7 @@ class FlowGenerator:
         hosts = network.get_categorized_nodes()['host']
         for _ in range(k):
             src, dest = random.sample(hosts, 2)
-            network.add_flow(src, dest, flow_size, 5)
+            network.add_flow(src, dest, flow_size, 0)
         return
 
     @staticmethod
@@ -56,7 +56,7 @@ class FlowGenerator:
             src_idx, dest_idx = random.sample(indices, 2)
             src = hosts[src_idx]
             dest = hosts[dest_idx]
-            network.add_flow(src, dest, flow_size, 5)
+            network.add_flow(src, dest, flow_size, 0)
             indices.remove(src_idx)
             indices.remove(dest_idx)
         return
@@ -75,7 +75,7 @@ class FlowGenerator:
             flow_to_send = total_flow
             while (flow_to_send > 0):
                 num_bytes = flow_size if flow_to_send > flow_size else flow_to_send
-                network.add_flow(src, dest, num_bytes, 5)
+                network.add_flow(src, dest, num_bytes, 0)
                 flow_to_send -= flow_size
             indices.remove(src_idx)
             indices.remove(dest_idx)
@@ -95,11 +95,40 @@ class FlowGenerator:
             counter = 0
             while (flow_to_send > 0):
                 flow_size = FlowGenerator.flow_size_sample()
-                num_bytes = flow_size if flow_to_send > flow_size else flow_to_send
-                network.add_flow(src, dest, num_bytes, 5)
-                flow_to_send -= flow_size
+                num_bytes = flow_size if flow_to_send >= flow_size else flow_to_send
+                network.add_flow(src, dest, num_bytes, 0)
+                flow_to_send -= num_bytes
                 counter += 1
-            print(f"Num flows added {counter}")
+            # print(f"Num flows added {counter}")
+            indices.remove(src_idx)
+            indices.remove(dest_idx)
+
+        return
+    
+    @staticmethod
+    def add_random_paired_mice_elephant_flows(network, total_flow):
+        mice_size = 10 * KB
+        elephant_size = 250 * KB
+        hosts = network.get_categorized_nodes()['host']
+        if len(hosts) % 2 != 0:
+            print(f"Cannot add paired flows with odd number of hosts [{len(hosts)}]")
+        if total_flow % mice_size != 0:
+            print(f"Cannot add weird total_flow [{total_flow}]")
+
+        indices = [i for i in range(len(hosts))]
+        for _ in range(len(hosts) // 2):
+            src_idx, dest_idx = random.sample(indices, 2)
+            src = hosts[src_idx]
+            dest = hosts[dest_idx]
+            flow_to_send = total_flow
+            counter = 0
+            while (flow_to_send > 0):
+                flow_size = mice_size if random.random() < 0.9 else elephant_size
+                num_bytes = flow_size if flow_to_send >= flow_size else mice_size
+                network.add_flow(src, dest, num_bytes, 0)
+                flow_to_send -= num_bytes
+                counter += 1
+            # print(f"Num flows added {counter}")
             indices.remove(src_idx)
             indices.remove(dest_idx)
 
@@ -121,5 +150,5 @@ class FlowGenerator:
                 p = np.random.normal(4, 1)
             flow_size = 10 ** p
             src, dest = random.sample(hosts, 2)
-            network.add_flow(src, dest, flow_size, 5)
+            network.add_flow(src, dest, flow_size, 0)
         return

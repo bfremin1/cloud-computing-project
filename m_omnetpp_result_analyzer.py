@@ -13,12 +13,18 @@ from vl2_ned import VL2
 from flow_generator import FlowGenerator
 
 def main():
-    print(sys.argv)
+    show_plots = True
     if (len(sys.argv) > 2):
         print("Usage: main.py [omnet_working_dir]")
     if (len(sys.argv) >= 2):
         set_working_directory(sys.argv[1])    
+    if (len(sys.argv) > 2):
+        show_plots = False
+    
     print(f"Working directory set to: \'{get_working_directory()}\'")
+    analysis_dir = f"{get_working_directory()}/analysis"
+    if not os.path.exists(analysis_dir):
+        os.makedirs(analysis_dir)
 
     topologies, stats, runtimes, latencies = read_data()
     print(topologies)
@@ -54,25 +60,40 @@ def main():
                         server_lengths[server_name] = [len(flow._path) - 3]
                         server_flow_sizes[server_name] = [flow._send_amount]
         fd.close()
-        if 'normal' in topo:
-            plt.scatter(xs, ys)
-            plt.title(topo)
-            plt.xlabel('flow size (B)')
-            plt.ylabel('latency (ms)')
-            plt.show()
+        plt.scatter(xs, ys, label=topo)
         for key, value in stats.items():
             if key in topo:
                 print(key, topo)
                 value['x'].extend(list(server_throughputs.values()))
                 value['y'].extend([np.mean(lats) for lats in server_latencies.values()])
-        
+
+    plt.xlabel('flow size (B)')
+    plt.ylabel('latency (ms)')
+    plt.legend()
+    plt.savefig(f"{analysis_dir}/size_latency_plot.png")
+    if show_plots:
+        plt.show()
+    plt.close()
+
+    analysis_str = ""
     for key, value in stats.items():
         plt.scatter(value['x'], value['y'], label=key)
         plt.errorbar(np.mean(value['x']), np.mean(value['y']), xerr=np.std(value['x']), yerr=np.std(value['y']), capsize=4, alpha=0.5)
+        analysis_str += f"key={key}\n"
+        analysis_str += f"X Data: n={len(value['x'])} min={min(value['x'])} max={max(value['x'])} mean={np.mean(value['x'])} stdev={np.std(value['x'])}\n"
+        analysis_str+= f"Y Data: n={len(value['y'])} min={min(value['y'])} max={max(value['y'])} mean={np.mean(value['y'])} stdev={np.std(value['y'])}\n"
+    
+    analysis_file = open(f"{analysis_dir}/analysis.txt", "w")
+    analysis_file.write(analysis_str)
+    analysis_file.close()
+    print(analysis_str)
+
     plt.xlabel("Throughput (kB/sec)")
     plt.ylabel("Latency (ms)")
     plt.legend()
-    plt.show()
+    plt.savefig(f"{analysis_dir}/throughput_latency_plot.png")
+    if show_plots:
+        plt.show()
 
 def get_cleaned_dfs(path):
     df = pd.read_csv(path)
@@ -99,6 +120,8 @@ def read_data():
     stats = {}
     for line in fd.readlines():
         line = line.replace('\n', '')
+        if "TRIAL" in line:
+            continue
         line_data = {}
         for kv in line.split(" "):
             if "=" not in kv:

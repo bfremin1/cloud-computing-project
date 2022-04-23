@@ -35,5 +35,7 @@ while read -r -a line; do
     scavetool x ${TOPO}.sca ${TOPO}.vec -o "${OUTPUT_PATH}/${TOPO}.csv"
 done < "${OMNET_WORKINGDIR_PATH}/topologies.txt"
 
+echo "********** Analyzing results... **********"
+python $SCRIPTS_DIR/m_omnetpp_result_analyzer.py $OMNET_WORKINGDIR_PATH hide-plots
 
 echo "********** Done. :D **********"

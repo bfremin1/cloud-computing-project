@@ -34,7 +34,7 @@ IMPORTS = [
 
 DEFAULT_CHANNEL = "defaultline"
 DEFAULT_LINE_PARAMS = {
-    "delay": "1us",
+    "delay": "100us",
     "datarate": "8Mbps",
     "per": "0"
 }

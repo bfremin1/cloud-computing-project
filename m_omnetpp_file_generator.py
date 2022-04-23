@@ -43,42 +43,97 @@ def fat(topologies_file):
         network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.ECMP))
         topologies_file.write(f"{network.get_name()} seed={seed} k={k}\n")
 
-def jelly(topologies_file):
-    configs = [
-        (16, 4, 3, 4),
-        (8, 8, 6, 4),
-        (4, 16, 12, 4)
-    ]
-
-    seed = 0
-    for cfg in configs:
-        s, p, i, k = cfg
-        root = f"Jellyfish_{s}_{p}_{i}_{k}"
-        random.seed(seed)
-        np.random.seed(seed)
-        network = Jellyfish(name=f"{root}_{seed}", num_switches=s, ports_per_switch=p, internal_ports=i).initialize()
-        FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
-        network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=k))
-        topologies_file.write(f"{network.get_name()} seed={seed} root={root}\n")
-
 def jelly_add(topologies_file):
     root = f"Jellyfish"
-    random.seed(0)
-    np.random.seed(0)
-    network = Jellyfish(name=f"{root}", num_switches=8, ports_per_switch=4, internal_ports=3).initialize()
+    network = Jellyfish(name=f"{root}", num_switches=8, ports_per_switch=4, internal_ports=3, seed=0).initialize()
     network.add_n_fully_connected_core_routers(4, 4)
     FlowGenerator.add_random_paired_flows(network, 1 * MB, 1 * MB)
-    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=2))
-    topologies_file.write(f"{network.get_name()} root={root}\n")
-
-def test_brandon_1(topologies_file):
-    root = f"Jellyfish_16_4_3"
-    random.seed(0)
-    np.random.seed(0)
-    network = Jellyfish(name=f"{root}", num_switches=16, ports_per_switch=4, internal_ports=3).initialize()
-    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
     network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
     topologies_file.write(f"{network.get_name()} root={root}\n")
+
+def fvj_flat_traffic_baseline(topologies_file):
+    # topologies_file.write(f"TRIAL {sys._getframe().f_code.co_name}\n")
+    for seed in range(2):
+        root = f"Jellyfish_16_4_3"
+        network = Jellyfish(name=f"{root}_seed{seed}", num_switches=16, ports_per_switch=4, internal_ports=3, seed=seed).initialize()
+        FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+        network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+        topologies_file.write(f"{network.get_name()} root={root}\n")
+
+        root = f"FatTree_4"
+        network = FatTree(name=f"{root}_seed{seed}", switch_degree=4, seed=seed).initialize()
+        FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+        network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.ECMP))
+        topologies_file.write(f"{network.get_name()} root={root}\n")
+
+        root = f"VL2_8_8_1"
+        network = VL2(name=f"{root}_seed{seed}", ports_per_core_switch=8, ports_per_aggregate_switch=8, hosts_per_tor=1, seed=seed).initialize()
+        FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+        network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.VLB))
+        topologies_file.write(f"{network.get_name()} root={root}\n")
+
+def fvj_dc_traffic_baseline(topologies_file):
+    # topologies_file.write(f"TRIAL {sys._getframe().f_code.co_name}\n")
+    for seed in range(1):
+        root = f"Jellyfish_16_4_3"
+        network = Jellyfish(name=f"{root}_seed{seed}", num_switches=16, ports_per_switch=4, internal_ports=3, seed=seed).initialize()
+        FlowGenerator.add_random_paired_normal_flows(network, 1 * MB)
+        network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+        topologies_file.write(f"{network.get_name()} root={root}\n")
+
+        root = f"FatTree_4"
+        network = FatTree(name=f"{root}_seed{seed}", switch_degree=4, seed=seed).initialize()
+        FlowGenerator.add_random_paired_normal_flows(network, 1 * MB)
+        network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.ECMP))
+        topologies_file.write(f"{network.get_name()} root={root}\n")
+
+        root = f"VL2_8_8_1"
+        network = VL2(name=f"{root}_seed{seed}", ports_per_core_switch=8, ports_per_aggregate_switch=8, hosts_per_tor=1, seed=seed).initialize()
+        FlowGenerator.add_random_paired_normal_flows(network, 1 * MB)
+        network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.VLB))
+        topologies_file.write(f"{network.get_name()} root={root}\n")
+
+def fvj_el_traffic_baseline(topologies_file):
+    # topologies_file.write(f"TRIAL {sys._getframe().f_code.co_name}\n")
+    for seed in range(1):
+        root = f"Jellyfish_16_4_3"
+        network = Jellyfish(name=f"{root}_seed{seed}", num_switches=16, ports_per_switch=4, internal_ports=3, seed=seed).initialize()
+        FlowGenerator.add_random_paired_mice_elephant_flows(network, 1 * MB)
+        network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
+        topologies_file.write(f"{network.get_name()} root={root}\n")
+
+        root = f"FatTree_4"
+        network = FatTree(name=f"{root}_seed{seed}", switch_degree=4, seed=seed).initialize()
+        FlowGenerator.add_random_paired_mice_elephant_flows(network, 1 * MB)
+        network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.ECMP))
+        topologies_file.write(f"{network.get_name()} root={root}\n")
+
+        root = f"VL2_8_8_1"
+        network = VL2(name=f"{root}_seed{seed}", ports_per_core_switch=8, ports_per_aggregate_switch=8, hosts_per_tor=1, seed=seed).initialize()
+        FlowGenerator.add_random_paired_mice_elephant_flows(network, 1 * MB)
+        network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.VLB))
+        topologies_file.write(f"{network.get_name()} root={root}\n")
+
+def jelly_hosts_per_router(topologies_file):
+    # topologies_file.write(f"TRIAL {sys._getframe().f_code.co_name}\n")
+    configs = [
+        (24, 6, 5, 4),
+        (12, 6, 4, 4),
+        (8, 6, 3, 4),
+        (6, 6, 2, 4)
+    ]
+
+    for seed in range(1):
+        for cfg in configs:
+            s, p, i, k = cfg
+            root = f"Jellyfish_{s}_{p}_{i}_{k}"
+            network = Jellyfish(name=f"{root}_seed{seed}", num_switches=s, ports_per_switch=p, internal_ports=i, seed=seed).initialize()
+            network.add_n_fully_connected_core_routers(24 - s, 6)
+            FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
+            network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=k))
+            topologies_file.write(f"{network.get_name()} seed={seed} root={root}\n")
+
+"""
 
     root = f"Jellyfish_16_4_3_fill"
     random.seed(0)
@@ -89,21 +144,7 @@ def test_brandon_1(topologies_file):
     network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.KSP, k=4))
     topologies_file.write(f"{network.get_name()} root={root}\n")
 
-    root = f"FatTree_4"
-    random.seed(0)
-    np.random.seed(0)
-    network = FatTree(name=f"{root}", switch_degree=4).initialize()
-    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
-    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.ECMP))
-    topologies_file.write(f"{network.get_name()} root={root}\n")
-
-    root = f"VL2_8_8_1"
-    random.seed(0)
-    np.random.seed(0)
-    network = VL2(name=f"{root}", ports_per_core_switch=8, ports_per_aggregate_switch=8, hosts_per_tor=1).initialize()
-    FlowGenerator.add_random_paired_flows(network, 1 * MB, 100 * KB)
-    network.create_files(get_working_directory(), routing_algorithm(RoutingAlgorithm.VLB))
-    topologies_file.write(f"{network.get_name()} root={root}\n")
+"""
 
 def test_brandon_2(topologies_file):
     root = f"Jellyfish_16_4_3_1pct"
@@ -231,7 +272,10 @@ def main():
     print(f"Package name set to: \'{get_package_name()}\'")
 
     topologies_file = open(f"{get_working_directory()}/topologies.txt", "w")
-    test_brandon_5(topologies_file)
+    # fvj_flat_traffic_baseline(topologies_file)
+    # fvj_dc_traffic_baseline(topologies_file)
+    # fvj_el_traffic_baseline(topologies_file)
+    jelly_hosts_per_router(topologies_file)
     topologies_file.close()
     return
 

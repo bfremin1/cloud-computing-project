@@ -79,10 +79,14 @@ class Jellyfish(Network):
             )
             for _ in range(k // 2):
                 graph = RoutingAlgorithm.get_nx_graph(self)
-                neighbors = graph.neighbors(router_name)
+                neighbors = list(graph.neighbors(router_name))
+                neighbors.append(router_name)
                 def connectable(edge):
                     return edge[0] not in neighbors and edge[1] not in neighbors and 'core' in edge[0] and 'core' in edge[1]
                 edges = [e for e in filter(connectable, graph.edges())]
+                if len(edges) == 0:
+                    print("No edges to select from :/")
+                    break
                 rand_edge = random.sample(edges, 1)[0]
                 Node.disconnect(self._node_map[rand_edge[0]], self._node_map[rand_edge[1]])
                 Node.connect(self._node_map[router_name], self._node_map[rand_edge[0]])

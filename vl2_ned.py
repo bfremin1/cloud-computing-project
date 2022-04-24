@@ -4,7 +4,8 @@ import copy
 class VL2(Network):
     def __init__(self, name, ports_per_core_switch, ports_per_aggregate_switch, hosts_per_tor, **kwargs):
         super().__init__(name, **kwargs)
-        assert ports_per_core_switch % 4 == 0
+        assert ports_per_core_switch % 2 == 0
+        assert ports_per_aggregate_switch % 2 == 0
         self._c = ports_per_core_switch  # degree of core routers
         self._a = ports_per_aggregate_switch  # degree of aggregate routers
         self._s = hosts_per_tor  # servers per ToR

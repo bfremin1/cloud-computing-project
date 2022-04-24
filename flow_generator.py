@@ -107,7 +107,7 @@ class FlowGenerator:
     
     @staticmethod
     def add_random_paired_mice_elephant_flows(network, total_flow):
-        mice_size = 10 * KB
+        mice_size = 50 * KB
         elephant_size = 250 * KB
         hosts = network.get_categorized_nodes()['host']
         if len(hosts) % 2 != 0:
@@ -140,15 +140,16 @@ class FlowGenerator:
         while p < 3:
             p = np.random.normal(4, 1)
         return 10 ** p
-    
+    """
     @staticmethod
     def add_k_normal_random_flows(network, k):
         hosts = network.get_categorized_nodes()['host']
         for _ in range(k):
-            p = np.random.normal(4, 1)
-            while p < 3:
-                p = np.random.normal(4, 1)
+            p = np.random.normal(5, 1)
+            while p < 4:
+                p = np.random.normal(5, 1)
             flow_size = 10 ** p
             src, dest = random.sample(hosts, 2)
             network.add_flow(src, dest, flow_size, 0)
         return
+    """

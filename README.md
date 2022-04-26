@@ -16,8 +16,8 @@ Note: Our project runs on Omnet++ 5.7. To install Omnet++, we used [this guide](
 5) Run `omnetpp` in the Mingwenv terminal.
 6) When Omnet++ opens, it will ask you to select a working directory. Select `omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples` as your working directory. 
 7) Once the editor opens up into the directory above. An screen will be displayed prompting you to install INET. Keep all of the boxes checked and proceed. If you don't have INET installed, see this [link](https://inet.omnetpp.org/Installation.html) for installation steps. Once installed, there should be a folder called `inet4` in your `omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples` directory.
-8) Navigate to the following directory: `omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet`. It's a long way down the tree, but we want our scripts to use the correct relative paths.
-9) Create a new folder in this directory. We'll assume it's called `foo` for these instructions. This folder will contain all of our project results and files after our bash script finishes.
+8)  Navigate to the following directory: `omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet`. It's a long way down the tree, but we want our scripts to use the correct relative paths.
+9)  Create a new folder in this directory. We'll assume it's called `foo` for these instructions. This folder will contain all of our project results and files after our bash script finishes.
 10) Now we must set the absolute path variables for the `run.sh` scripts inside this repo. Please set the following according to your machines abosolute paths. We have left examples of Shravan and I's paths commented out in the `run.sh`:
     ```
     # Root of OMNET++
@@ -35,8 +35,16 @@ Note: Our project runs on Omnet++ 5.7. To install Omnet++, we used [this guide](
     # Desired output directory
     OUTPUT_PATH="<path_to_omnet_dir>/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/foo/results"
     ```
-11) From any terminal window on your machine, execute the `run.sh` command. It will log each time new tests are run. The entire set of simulations took us on the order of 12 hours to complete. We had to leave it running overnight
-12) Several directories will be created within the `omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/foo` directory. 
+11) Now that Omnet++ is set up, pip should come with the default Mingwenv terminal. Pip install the following libraries that we use in our Python scripts:
+    ```
+    pip install matplotlib
+    pip install numpy
+    pip install pandas
+    pip install pickle
+    pip install networkx
+    ```
+12) From any terminal window on your machine, execute the `run.sh` command. It will log each time new tests are run. The entire set of simulations took us on the order of 12 hours to complete. We had to leave it running overnight
+13) Several directories will be created within the `omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/foo` directory. 
     ```
     foo
         analysis
@@ -61,9 +69,12 @@ Note: Our project runs on Omnet++ 5.7. To install Omnet++, we used [this guide](
             topoI_seedJ.vec  # vector statistics from simulation
             topoI_seedJ.csv  # scalars and vectors formatted in a CSV files for analysis
             ...
-        theoretical
-            # SHRAVAN ADD HERE
-            # theoretical plots
+        paths
+            plot.png  # path length distributions
+            ...
+        bissection
+            plot.png  # bisseciton bandwidth graphs
+            ...
         topologies.txt  # Lists all of the topologies that Omnet++ needs to simulate
         topoI_seedJ.ned  # Define network topologies
         topoI_seedJ.ini  # Define flow patterns and simulation settings
@@ -71,4 +82,4 @@ Note: Our project runs on Omnet++ 5.7. To install Omnet++, we used [this guide](
         topoI_seedJ.pkl  # Store Python object to be reference later
         ...
     ```
-13) All of the results presented in our final presentation and paper come from the above files. We used fixed RNG seeds to ensure that results are reproducible.
+14) All of the results presented in our final presentation and paper come from the above files. We used fixed RNG seeds to ensure that results are reproducible.

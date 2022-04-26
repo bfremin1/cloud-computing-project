@@ -57,18 +57,18 @@ Note: Our project runs on Omnet++ 5.7. To install Omnet++, we used [this guide](
                 ...
             ...
         results
-            topo1.sca  # scalar statistics from simulation
-            topo1.vec  # vector statistics from simulation
-            topo1.csv  # scalars and vectors formatted in a CSV files for analysis
+            topoI_seedJ.sca  # scalar statistics from simulation
+            topoI_seedJ.vec  # vector statistics from simulation
+            topoI_seedJ.csv  # scalars and vectors formatted in a CSV files for analysis
             ...
         theoretical
             # SHRAVAN ADD HERE
             # theoretical plots
         topologies.txt  # Lists all of the topologies that Omnet++ needs to simulate
-        topo1.ned  # Define network topologies
-        topo1.ini  # Define flow patterns and simulation settings
-        topo1.xml  # Definre routing tables
-        topo1.pkl  # Store Python object to be reference later
+        topoI_seedJ.ned  # Define network topologies
+        topoI_seedJ.ini  # Define flow patterns and simulation settings
+        topoI_seedJ.xml  # Definre routing tables
+        topoI_seedJ.pkl  # Store Python object to be reference later
         ...
     ```
 13) All of the results presented in our final presentation and paper come from the above files. We used fixed RNG seeds to ensure that results are reproducible.

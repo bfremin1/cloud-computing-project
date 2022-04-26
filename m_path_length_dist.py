@@ -1,4 +1,4 @@
-import random, sys
+import random, sys, os
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
@@ -26,6 +26,8 @@ JELLY_PATH_RANGE = [1, 10] # [1, 10]
 VL_CORE_RANGE = [2, 10] # [2, 10]
 VL_AGG_RANGE = [2, 10] # [2, 10]
 
+STORAGE_DIR = "paths/"
+
 def plt_hist_prop(data, label='', alpha=1.0):
     plt.hist(data, label=label, bins=np.arange(0, 12.25, 0.25), alpha=alpha, weights=np.ones_like(data) / len(data))
 
@@ -39,7 +41,7 @@ def plt_output(title="", xlabel="", ylabel=""):
                [round(x, 1) for x in np.arange(0, 1.1, 0.1)])
     plt.legend()
     if PLT_SAVE_FIG:
-        plt.savefig("graphs/" + title.replace(' ', '-').replace('\n', '_') + ".png")
+        plt.savefig(STORAGE_DIR + title.replace(' ', '-').replace('\n', '_') + ".png")
         plt.clf()
     if PLT_SHOW_FIG:
         plt.show()
@@ -172,7 +174,10 @@ def gen_dist_jelly_range_treelike_hosts(k_range, path_range, trials, path_func):
         graphs.append(gen_dist_jelly_treelike_hosts(k, path_range, trials, path_func))
     return graphs
 
-def main():
+def gen_essentials():
+
+    print(f"Comparing FatTree with similar Jellyfish(es), k={TREE_K_RANGE[0]:d} to k={TREE_K_RANGE[1]:d}")
+    
     # Fix randomness for reproducability
     random.seed(0)
     np.random.seed(0)
@@ -180,6 +185,9 @@ def main():
     p_set = [1, 2, 4, 8]
 
     for k in range(TREE_K_RANGE[0], TREE_K_RANGE[1] + 1, 2):
+
+        print(f"Generating plots for k = {k:d}...")
+        
         tree = gen_dist_tree(k)
         jellies = gen_dist_jelly_treelike_full_first(k, JELLY_PATH_RANGE, JELLY_TRIALS, lambda x: x in p_set)
 
@@ -202,6 +210,15 @@ def main():
                 plt_hist_prop(jelly_nodes[i][1], jelly_nodes[i][0], alpha=0.5)
                 plt_output("FatTree (k=" + str(k) + ") vs. Equivalent Jellyfish Internals (p=" + str(p) + "), " + str(JELLY_TRIALS) + " trials",
                            "Average Path Length", "Relative Frequency")
+    
+def main():
+    global STORAGE_DIR
+    if len(sys.argv) > 1:
+        STORAGE_DIR = sys.argv[1]
+    if STORAGE_DIR[-1] != '/':
+        STORAGE_DIR = STORAGE_DIR + '/'
+    os.makedirs(STORAGE_DIR, exist_ok=True)
+    gen_essentials()
 
 if __name__ == "__main__":
     main()

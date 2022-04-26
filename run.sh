@@ -15,7 +15,7 @@ SCRIPTS_DIR="/c/Users/shrav/Documents/_Docs_/JHU/Classes/cloud-computing-project
 #SCRIPTS_DIR="/c/Users/bfrem/BlueFloor/Assets/cloud-computing-project"  # Brandon
 
 # Desired output directory
-OUTPUT_PATH="/c/Users/shrav/Documents/_Docs_/JHU/Classes/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/cc_datacenter/results"  # Shravan
+OUTPUT_PATH="${OMNET_WORKINGDIR_PATH}/results"  # Shravan
 #OUTPUT_PATH="$OMNET_WORKINGDIR_PATH/results"  # Brandon
 
 echo "********** Running topology generation script... **********"
@@ -41,5 +41,13 @@ done < "${OMNET_WORKINGDIR_PATH}/topologies.txt"
 
 echo "********** Analyzing results... **********"
 python $SCRIPTS_DIR/m_omnetpp_result_analyzer.py $OMNET_WORKINGDIR_PATH hide-plots
+
+echo "********** Generating path length distributions... **********"
+
+python $SCRIPTS_DIR/m_path_length_dist.py "${OMNET_WORKINGDIR_PATH}/paths"
+
+echo "********** Generating bisection bandwidth plots... **********"
+
+python $SCRIPTS_DIR/m_bisection_bandwidth.py "${OMNET_WORKINGDIR_PATH}/bisections"
 
 echo "********** Done. :D **********"

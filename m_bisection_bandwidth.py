@@ -1,8 +1,12 @@
+import sys, os
 import numpy as np
 import matplotlib.pyplot as plt
 import math
 
+STORAGE_DIR = "bisections/"
+
 def plt_bisection_small():
+    print("Generating plot for small k...")
     plt.gca().set_prop_cycle(None)
     for k in range(4, 10, 2):
         servers = []
@@ -27,10 +31,12 @@ def plt_bisection_small():
     plt.xlabel("Servers")
     plt.ylabel("Normalized Bisection Bandwidth")
     plt.legend()
-    plt.savefig("graphs/bisection.png")
+    plt.savefig(STORAGE_DIR + "bisection_small.png")
     plt.show()
+    plt.clf()
 
 def plt_bisection_repro():
+    print("Generating plot for large k (paper reproduction)...")
     plt.gca().set_prop_cycle(None)
     for k in [24, 32, 48]:
         servers = []
@@ -56,10 +62,17 @@ def plt_bisection_repro():
     plt.xlabel("Servers (Thousands)")
     plt.ylabel("Normalized Bisection Bandwidth")
     plt.legend()
-    plt.savefig("graphs/bisection_repro.png")
+    plt.savefig(STORAGE_DIR + "bisection_repro.png")
     plt.show()
+    plt.clf()
 
 def main():
+    global STORAGE_DIR
+    if len(sys.argv) > 1:
+        STORAGE_DIR = sys.argv[1]
+    if STORAGE_DIR[-1] != '/':
+        STORAGE_DIR = STORAGE_DIR + '/'
+    os.makedirs(STORAGE_DIR, exist_ok=True)
     plt_bisection_small()
     plt_bisection_repro()
 

@@ -33,7 +33,7 @@ Note: Our project runs on Omnet++ 5.7. To install Omnet++, we used [this guide](
     SCRIPTS_DIR="<path_to_github_dir>"
 
     # Desired output directory
-    OUTPUT_PATH="<path_to_omnet_dir>/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/foo/results"  # Brandon
+    OUTPUT_PATH="<path_to_omnet_dir>/omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/foo/results"
     ```
 11) From any terminal window on your machine, execute the `run.sh` command. It will log each time new tests are run. The entire set of simulations took us on the order of 12 hours to complete. We had to leave it running overnight
 12) Several directories will be created within the `omnetpp-5.7-windows-x86_64/omnetpp-5.7/samples/inet4/examples/inet/foo` directory. 

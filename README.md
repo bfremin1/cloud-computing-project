@@ -1,14 +1,14 @@
 # Cloud Computing Final Project
-Brandon Fremin and Shravan Venkatesan
+Brandon Fremin (bfremin1@jhu.edu) and Shravan Venkatesan (svenka16@jhu.edu)
 
-### Reproducing Results
+### Reproducing Results Locally
 
 Note: Our project runs on Omnet++ 5.7. To install Omnet++, we used [this guide](https://doc.omnetpp.org/omnetpp/InstallGuide.pdf). We will explain our setup steps below:
 
 1) Download [Omnet++ 5.7](https://omnetpp.org/download/old). This will give you a file called `omnetpp-5.7-windows-x86_64.zip`.
 2) Unzip the downloaded file to get the Omnet++ source code. By default, it will be created in a folder called `omnetpp-5.7-windows-x86_64` in the same directory as your zip file.
 3) Run a Mingwenv terminal by navigating to the `omnetpp-5.7-windows-x86_64/omnetpp-5.7` directory and running the `mingwenv.cmd` Windows command script. 
-4) In the Mingwenv terminal, running the following commands to create the Omnet++ binaries. Building took about 30 minutes on our local laptops:
+4) In the Mingwenv terminal, running the following commands to create the Omnet++ binaries. Building took about 30 minutes on our local laptops. *IMPORTANT NOTE*: if any directory in your abosulte path with a space in it, the make with not succeed. This took us a while to debug.
     ```
     ./configure
     make
@@ -72,8 +72,8 @@ Note: Our project runs on Omnet++ 5.7. To install Omnet++, we used [this guide](
         paths
             plot.png  # path length distributions
             ...
-        bissection
-            plot.png  # bisseciton bandwidth graphs
+        bisections
+            plot.png  # bisection bandwidth graphs
             ...
         topologies.txt  # Lists all of the topologies that Omnet++ needs to simulate
         topoI_seedJ.ned  # Define network topologies
@@ -83,3 +83,16 @@ Note: Our project runs on Omnet++ 5.7. To install Omnet++, we used [this guide](
         ...
     ```
 14) All of the results presented in our final presentation and paper come from the above files. We used fixed RNG seeds to ensure that results are reproducible.
+
+### Reproducing Results on Google Cloud VM
+
+1) If you have not yet received an invitation from Google to join out Google Cloud VM, please send Brandon or Shravan your gmail, so we can add you and give you privileges.
+2) Once you have access to our Google Cloud VM, go to this [link](https://console.cloud.google.com/compute/instances?project=cloud-computing-dc-topologies) which lists our VM instances in Google Cloud.
+3) We only have one VM isntance named `omnetpp-jellyfish`. Click the SSH button to open an SSH terminal into that VM.
+4) Run the following:
+    ```
+    cd /cloud-computing-project
+    export PATH=/omnetpp-5.7/bin/:$PATH
+    ./run.sh
+    ```
+5) After about 12 hours, you can find all of our results in the directory `/omnetpp-5.7/samples/inet4/examples/inet/datacenter_topologies` in the same structure described by step 13 above.

@@ -43,11 +43,9 @@ echo "********** Analyzing results... **********"
 python $SCRIPTS_DIR/m_omnetpp_result_analyzer.py $OMNET_WORKINGDIR_PATH hide-plots
 
 echo "********** Generating path length distributions... **********"
-
 python $SCRIPTS_DIR/m_path_length_dist.py "${OMNET_WORKINGDIR_PATH}/paths"
 
 echo "********** Generating bisection bandwidth plots... **********"
-
 python $SCRIPTS_DIR/m_bisection_bandwidth.py "${OMNET_WORKINGDIR_PATH}/bisections"
 
 echo "********** Done. :D **********"

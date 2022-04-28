@@ -1,0 +1,347 @@
+package inet.examples.inet.datacenter_topologies;
+
+import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
+import inet.node.inet.Router;
+import inet.node.inet.StandardHost;
+import ned.DatarateChannel;
+import inet.visualizer.integrated.IntegratedVisualizer;
+
+network Jellyfish_8_8_7_8__jelly_vary_num_switches_seed4
+{
+    parameters:
+        @display("bgb=1200,500");
+    types:
+        channel defaultline extends DatarateChannel { delay = 100us; datarate = 8Mbps; per = 0; }
+        channel infiniteline extends DatarateChannel { delay = 0s; datarate = 1000Gbps; per = 0; }
+    submodules:
+        configurator: Ipv4NetworkConfigurator { parameters: @display("p=50,50;i=block/cogwheel;is=s"); }
+        core_00: Router { parameters: @display("p=725,250;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_01: Router { parameters: @display("p=688,338;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_02: Router { parameters: @display("p=600,375;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_03: Router { parameters: @display("p=511,338;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_04: Router { parameters: @display("p=475,250;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_05: Router { parameters: @display("p=511,161;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_06: Router { parameters: @display("p=600,125;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_07: Router { parameters: @display("p=688,161;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_08: Router { parameters: @display("p=650,250;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_09: Router { parameters: @display("p=646,269;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_10: Router { parameters: @display("p=635,285;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_11: Router { parameters: @display("p=619,296;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_12: Router { parameters: @display("p=600,300;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_13: Router { parameters: @display("p=580,296;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_14: Router { parameters: @display("p=564,285;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_15: Router { parameters: @display("p=553,269;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_16: Router { parameters: @display("p=550,250;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_17: Router { parameters: @display("p=553,230;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_18: Router { parameters: @display("p=564,214;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_19: Router { parameters: @display("p=580,203;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_20: Router { parameters: @display("p=600,200;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_21: Router { parameters: @display("p=619,203;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_22: Router { parameters: @display("p=635,214;i=abstract/router;is=s"); gates: pppg[8]; }
+        core_23: Router { parameters: @display("p=646,230;i=abstract/router;is=s"); gates: pppg[8]; }
+        host_00: Router { parameters: @display("p=800,250;i=device/server;is=s"); gates: pppg[22]; }
+        host_01: Router { parameters: @display("p=741,391;i=device/server;is=s"); gates: pppg[21]; }
+        host_02: Router { parameters: @display("p=600,450;i=device/server;is=s"); gates: pppg[8]; }
+        host_03: Router { parameters: @display("p=458,391;i=device/server;is=s"); gates: pppg[22]; }
+        host_04: Router { parameters: @display("p=400,250;i=device/server;is=s"); gates: pppg[8]; }
+        host_05: Router { parameters: @display("p=458,108;i=device/server;is=s"); gates: pppg[2]; }
+        host_06: Router { parameters: @display("p=600,50;i=device/server;is=s"); gates: pppg[2]; }
+        host_07: Router { parameters: @display("p=741,108;i=device/server;is=s"); gates: pppg[21]; }
+        sink_000: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_001: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_002: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_003: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_004: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_005: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_006: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_007: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_008: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_009: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_010: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_011: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_012: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_013: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_014: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_015: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_016: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_017: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_018: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_019: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_020: StandardHost { parameters: @display("p=845,298;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_021: StandardHost { parameters: @display("p=551,495;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_022: StandardHost { parameters: @display("p=551,495;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_023: StandardHost { parameters: @display("p=551,495;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_024: StandardHost { parameters: @display("p=551,495;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_025: StandardHost { parameters: @display("p=551,495;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_026: StandardHost { parameters: @display("p=551,495;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_027: StandardHost { parameters: @display("p=551,495;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_028: StandardHost { parameters: @display("p=461,42;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_029: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_030: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_031: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_032: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_033: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_034: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_035: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_036: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_037: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_038: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_039: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_040: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_041: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_042: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_043: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_044: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_045: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_046: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_047: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        sink_048: StandardHost { parameters: @display("p=807,111;i=block/sink;is=vs"); gates: pppg[1]; }
+        source_000: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_001: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_002: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_003: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_004: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_005: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_006: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_007: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_008: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_009: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_010: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_011: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_012: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_013: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_014: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_015: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_016: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_017: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_018: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_019: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_020: StandardHost { parameters: @display("p=461,457;i=block/source;is=vs"); gates: pppg[1]; }
+        source_021: StandardHost { parameters: @display("p=354,298;i=block/source;is=vs"); gates: pppg[1]; }
+        source_022: StandardHost { parameters: @display("p=354,298;i=block/source;is=vs"); gates: pppg[1]; }
+        source_023: StandardHost { parameters: @display("p=354,298;i=block/source;is=vs"); gates: pppg[1]; }
+        source_024: StandardHost { parameters: @display("p=354,298;i=block/source;is=vs"); gates: pppg[1]; }
+        source_025: StandardHost { parameters: @display("p=354,298;i=block/source;is=vs"); gates: pppg[1]; }
+        source_026: StandardHost { parameters: @display("p=354,298;i=block/source;is=vs"); gates: pppg[1]; }
+        source_027: StandardHost { parameters: @display("p=354,298;i=block/source;is=vs"); gates: pppg[1]; }
+        source_028: StandardHost { parameters: @display("p=551,4;i=block/source;is=vs"); gates: pppg[1]; }
+        source_029: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_030: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_031: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_032: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_033: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_034: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_035: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_036: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_037: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_038: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_039: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_040: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_041: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_042: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_043: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_044: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_045: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_046: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_047: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+        source_048: StandardHost { parameters: @display("p=807,388;i=block/source;is=vs"); gates: pppg[1]; }
+    connections:
+        core_00.pppg[0] <--> defaultline <--> core_01.pppg[0];
+        core_00.pppg[1] <--> defaultline <--> core_03.pppg[0];
+        core_00.pppg[2] <--> defaultline <--> core_04.pppg[0];
+        core_00.pppg[3] <--> defaultline <--> core_07.pppg[0];
+        core_00.pppg[4] <--> defaultline <--> core_10.pppg[0];
+        core_00.pppg[5] <--> defaultline <--> core_19.pppg[0];
+        core_00.pppg[6] <--> defaultline <--> core_22.pppg[0];
+        core_00.pppg[7] <--> defaultline <--> host_00.pppg[0];
+        core_01.pppg[1] <--> defaultline <--> core_05.pppg[0];
+        core_01.pppg[2] <--> defaultline <--> core_10.pppg[1];
+        core_01.pppg[3] <--> defaultline <--> core_13.pppg[0];
+        core_01.pppg[4] <--> defaultline <--> core_15.pppg[0];
+        core_01.pppg[5] <--> defaultline <--> core_16.pppg[0];
+        core_01.pppg[6] <--> defaultline <--> core_22.pppg[1];
+        core_01.pppg[7] <--> defaultline <--> host_01.pppg[0];
+        core_02.pppg[0] <--> defaultline <--> core_03.pppg[1];
+        core_02.pppg[1] <--> defaultline <--> core_06.pppg[0];
+        core_02.pppg[2] <--> defaultline <--> core_07.pppg[1];
+        core_02.pppg[3] <--> defaultline <--> core_10.pppg[2];
+        core_02.pppg[4] <--> defaultline <--> core_15.pppg[1];
+        core_02.pppg[5] <--> defaultline <--> core_20.pppg[0];
+        core_02.pppg[6] <--> defaultline <--> core_22.pppg[2];
+        core_02.pppg[7] <--> defaultline <--> host_02.pppg[0];
+        core_03.pppg[2] <--> defaultline <--> core_06.pppg[1];
+        core_03.pppg[3] <--> defaultline <--> core_07.pppg[2];
+        core_03.pppg[4] <--> defaultline <--> core_11.pppg[0];
+        core_03.pppg[5] <--> defaultline <--> core_12.pppg[0];
+        core_03.pppg[6] <--> defaultline <--> core_20.pppg[1];
+        core_03.pppg[7] <--> defaultline <--> host_03.pppg[0];
+        core_04.pppg[1] <--> defaultline <--> core_05.pppg[1];
+        core_04.pppg[2] <--> defaultline <--> core_14.pppg[0];
+        core_04.pppg[3] <--> defaultline <--> core_15.pppg[2];
+        core_04.pppg[4] <--> defaultline <--> core_18.pppg[0];
+        core_04.pppg[5] <--> defaultline <--> core_22.pppg[3];
+        core_04.pppg[6] <--> defaultline <--> core_23.pppg[0];
+        core_04.pppg[7] <--> defaultline <--> host_04.pppg[0];
+        core_05.pppg[2] <--> defaultline <--> core_09.pppg[0];
+        core_05.pppg[3] <--> defaultline <--> core_10.pppg[3];
+        core_05.pppg[4] <--> defaultline <--> core_15.pppg[3];
+        core_05.pppg[5] <--> defaultline <--> core_17.pppg[0];
+        core_05.pppg[6] <--> defaultline <--> core_19.pppg[1];
+        core_05.pppg[7] <--> defaultline <--> host_05.pppg[0];
+        core_06.pppg[2] <--> defaultline <--> core_10.pppg[4];
+        core_06.pppg[3] <--> defaultline <--> core_13.pppg[1];
+        core_06.pppg[4] <--> defaultline <--> core_14.pppg[1];
+        core_06.pppg[5] <--> defaultline <--> core_15.pppg[4];
+        core_06.pppg[6] <--> defaultline <--> core_17.pppg[1];
+        core_06.pppg[7] <--> defaultline <--> host_06.pppg[0];
+        core_07.pppg[3] <--> defaultline <--> core_08.pppg[0];
+        core_07.pppg[4] <--> defaultline <--> core_17.pppg[2];
+        core_07.pppg[5] <--> defaultline <--> core_18.pppg[1];
+        core_07.pppg[6] <--> defaultline <--> core_23.pppg[1];
+        core_07.pppg[7] <--> defaultline <--> host_07.pppg[0];
+        core_08.pppg[1] <--> defaultline <--> core_09.pppg[1];
+        core_08.pppg[2] <--> defaultline <--> core_11.pppg[1];
+        core_08.pppg[3] <--> defaultline <--> core_14.pppg[2];
+        core_08.pppg[4] <--> defaultline <--> core_16.pppg[1];
+        core_08.pppg[5] <--> defaultline <--> core_17.pppg[3];
+        core_08.pppg[6] <--> defaultline <--> core_21.pppg[0];
+        core_08.pppg[7] <--> defaultline <--> core_22.pppg[4];
+        core_09.pppg[2] <--> defaultline <--> core_10.pppg[5];
+        core_09.pppg[3] <--> defaultline <--> core_11.pppg[2];
+        core_09.pppg[4] <--> defaultline <--> core_12.pppg[1];
+        core_09.pppg[5] <--> defaultline <--> core_16.pppg[2];
+        core_09.pppg[6] <--> defaultline <--> core_20.pppg[2];
+        core_09.pppg[7] <--> defaultline <--> core_21.pppg[1];
+        core_10.pppg[6] <--> defaultline <--> core_19.pppg[2];
+        core_10.pppg[7] <--> defaultline <--> core_21.pppg[2];
+        core_11.pppg[3] <--> defaultline <--> core_12.pppg[2];
+        core_11.pppg[4] <--> defaultline <--> core_13.pppg[2];
+        core_11.pppg[5] <--> defaultline <--> core_17.pppg[4];
+        core_11.pppg[6] <--> defaultline <--> core_19.pppg[3];
+        core_11.pppg[7] <--> defaultline <--> core_21.pppg[3];
+        core_12.pppg[3] <--> defaultline <--> core_13.pppg[3];
+        core_12.pppg[4] <--> defaultline <--> core_16.pppg[3];
+        core_12.pppg[5] <--> defaultline <--> core_18.pppg[2];
+        core_12.pppg[6] <--> defaultline <--> core_21.pppg[4];
+        core_12.pppg[7] <--> defaultline <--> core_23.pppg[2];
+        core_13.pppg[4] <--> defaultline <--> core_16.pppg[4];
+        core_13.pppg[5] <--> defaultline <--> core_17.pppg[5];
+        core_13.pppg[6] <--> defaultline <--> core_18.pppg[3];
+        core_13.pppg[7] <--> defaultline <--> core_23.pppg[3];
+        core_14.pppg[3] <--> defaultline <--> core_15.pppg[5];
+        core_14.pppg[4] <--> defaultline <--> core_17.pppg[6];
+        core_14.pppg[5] <--> defaultline <--> core_18.pppg[4];
+        core_14.pppg[6] <--> defaultline <--> core_20.pppg[3];
+        core_14.pppg[7] <--> defaultline <--> core_21.pppg[5];
+        core_15.pppg[6] <--> defaultline <--> core_19.pppg[4];
+        core_15.pppg[7] <--> defaultline <--> core_23.pppg[4];
+        core_16.pppg[5] <--> defaultline <--> core_17.pppg[7];
+        core_16.pppg[6] <--> defaultline <--> core_18.pppg[5];
+        core_16.pppg[7] <--> defaultline <--> core_20.pppg[4];
+        core_18.pppg[6] <--> defaultline <--> core_21.pppg[6];
+        core_18.pppg[7] <--> defaultline <--> core_22.pppg[5];
+        core_19.pppg[5] <--> defaultline <--> core_20.pppg[5];
+        core_19.pppg[6] <--> defaultline <--> core_22.pppg[6];
+        core_19.pppg[7] <--> defaultline <--> core_23.pppg[5];
+        core_20.pppg[6] <--> defaultline <--> core_21.pppg[7];
+        core_20.pppg[7] <--> defaultline <--> core_23.pppg[6];
+        core_22.pppg[7] <--> defaultline <--> core_23.pppg[7];
+        host_00.pppg[10] <--> infiniteline <--> sink_009.pppg[0];
+        host_00.pppg[11] <--> infiniteline <--> sink_010.pppg[0];
+        host_00.pppg[12] <--> infiniteline <--> sink_011.pppg[0];
+        host_00.pppg[13] <--> infiniteline <--> sink_012.pppg[0];
+        host_00.pppg[14] <--> infiniteline <--> sink_013.pppg[0];
+        host_00.pppg[15] <--> infiniteline <--> sink_014.pppg[0];
+        host_00.pppg[16] <--> infiniteline <--> sink_015.pppg[0];
+        host_00.pppg[17] <--> infiniteline <--> sink_016.pppg[0];
+        host_00.pppg[18] <--> infiniteline <--> sink_017.pppg[0];
+        host_00.pppg[19] <--> infiniteline <--> sink_018.pppg[0];
+        host_00.pppg[1] <--> infiniteline <--> sink_000.pppg[0];
+        host_00.pppg[20] <--> infiniteline <--> sink_019.pppg[0];
+        host_00.pppg[21] <--> infiniteline <--> sink_020.pppg[0];
+        host_00.pppg[2] <--> infiniteline <--> sink_001.pppg[0];
+        host_00.pppg[3] <--> infiniteline <--> sink_002.pppg[0];
+        host_00.pppg[4] <--> infiniteline <--> sink_003.pppg[0];
+        host_00.pppg[5] <--> infiniteline <--> sink_004.pppg[0];
+        host_00.pppg[6] <--> infiniteline <--> sink_005.pppg[0];
+        host_00.pppg[7] <--> infiniteline <--> sink_006.pppg[0];
+        host_00.pppg[8] <--> infiniteline <--> sink_007.pppg[0];
+        host_00.pppg[9] <--> infiniteline <--> sink_008.pppg[0];
+        host_01.pppg[10] <--> infiniteline <--> source_038.pppg[0];
+        host_01.pppg[11] <--> infiniteline <--> source_039.pppg[0];
+        host_01.pppg[12] <--> infiniteline <--> source_040.pppg[0];
+        host_01.pppg[13] <--> infiniteline <--> source_041.pppg[0];
+        host_01.pppg[14] <--> infiniteline <--> source_042.pppg[0];
+        host_01.pppg[15] <--> infiniteline <--> source_043.pppg[0];
+        host_01.pppg[16] <--> infiniteline <--> source_044.pppg[0];
+        host_01.pppg[17] <--> infiniteline <--> source_045.pppg[0];
+        host_01.pppg[18] <--> infiniteline <--> source_046.pppg[0];
+        host_01.pppg[19] <--> infiniteline <--> source_047.pppg[0];
+        host_01.pppg[1] <--> infiniteline <--> source_029.pppg[0];
+        host_01.pppg[20] <--> infiniteline <--> source_048.pppg[0];
+        host_01.pppg[2] <--> infiniteline <--> source_030.pppg[0];
+        host_01.pppg[3] <--> infiniteline <--> source_031.pppg[0];
+        host_01.pppg[4] <--> infiniteline <--> source_032.pppg[0];
+        host_01.pppg[5] <--> infiniteline <--> source_033.pppg[0];
+        host_01.pppg[6] <--> infiniteline <--> source_034.pppg[0];
+        host_01.pppg[7] <--> infiniteline <--> source_035.pppg[0];
+        host_01.pppg[8] <--> infiniteline <--> source_036.pppg[0];
+        host_01.pppg[9] <--> infiniteline <--> source_037.pppg[0];
+        host_02.pppg[1] <--> infiniteline <--> sink_021.pppg[0];
+        host_02.pppg[2] <--> infiniteline <--> sink_022.pppg[0];
+        host_02.pppg[3] <--> infiniteline <--> sink_023.pppg[0];
+        host_02.pppg[4] <--> infiniteline <--> sink_024.pppg[0];
+        host_02.pppg[5] <--> infiniteline <--> sink_025.pppg[0];
+        host_02.pppg[6] <--> infiniteline <--> sink_026.pppg[0];
+        host_02.pppg[7] <--> infiniteline <--> sink_027.pppg[0];
+        host_03.pppg[10] <--> infiniteline <--> source_009.pppg[0];
+        host_03.pppg[11] <--> infiniteline <--> source_010.pppg[0];
+        host_03.pppg[12] <--> infiniteline <--> source_011.pppg[0];
+        host_03.pppg[13] <--> infiniteline <--> source_012.pppg[0];
+        host_03.pppg[14] <--> infiniteline <--> source_013.pppg[0];
+        host_03.pppg[15] <--> infiniteline <--> source_014.pppg[0];
+        host_03.pppg[16] <--> infiniteline <--> source_015.pppg[0];
+        host_03.pppg[17] <--> infiniteline <--> source_016.pppg[0];
+        host_03.pppg[18] <--> infiniteline <--> source_017.pppg[0];
+        host_03.pppg[19] <--> infiniteline <--> source_018.pppg[0];
+        host_03.pppg[1] <--> infiniteline <--> source_000.pppg[0];
+        host_03.pppg[20] <--> infiniteline <--> source_019.pppg[0];
+        host_03.pppg[21] <--> infiniteline <--> source_020.pppg[0];
+        host_03.pppg[2] <--> infiniteline <--> source_001.pppg[0];
+        host_03.pppg[3] <--> infiniteline <--> source_002.pppg[0];
+        host_03.pppg[4] <--> infiniteline <--> source_003.pppg[0];
+        host_03.pppg[5] <--> infiniteline <--> source_004.pppg[0];
+        host_03.pppg[6] <--> infiniteline <--> source_005.pppg[0];
+        host_03.pppg[7] <--> infiniteline <--> source_006.pppg[0];
+        host_03.pppg[8] <--> infiniteline <--> source_007.pppg[0];
+        host_03.pppg[9] <--> infiniteline <--> source_008.pppg[0];
+        host_04.pppg[1] <--> infiniteline <--> source_021.pppg[0];
+        host_04.pppg[2] <--> infiniteline <--> source_022.pppg[0];
+        host_04.pppg[3] <--> infiniteline <--> source_023.pppg[0];
+        host_04.pppg[4] <--> infiniteline <--> source_024.pppg[0];
+        host_04.pppg[5] <--> infiniteline <--> source_025.pppg[0];
+        host_04.pppg[6] <--> infiniteline <--> source_026.pppg[0];
+        host_04.pppg[7] <--> infiniteline <--> source_027.pppg[0];
+        host_05.pppg[1] <--> infiniteline <--> sink_028.pppg[0];
+        host_06.pppg[1] <--> infiniteline <--> source_028.pppg[0];
+        host_07.pppg[10] <--> infiniteline <--> sink_038.pppg[0];
+        host_07.pppg[11] <--> infiniteline <--> sink_039.pppg[0];
+        host_07.pppg[12] <--> infiniteline <--> sink_040.pppg[0];
+        host_07.pppg[13] <--> infiniteline <--> sink_041.pppg[0];
+        host_07.pppg[14] <--> infiniteline <--> sink_042.pppg[0];
+        host_07.pppg[15] <--> infiniteline <--> sink_043.pppg[0];
+        host_07.pppg[16] <--> infiniteline <--> sink_044.pppg[0];
+        host_07.pppg[17] <--> infiniteline <--> sink_045.pppg[0];
+        host_07.pppg[18] <--> infiniteline <--> sink_046.pppg[0];
+        host_07.pppg[19] <--> infiniteline <--> sink_047.pppg[0];
+        host_07.pppg[1] <--> infiniteline <--> sink_029.pppg[0];
+        host_07.pppg[20] <--> infiniteline <--> sink_048.pppg[0];
+        host_07.pppg[2] <--> infiniteline <--> sink_030.pppg[0];
+        host_07.pppg[3] <--> infiniteline <--> sink_031.pppg[0];
+        host_07.pppg[4] <--> infiniteline <--> sink_032.pppg[0];
+        host_07.pppg[5] <--> infiniteline <--> sink_033.pppg[0];
+        host_07.pppg[6] <--> infiniteline <--> sink_034.pppg[0];
+        host_07.pppg[7] <--> infiniteline <--> sink_035.pppg[0];
+        host_07.pppg[8] <--> infiniteline <--> sink_036.pppg[0];
+        host_07.pppg[9] <--> infiniteline <--> sink_037.pppg[0];
+}

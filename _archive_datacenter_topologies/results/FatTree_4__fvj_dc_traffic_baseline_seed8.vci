@@ -1,0 +1,2699 @@
+file 465248 1651090927                                          
+version 2
+run General-0-20220427-20:21:50-21956
+attr configname General
+attr datetime 20220427-20:21:50
+attr experiment General
+attr inifile FatTree_4__fvj_dc_traffic_baseline_seed8.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network FatTree_4__fvj_dc_traffic_baseline_seed8
+attr processid 21956
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.ppp[*].ppp.queue.typename "\"DropTailQueue\""
+param **.ppp[*].ppp.queue.packetCapacity 100
+param *.configurator.config "xmldoc(\"FatTree_4__fvj_dc_traffic_baseline_seed8.xml\")"
+param **.sink_000.numApps 1
+param **.sink_000.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_000.app[0].localAddress "\"\""
+param **.sink_000.app[0].localPort 1100
+param **.sink_000.app[0].replyDelay 0s
+param **.sink_001.numApps 1
+param **.sink_001.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_001.app[0].localAddress "\"\""
+param **.sink_001.app[0].localPort 1100
+param **.sink_001.app[0].replyDelay 0s
+param **.sink_002.numApps 1
+param **.sink_002.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_002.app[0].localAddress "\"\""
+param **.sink_002.app[0].localPort 1100
+param **.sink_002.app[0].replyDelay 0s
+param **.sink_003.numApps 1
+param **.sink_003.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_003.app[0].localAddress "\"\""
+param **.sink_003.app[0].localPort 1100
+param **.sink_003.app[0].replyDelay 0s
+param **.sink_004.numApps 1
+param **.sink_004.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_004.app[0].localAddress "\"\""
+param **.sink_004.app[0].localPort 1100
+param **.sink_004.app[0].replyDelay 0s
+param **.sink_005.numApps 1
+param **.sink_005.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_005.app[0].localAddress "\"\""
+param **.sink_005.app[0].localPort 1100
+param **.sink_005.app[0].replyDelay 0s
+param **.sink_006.numApps 1
+param **.sink_006.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_006.app[0].localAddress "\"\""
+param **.sink_006.app[0].localPort 1100
+param **.sink_006.app[0].replyDelay 0s
+param **.sink_007.numApps 1
+param **.sink_007.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_007.app[0].localAddress "\"\""
+param **.sink_007.app[0].localPort 1100
+param **.sink_007.app[0].replyDelay 0s
+param **.sink_008.numApps 1
+param **.sink_008.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_008.app[0].localAddress "\"\""
+param **.sink_008.app[0].localPort 1100
+param **.sink_008.app[0].replyDelay 0s
+param **.sink_009.numApps 1
+param **.sink_009.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_009.app[0].localAddress "\"\""
+param **.sink_009.app[0].localPort 1100
+param **.sink_009.app[0].replyDelay 0s
+param **.sink_010.numApps 1
+param **.sink_010.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_010.app[0].localAddress "\"\""
+param **.sink_010.app[0].localPort 1100
+param **.sink_010.app[0].replyDelay 0s
+param **.sink_011.numApps 1
+param **.sink_011.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_011.app[0].localAddress "\"\""
+param **.sink_011.app[0].localPort 1100
+param **.sink_011.app[0].replyDelay 0s
+param **.sink_012.numApps 1
+param **.sink_012.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_012.app[0].localAddress "\"\""
+param **.sink_012.app[0].localPort 1100
+param **.sink_012.app[0].replyDelay 0s
+param **.sink_013.numApps 1
+param **.sink_013.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_013.app[0].localAddress "\"\""
+param **.sink_013.app[0].localPort 1100
+param **.sink_013.app[0].replyDelay 0s
+param **.sink_014.numApps 1
+param **.sink_014.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_014.app[0].localAddress "\"\""
+param **.sink_014.app[0].localPort 1100
+param **.sink_014.app[0].replyDelay 0s
+param **.sink_015.numApps 1
+param **.sink_015.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_015.app[0].localAddress "\"\""
+param **.sink_015.app[0].localPort 1100
+param **.sink_015.app[0].replyDelay 0s
+param **.sink_016.numApps 1
+param **.sink_016.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_016.app[0].localAddress "\"\""
+param **.sink_016.app[0].localPort 1100
+param **.sink_016.app[0].replyDelay 0s
+param **.sink_017.numApps 1
+param **.sink_017.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_017.app[0].localAddress "\"\""
+param **.sink_017.app[0].localPort 1100
+param **.sink_017.app[0].replyDelay 0s
+param **.sink_018.numApps 1
+param **.sink_018.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_018.app[0].localAddress "\"\""
+param **.sink_018.app[0].localPort 1100
+param **.sink_018.app[0].replyDelay 0s
+param **.sink_019.numApps 1
+param **.sink_019.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_019.app[0].localAddress "\"\""
+param **.sink_019.app[0].localPort 1100
+param **.sink_019.app[0].replyDelay 0s
+param **.sink_020.numApps 1
+param **.sink_020.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_020.app[0].localAddress "\"\""
+param **.sink_020.app[0].localPort 1100
+param **.sink_020.app[0].replyDelay 0s
+param **.sink_021.numApps 1
+param **.sink_021.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_021.app[0].localAddress "\"\""
+param **.sink_021.app[0].localPort 1100
+param **.sink_021.app[0].replyDelay 0s
+param **.sink_022.numApps 1
+param **.sink_022.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_022.app[0].localAddress "\"\""
+param **.sink_022.app[0].localPort 1100
+param **.sink_022.app[0].replyDelay 0s
+param **.sink_023.numApps 1
+param **.sink_023.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_023.app[0].localAddress "\"\""
+param **.sink_023.app[0].localPort 1100
+param **.sink_023.app[0].replyDelay 0s
+param **.sink_024.numApps 1
+param **.sink_024.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_024.app[0].localAddress "\"\""
+param **.sink_024.app[0].localPort 1100
+param **.sink_024.app[0].replyDelay 0s
+param **.sink_025.numApps 1
+param **.sink_025.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_025.app[0].localAddress "\"\""
+param **.sink_025.app[0].localPort 1100
+param **.sink_025.app[0].replyDelay 0s
+param **.sink_026.numApps 1
+param **.sink_026.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_026.app[0].localAddress "\"\""
+param **.sink_026.app[0].localPort 1100
+param **.sink_026.app[0].replyDelay 0s
+param **.sink_027.numApps 1
+param **.sink_027.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_027.app[0].localAddress "\"\""
+param **.sink_027.app[0].localPort 1100
+param **.sink_027.app[0].replyDelay 0s
+param **.sink_028.numApps 1
+param **.sink_028.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_028.app[0].localAddress "\"\""
+param **.sink_028.app[0].localPort 1100
+param **.sink_028.app[0].replyDelay 0s
+param **.sink_029.numApps 1
+param **.sink_029.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_029.app[0].localAddress "\"\""
+param **.sink_029.app[0].localPort 1100
+param **.sink_029.app[0].replyDelay 0s
+param **.sink_030.numApps 1
+param **.sink_030.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_030.app[0].localAddress "\"\""
+param **.sink_030.app[0].localPort 1100
+param **.sink_030.app[0].replyDelay 0s
+param **.sink_031.numApps 1
+param **.sink_031.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_031.app[0].localAddress "\"\""
+param **.sink_031.app[0].localPort 1100
+param **.sink_031.app[0].replyDelay 0s
+param **.sink_032.numApps 1
+param **.sink_032.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_032.app[0].localAddress "\"\""
+param **.sink_032.app[0].localPort 1100
+param **.sink_032.app[0].replyDelay 0s
+param **.sink_033.numApps 1
+param **.sink_033.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_033.app[0].localAddress "\"\""
+param **.sink_033.app[0].localPort 1100
+param **.sink_033.app[0].replyDelay 0s
+param **.sink_034.numApps 1
+param **.sink_034.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_034.app[0].localAddress "\"\""
+param **.sink_034.app[0].localPort 1100
+param **.sink_034.app[0].replyDelay 0s
+param **.sink_035.numApps 1
+param **.sink_035.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_035.app[0].localAddress "\"\""
+param **.sink_035.app[0].localPort 1100
+param **.sink_035.app[0].replyDelay 0s
+param **.sink_036.numApps 1
+param **.sink_036.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_036.app[0].localAddress "\"\""
+param **.sink_036.app[0].localPort 1100
+param **.sink_036.app[0].replyDelay 0s
+param **.sink_037.numApps 1
+param **.sink_037.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_037.app[0].localAddress "\"\""
+param **.sink_037.app[0].localPort 1100
+param **.sink_037.app[0].replyDelay 0s
+param **.sink_038.numApps 1
+param **.sink_038.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_038.app[0].localAddress "\"\""
+param **.sink_038.app[0].localPort 1100
+param **.sink_038.app[0].replyDelay 0s
+param **.sink_039.numApps 1
+param **.sink_039.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_039.app[0].localAddress "\"\""
+param **.sink_039.app[0].localPort 1100
+param **.sink_039.app[0].replyDelay 0s
+param **.sink_040.numApps 1
+param **.sink_040.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_040.app[0].localAddress "\"\""
+param **.sink_040.app[0].localPort 1100
+param **.sink_040.app[0].replyDelay 0s
+param **.sink_041.numApps 1
+param **.sink_041.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_041.app[0].localAddress "\"\""
+param **.sink_041.app[0].localPort 1100
+param **.sink_041.app[0].replyDelay 0s
+param **.sink_042.numApps 1
+param **.sink_042.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_042.app[0].localAddress "\"\""
+param **.sink_042.app[0].localPort 1100
+param **.sink_042.app[0].replyDelay 0s
+param **.sink_043.numApps 1
+param **.sink_043.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_043.app[0].localAddress "\"\""
+param **.sink_043.app[0].localPort 1100
+param **.sink_043.app[0].replyDelay 0s
+param **.sink_044.numApps 1
+param **.sink_044.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_044.app[0].localAddress "\"\""
+param **.sink_044.app[0].localPort 1100
+param **.sink_044.app[0].replyDelay 0s
+param **.sink_045.numApps 1
+param **.sink_045.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_045.app[0].localAddress "\"\""
+param **.sink_045.app[0].localPort 1100
+param **.sink_045.app[0].replyDelay 0s
+param **.sink_046.numApps 1
+param **.sink_046.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_046.app[0].localAddress "\"\""
+param **.sink_046.app[0].localPort 1100
+param **.sink_046.app[0].replyDelay 0s
+param **.sink_047.numApps 1
+param **.sink_047.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_047.app[0].localAddress "\"\""
+param **.sink_047.app[0].localPort 1100
+param **.sink_047.app[0].replyDelay 0s
+param **.sink_048.numApps 1
+param **.sink_048.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_048.app[0].localAddress "\"\""
+param **.sink_048.app[0].localPort 1100
+param **.sink_048.app[0].replyDelay 0s
+param **.sink_049.numApps 1
+param **.sink_049.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_049.app[0].localAddress "\"\""
+param **.sink_049.app[0].localPort 1100
+param **.sink_049.app[0].replyDelay 0s
+param **.sink_050.numApps 1
+param **.sink_050.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_050.app[0].localAddress "\"\""
+param **.sink_050.app[0].localPort 1100
+param **.sink_050.app[0].replyDelay 0s
+param **.sink_051.numApps 1
+param **.sink_051.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_051.app[0].localAddress "\"\""
+param **.sink_051.app[0].localPort 1100
+param **.sink_051.app[0].replyDelay 0s
+param **.sink_052.numApps 1
+param **.sink_052.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_052.app[0].localAddress "\"\""
+param **.sink_052.app[0].localPort 1100
+param **.sink_052.app[0].replyDelay 0s
+param **.sink_053.numApps 1
+param **.sink_053.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_053.app[0].localAddress "\"\""
+param **.sink_053.app[0].localPort 1100
+param **.sink_053.app[0].replyDelay 0s
+param **.sink_054.numApps 1
+param **.sink_054.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_054.app[0].localAddress "\"\""
+param **.sink_054.app[0].localPort 1100
+param **.sink_054.app[0].replyDelay 0s
+param **.sink_055.numApps 1
+param **.sink_055.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_055.app[0].localAddress "\"\""
+param **.sink_055.app[0].localPort 1100
+param **.sink_055.app[0].replyDelay 0s
+param **.sink_056.numApps 1
+param **.sink_056.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_056.app[0].localAddress "\"\""
+param **.sink_056.app[0].localPort 1100
+param **.sink_056.app[0].replyDelay 0s
+param **.sink_057.numApps 1
+param **.sink_057.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_057.app[0].localAddress "\"\""
+param **.sink_057.app[0].localPort 1100
+param **.sink_057.app[0].replyDelay 0s
+param **.sink_058.numApps 1
+param **.sink_058.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_058.app[0].localAddress "\"\""
+param **.sink_058.app[0].localPort 1100
+param **.sink_058.app[0].replyDelay 0s
+param **.sink_059.numApps 1
+param **.sink_059.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_059.app[0].localAddress "\"\""
+param **.sink_059.app[0].localPort 1100
+param **.sink_059.app[0].replyDelay 0s
+param **.sink_060.numApps 1
+param **.sink_060.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_060.app[0].localAddress "\"\""
+param **.sink_060.app[0].localPort 1100
+param **.sink_060.app[0].replyDelay 0s
+param **.sink_061.numApps 1
+param **.sink_061.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_061.app[0].localAddress "\"\""
+param **.sink_061.app[0].localPort 1100
+param **.sink_061.app[0].replyDelay 0s
+param **.sink_062.numApps 1
+param **.sink_062.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_062.app[0].localAddress "\"\""
+param **.sink_062.app[0].localPort 1100
+param **.sink_062.app[0].replyDelay 0s
+param **.sink_063.numApps 1
+param **.sink_063.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_063.app[0].localAddress "\"\""
+param **.sink_063.app[0].localPort 1100
+param **.sink_063.app[0].replyDelay 0s
+param **.sink_064.numApps 1
+param **.sink_064.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_064.app[0].localAddress "\"\""
+param **.sink_064.app[0].localPort 1100
+param **.sink_064.app[0].replyDelay 0s
+param **.sink_065.numApps 1
+param **.sink_065.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_065.app[0].localAddress "\"\""
+param **.sink_065.app[0].localPort 1100
+param **.sink_065.app[0].replyDelay 0s
+param **.sink_066.numApps 1
+param **.sink_066.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_066.app[0].localAddress "\"\""
+param **.sink_066.app[0].localPort 1100
+param **.sink_066.app[0].replyDelay 0s
+param **.sink_067.numApps 1
+param **.sink_067.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_067.app[0].localAddress "\"\""
+param **.sink_067.app[0].localPort 1100
+param **.sink_067.app[0].replyDelay 0s
+param **.sink_068.numApps 1
+param **.sink_068.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_068.app[0].localAddress "\"\""
+param **.sink_068.app[0].localPort 1100
+param **.sink_068.app[0].replyDelay 0s
+param **.sink_069.numApps 1
+param **.sink_069.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_069.app[0].localAddress "\"\""
+param **.sink_069.app[0].localPort 1100
+param **.sink_069.app[0].replyDelay 0s
+param **.sink_070.numApps 1
+param **.sink_070.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_070.app[0].localAddress "\"\""
+param **.sink_070.app[0].localPort 1100
+param **.sink_070.app[0].replyDelay 0s
+param **.sink_071.numApps 1
+param **.sink_071.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_071.app[0].localAddress "\"\""
+param **.sink_071.app[0].localPort 1100
+param **.sink_071.app[0].replyDelay 0s
+param **.sink_072.numApps 1
+param **.sink_072.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_072.app[0].localAddress "\"\""
+param **.sink_072.app[0].localPort 1100
+param **.sink_072.app[0].replyDelay 0s
+param **.sink_073.numApps 1
+param **.sink_073.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_073.app[0].localAddress "\"\""
+param **.sink_073.app[0].localPort 1100
+param **.sink_073.app[0].replyDelay 0s
+param **.sink_074.numApps 1
+param **.sink_074.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_074.app[0].localAddress "\"\""
+param **.sink_074.app[0].localPort 1100
+param **.sink_074.app[0].replyDelay 0s
+param **.sink_075.numApps 1
+param **.sink_075.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_075.app[0].localAddress "\"\""
+param **.sink_075.app[0].localPort 1100
+param **.sink_075.app[0].replyDelay 0s
+param **.sink_076.numApps 1
+param **.sink_076.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_076.app[0].localAddress "\"\""
+param **.sink_076.app[0].localPort 1100
+param **.sink_076.app[0].replyDelay 0s
+param **.sink_077.numApps 1
+param **.sink_077.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_077.app[0].localAddress "\"\""
+param **.sink_077.app[0].localPort 1100
+param **.sink_077.app[0].replyDelay 0s
+param **.sink_078.numApps 1
+param **.sink_078.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_078.app[0].localAddress "\"\""
+param **.sink_078.app[0].localPort 1100
+param **.sink_078.app[0].replyDelay 0s
+param **.sink_079.numApps 1
+param **.sink_079.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_079.app[0].localAddress "\"\""
+param **.sink_079.app[0].localPort 1100
+param **.sink_079.app[0].replyDelay 0s
+param **.sink_080.numApps 1
+param **.sink_080.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_080.app[0].localAddress "\"\""
+param **.sink_080.app[0].localPort 1100
+param **.sink_080.app[0].replyDelay 0s
+param **.source_000.numApps 1
+param **.source_000.app[0].typename "\"TcpBasicClientApp\""
+param **.source_000.app[0].localAddress "\"\""
+param **.source_000.app[0].connectAddress "\"sink_000\""
+param **.source_000.app[0].connectPort 1100
+param **.source_000.app[0].startTime 0s
+param **.source_000.app[0].idleInterval 1000s
+param **.source_000.app[0].requestLength 1300B
+param **.source_000.app[0].replyLength 20B
+param **.source_000.app[0].thinkTime 0s
+param **.source_000.app[0].numRequestsPerSession 10
+param **.source_001.numApps 1
+param **.source_001.app[0].typename "\"TcpBasicClientApp\""
+param **.source_001.app[0].localAddress "\"\""
+param **.source_001.app[0].connectAddress "\"sink_001\""
+param **.source_001.app[0].connectPort 1100
+param **.source_001.app[0].startTime 0s
+param **.source_001.app[0].idleInterval 1000s
+param **.source_001.app[0].requestLength 1300B
+param **.source_001.app[0].replyLength 20B
+param **.source_001.app[0].thinkTime 0s
+param **.source_001.app[0].numRequestsPerSession 95
+param **.source_002.numApps 1
+param **.source_002.app[0].typename "\"TcpBasicClientApp\""
+param **.source_002.app[0].localAddress "\"\""
+param **.source_002.app[0].connectAddress "\"sink_002\""
+param **.source_002.app[0].connectPort 1100
+param **.source_002.app[0].startTime 0s
+param **.source_002.app[0].idleInterval 1000s
+param **.source_002.app[0].requestLength 1300B
+param **.source_002.app[0].replyLength 20B
+param **.source_002.app[0].thinkTime 0s
+param **.source_002.app[0].numRequestsPerSession 665
+param **.source_003.numApps 1
+param **.source_003.app[0].typename "\"TcpBasicClientApp\""
+param **.source_003.app[0].localAddress "\"\""
+param **.source_003.app[0].connectAddress "\"sink_003\""
+param **.source_003.app[0].connectPort 1100
+param **.source_003.app[0].startTime 0s
+param **.source_003.app[0].idleInterval 1000s
+param **.source_003.app[0].requestLength 1300B
+param **.source_003.app[0].replyLength 20B
+param **.source_003.app[0].thinkTime 0s
+param **.source_003.app[0].numRequestsPerSession 412
+param **.source_004.numApps 1
+param **.source_004.app[0].typename "\"TcpBasicClientApp\""
+param **.source_004.app[0].localAddress "\"\""
+param **.source_004.app[0].connectAddress "\"sink_004\""
+param **.source_004.app[0].connectPort 1100
+param **.source_004.app[0].startTime 0s
+param **.source_004.app[0].idleInterval 1000s
+param **.source_004.app[0].requestLength 1300B
+param **.source_004.app[0].replyLength 20B
+param **.source_004.app[0].thinkTime 0s
+param **.source_004.app[0].numRequestsPerSession 359
+param **.source_005.numApps 1
+param **.source_005.app[0].typename "\"TcpBasicClientApp\""
+param **.source_005.app[0].localAddress "\"\""
+param **.source_005.app[0].connectAddress "\"sink_005\""
+param **.source_005.app[0].connectPort 1100
+param **.source_005.app[0].startTime 0s
+param **.source_005.app[0].idleInterval 1000s
+param **.source_005.app[0].requestLength 1300B
+param **.source_005.app[0].replyLength 20B
+param **.source_005.app[0].thinkTime 0s
+param **.source_005.app[0].numRequestsPerSession 48
+param **.source_006.numApps 1
+param **.source_006.app[0].typename "\"TcpBasicClientApp\""
+param **.source_006.app[0].localAddress "\"\""
+param **.source_006.app[0].connectAddress "\"sink_006\""
+param **.source_006.app[0].connectPort 1100
+param **.source_006.app[0].startTime 0s
+param **.source_006.app[0].idleInterval 1000s
+param **.source_006.app[0].requestLength 1300B
+param **.source_006.app[0].replyLength 20B
+param **.source_006.app[0].thinkTime 0s
+param **.source_006.app[0].numRequestsPerSession 73
+param **.source_007.numApps 1
+param **.source_007.app[0].typename "\"TcpBasicClientApp\""
+param **.source_007.app[0].localAddress "\"\""
+param **.source_007.app[0].connectAddress "\"sink_007\""
+param **.source_007.app[0].connectPort 1100
+param **.source_007.app[0].startTime 0s
+param **.source_007.app[0].idleInterval 1000s
+param **.source_007.app[0].requestLength 1300B
+param **.source_007.app[0].replyLength 20B
+param **.source_007.app[0].thinkTime 0s
+param **.source_007.app[0].numRequestsPerSession 635
+param **.source_008.numApps 1
+param **.source_008.app[0].typename "\"TcpBasicClientApp\""
+param **.source_008.app[0].localAddress "\"\""
+param **.source_008.app[0].connectAddress "\"sink_008\""
+param **.source_008.app[0].connectPort 1100
+param **.source_008.app[0].startTime 0s
+param **.source_008.app[0].idleInterval 1000s
+param **.source_008.app[0].requestLength 1300B
+param **.source_008.app[0].replyLength 20B
+param **.source_008.app[0].thinkTime 0s
+param **.source_008.app[0].numRequestsPerSession 2
+param **.source_009.numApps 1
+param **.source_009.app[0].typename "\"TcpBasicClientApp\""
+param **.source_009.app[0].localAddress "\"\""
+param **.source_009.app[0].connectAddress "\"sink_009\""
+param **.source_009.app[0].connectPort 1100
+param **.source_009.app[0].startTime 0s
+param **.source_009.app[0].idleInterval 1000s
+param **.source_009.app[0].requestLength 1300B
+param **.source_009.app[0].replyLength 20B
+param **.source_009.app[0].thinkTime 0s
+param **.source_009.app[0].numRequestsPerSession 4
+param **.source_010.numApps 1
+param **.source_010.app[0].typename "\"TcpBasicClientApp\""
+param **.source_010.app[0].localAddress "\"\""
+param **.source_010.app[0].connectAddress "\"sink_010\""
+param **.source_010.app[0].connectPort 1100
+param **.source_010.app[0].startTime 0s
+param **.source_010.app[0].idleInterval 1000s
+param **.source_010.app[0].requestLength 1300B
+param **.source_010.app[0].replyLength 20B
+param **.source_010.app[0].thinkTime 0s
+param **.source_010.app[0].numRequestsPerSession 2
+param **.source_011.numApps 1
+param **.source_011.app[0].typename "\"TcpBasicClientApp\""
+param **.source_011.app[0].localAddress "\"\""
+param **.source_011.app[0].connectAddress "\"sink_011\""
+param **.source_011.app[0].connectPort 1100
+param **.source_011.app[0].startTime 0s
+param **.source_011.app[0].idleInterval 1000s
+param **.source_011.app[0].requestLength 1300B
+param **.source_011.app[0].replyLength 20B
+param **.source_011.app[0].thinkTime 0s
+param **.source_011.app[0].numRequestsPerSession 8
+param **.source_012.numApps 1
+param **.source_012.app[0].typename "\"TcpBasicClientApp\""
+param **.source_012.app[0].localAddress "\"\""
+param **.source_012.app[0].connectAddress "\"sink_012\""
+param **.source_012.app[0].connectPort 1100
+param **.source_012.app[0].startTime 0s
+param **.source_012.app[0].idleInterval 1000s
+param **.source_012.app[0].requestLength 1300B
+param **.source_012.app[0].replyLength 20B
+param **.source_012.app[0].thinkTime 0s
+param **.source_012.app[0].numRequestsPerSession 5
+param **.source_013.numApps 1
+param **.source_013.app[0].typename "\"TcpBasicClientApp\""
+param **.source_013.app[0].localAddress "\"\""
+param **.source_013.app[0].connectAddress "\"sink_013\""
+param **.source_013.app[0].connectPort 1100
+param **.source_013.app[0].startTime 0s
+param **.source_013.app[0].idleInterval 1000s
+param **.source_013.app[0].requestLength 1300B
+param **.source_013.app[0].replyLength 20B
+param **.source_013.app[0].thinkTime 0s
+param **.source_013.app[0].numRequestsPerSession 7
+param **.source_014.numApps 1
+param **.source_014.app[0].typename "\"TcpBasicClientApp\""
+param **.source_014.app[0].localAddress "\"\""
+param **.source_014.app[0].connectAddress "\"sink_014\""
+param **.source_014.app[0].connectPort 1100
+param **.source_014.app[0].startTime 0s
+param **.source_014.app[0].idleInterval 1000s
+param **.source_014.app[0].requestLength 1300B
+param **.source_014.app[0].replyLength 20B
+param **.source_014.app[0].thinkTime 0s
+param **.source_014.app[0].numRequestsPerSession 5
+param **.source_015.numApps 1
+param **.source_015.app[0].typename "\"TcpBasicClientApp\""
+param **.source_015.app[0].localAddress "\"\""
+param **.source_015.app[0].connectAddress "\"sink_015\""
+param **.source_015.app[0].connectPort 1100
+param **.source_015.app[0].startTime 0s
+param **.source_015.app[0].idleInterval 1000s
+param **.source_015.app[0].requestLength 1300B
+param **.source_015.app[0].replyLength 20B
+param **.source_015.app[0].thinkTime 0s
+param **.source_015.app[0].numRequestsPerSession 171
+param **.source_016.numApps 1
+param **.source_016.app[0].typename "\"TcpBasicClientApp\""
+param **.source_016.app[0].localAddress "\"\""
+param **.source_016.app[0].connectAddress "\"sink_016\""
+param **.source_016.app[0].connectPort 1100
+param **.source_016.app[0].startTime 0s
+param **.source_016.app[0].idleInterval 1000s
+param **.source_016.app[0].requestLength 1300B
+param **.source_016.app[0].replyLength 20B
+param **.source_016.app[0].thinkTime 0s
+param **.source_016.app[0].numRequestsPerSession 2
+param **.source_017.numApps 1
+param **.source_017.app[0].typename "\"TcpBasicClientApp\""
+param **.source_017.app[0].localAddress "\"\""
+param **.source_017.app[0].connectAddress "\"sink_017\""
+param **.source_017.app[0].connectPort 1100
+param **.source_017.app[0].startTime 0s
+param **.source_017.app[0].idleInterval 1000s
+param **.source_017.app[0].requestLength 1300B
+param **.source_017.app[0].replyLength 20B
+param **.source_017.app[0].thinkTime 0s
+param **.source_017.app[0].numRequestsPerSession 6
+param **.source_018.numApps 1
+param **.source_018.app[0].typename "\"TcpBasicClientApp\""
+param **.source_018.app[0].localAddress "\"\""
+param **.source_018.app[0].connectAddress "\"sink_018\""
+param **.source_018.app[0].connectPort 1100
+param **.source_018.app[0].startTime 0s
+param **.source_018.app[0].idleInterval 1000s
+param **.source_018.app[0].requestLength 1300B
+param **.source_018.app[0].replyLength 20B
+param **.source_018.app[0].thinkTime 0s
+param **.source_018.app[0].numRequestsPerSession 21
+param **.source_019.numApps 1
+param **.source_019.app[0].typename "\"TcpBasicClientApp\""
+param **.source_019.app[0].localAddress "\"\""
+param **.source_019.app[0].connectAddress "\"sink_019\""
+param **.source_019.app[0].connectPort 1100
+param **.source_019.app[0].startTime 0s
+param **.source_019.app[0].idleInterval 1000s
+param **.source_019.app[0].requestLength 1300B
+param **.source_019.app[0].replyLength 20B
+param **.source_019.app[0].thinkTime 0s
+param **.source_019.app[0].numRequestsPerSession 3
+param **.source_020.numApps 1
+param **.source_020.app[0].typename "\"TcpBasicClientApp\""
+param **.source_020.app[0].localAddress "\"\""
+param **.source_020.app[0].connectAddress "\"sink_020\""
+param **.source_020.app[0].connectPort 1100
+param **.source_020.app[0].startTime 0s
+param **.source_020.app[0].idleInterval 1000s
+param **.source_020.app[0].requestLength 1300B
+param **.source_020.app[0].replyLength 20B
+param **.source_020.app[0].thinkTime 0s
+param **.source_020.app[0].numRequestsPerSession 27
+param **.source_021.numApps 1
+param **.source_021.app[0].typename "\"TcpBasicClientApp\""
+param **.source_021.app[0].localAddress "\"\""
+param **.source_021.app[0].connectAddress "\"sink_021\""
+param **.source_021.app[0].connectPort 1100
+param **.source_021.app[0].startTime 0s
+param **.source_021.app[0].idleInterval 1000s
+param **.source_021.app[0].requestLength 1300B
+param **.source_021.app[0].replyLength 20B
+param **.source_021.app[0].thinkTime 0s
+param **.source_021.app[0].numRequestsPerSession 113
+param **.source_022.numApps 1
+param **.source_022.app[0].typename "\"TcpBasicClientApp\""
+param **.source_022.app[0].localAddress "\"\""
+param **.source_022.app[0].connectAddress "\"sink_022\""
+param **.source_022.app[0].connectPort 1100
+param **.source_022.app[0].startTime 0s
+param **.source_022.app[0].idleInterval 1000s
+param **.source_022.app[0].requestLength 1300B
+param **.source_022.app[0].replyLength 20B
+param **.source_022.app[0].thinkTime 0s
+param **.source_022.app[0].numRequestsPerSession 12
+param **.source_023.numApps 1
+param **.source_023.app[0].typename "\"TcpBasicClientApp\""
+param **.source_023.app[0].localAddress "\"\""
+param **.source_023.app[0].connectAddress "\"sink_023\""
+param **.source_023.app[0].connectPort 1100
+param **.source_023.app[0].startTime 0s
+param **.source_023.app[0].idleInterval 1000s
+param **.source_023.app[0].requestLength 1300B
+param **.source_023.app[0].replyLength 20B
+param **.source_023.app[0].thinkTime 0s
+param **.source_023.app[0].numRequestsPerSession 2
+param **.source_024.numApps 1
+param **.source_024.app[0].typename "\"TcpBasicClientApp\""
+param **.source_024.app[0].localAddress "\"\""
+param **.source_024.app[0].connectAddress "\"sink_024\""
+param **.source_024.app[0].connectPort 1100
+param **.source_024.app[0].startTime 0s
+param **.source_024.app[0].idleInterval 1000s
+param **.source_024.app[0].requestLength 1300B
+param **.source_024.app[0].replyLength 20B
+param **.source_024.app[0].thinkTime 0s
+param **.source_024.app[0].numRequestsPerSession 214
+param **.source_025.numApps 1
+param **.source_025.app[0].typename "\"TcpBasicClientApp\""
+param **.source_025.app[0].localAddress "\"\""
+param **.source_025.app[0].connectAddress "\"sink_025\""
+param **.source_025.app[0].connectPort 1100
+param **.source_025.app[0].startTime 0s
+param **.source_025.app[0].idleInterval 1000s
+param **.source_025.app[0].requestLength 1300B
+param **.source_025.app[0].replyLength 20B
+param **.source_025.app[0].thinkTime 0s
+param **.source_025.app[0].numRequestsPerSession 5
+param **.source_026.numApps 1
+param **.source_026.app[0].typename "\"TcpBasicClientApp\""
+param **.source_026.app[0].localAddress "\"\""
+param **.source_026.app[0].connectAddress "\"sink_026\""
+param **.source_026.app[0].connectPort 1100
+param **.source_026.app[0].startTime 0s
+param **.source_026.app[0].idleInterval 1000s
+param **.source_026.app[0].requestLength 1300B
+param **.source_026.app[0].replyLength 20B
+param **.source_026.app[0].thinkTime 0s
+param **.source_026.app[0].numRequestsPerSession 9
+param **.source_027.numApps 1
+param **.source_027.app[0].typename "\"TcpBasicClientApp\""
+param **.source_027.app[0].localAddress "\"\""
+param **.source_027.app[0].connectAddress "\"sink_027\""
+param **.source_027.app[0].connectPort 1100
+param **.source_027.app[0].startTime 0s
+param **.source_027.app[0].idleInterval 1000s
+param **.source_027.app[0].requestLength 1300B
+param **.source_027.app[0].replyLength 20B
+param **.source_027.app[0].thinkTime 0s
+param **.source_027.app[0].numRequestsPerSession 12
+param **.source_028.numApps 1
+param **.source_028.app[0].typename "\"TcpBasicClientApp\""
+param **.source_028.app[0].localAddress "\"\""
+param **.source_028.app[0].connectAddress "\"sink_028\""
+param **.source_028.app[0].connectPort 1100
+param **.source_028.app[0].startTime 0s
+param **.source_028.app[0].idleInterval 1000s
+param **.source_028.app[0].requestLength 1300B
+param **.source_028.app[0].replyLength 20B
+param **.source_028.app[0].thinkTime 0s
+param **.source_028.app[0].numRequestsPerSession 7
+param **.source_029.numApps 1
+param **.source_029.app[0].typename "\"TcpBasicClientApp\""
+param **.source_029.app[0].localAddress "\"\""
+param **.source_029.app[0].connectAddress "\"sink_029\""
+param **.source_029.app[0].connectPort 1100
+param **.source_029.app[0].startTime 0s
+param **.source_029.app[0].idleInterval 1000s
+param **.source_029.app[0].requestLength 1300B
+param **.source_029.app[0].replyLength 20B
+param **.source_029.app[0].thinkTime 0s
+param **.source_029.app[0].numRequestsPerSession 3
+param **.source_030.numApps 1
+param **.source_030.app[0].typename "\"TcpBasicClientApp\""
+param **.source_030.app[0].localAddress "\"\""
+param **.source_030.app[0].connectAddress "\"sink_030\""
+param **.source_030.app[0].connectPort 1100
+param **.source_030.app[0].startTime 0s
+param **.source_030.app[0].idleInterval 1000s
+param **.source_030.app[0].requestLength 1300B
+param **.source_030.app[0].replyLength 20B
+param **.source_030.app[0].thinkTime 0s
+param **.source_030.app[0].numRequestsPerSession 23
+param **.source_031.numApps 1
+param **.source_031.app[0].typename "\"TcpBasicClientApp\""
+param **.source_031.app[0].localAddress "\"\""
+param **.source_031.app[0].connectAddress "\"sink_031\""
+param **.source_031.app[0].connectPort 1100
+param **.source_031.app[0].startTime 0s
+param **.source_031.app[0].idleInterval 1000s
+param **.source_031.app[0].requestLength 1300B
+param **.source_031.app[0].replyLength 20B
+param **.source_031.app[0].thinkTime 0s
+param **.source_031.app[0].numRequestsPerSession 3
+param **.source_032.numApps 1
+param **.source_032.app[0].typename "\"TcpBasicClientApp\""
+param **.source_032.app[0].localAddress "\"\""
+param **.source_032.app[0].connectAddress "\"sink_032\""
+param **.source_032.app[0].connectPort 1100
+param **.source_032.app[0].startTime 0s
+param **.source_032.app[0].idleInterval 1000s
+param **.source_032.app[0].requestLength 1300B
+param **.source_032.app[0].replyLength 20B
+param **.source_032.app[0].thinkTime 0s
+param **.source_032.app[0].numRequestsPerSession 4
+param **.source_033.numApps 1
+param **.source_033.app[0].typename "\"TcpBasicClientApp\""
+param **.source_033.app[0].localAddress "\"\""
+param **.source_033.app[0].connectAddress "\"sink_033\""
+param **.source_033.app[0].connectPort 1100
+param **.source_033.app[0].startTime 0s
+param **.source_033.app[0].idleInterval 1000s
+param **.source_033.app[0].requestLength 1300B
+param **.source_033.app[0].replyLength 20B
+param **.source_033.app[0].thinkTime 0s
+param **.source_033.app[0].numRequestsPerSession 1
+param **.source_034.numApps 1
+param **.source_034.app[0].typename "\"TcpBasicClientApp\""
+param **.source_034.app[0].localAddress "\"\""
+param **.source_034.app[0].connectAddress "\"sink_034\""
+param **.source_034.app[0].connectPort 1100
+param **.source_034.app[0].startTime 0s
+param **.source_034.app[0].idleInterval 1000s
+param **.source_034.app[0].requestLength 1300B
+param **.source_034.app[0].replyLength 20B
+param **.source_034.app[0].thinkTime 0s
+param **.source_034.app[0].numRequestsPerSession 10
+param **.source_035.numApps 1
+param **.source_035.app[0].typename "\"TcpBasicClientApp\""
+param **.source_035.app[0].localAddress "\"\""
+param **.source_035.app[0].connectAddress "\"sink_035\""
+param **.source_035.app[0].connectPort 1100
+param **.source_035.app[0].startTime 0s
+param **.source_035.app[0].idleInterval 1000s
+param **.source_035.app[0].requestLength 1300B
+param **.source_035.app[0].replyLength 20B
+param **.source_035.app[0].thinkTime 0s
+param **.source_035.app[0].numRequestsPerSession 11
+param **.source_036.numApps 1
+param **.source_036.app[0].typename "\"TcpBasicClientApp\""
+param **.source_036.app[0].localAddress "\"\""
+param **.source_036.app[0].connectAddress "\"sink_036\""
+param **.source_036.app[0].connectPort 1100
+param **.source_036.app[0].startTime 0s
+param **.source_036.app[0].idleInterval 1000s
+param **.source_036.app[0].requestLength 1300B
+param **.source_036.app[0].replyLength 20B
+param **.source_036.app[0].thinkTime 0s
+param **.source_036.app[0].numRequestsPerSession 10
+param **.source_037.numApps 1
+param **.source_037.app[0].typename "\"TcpBasicClientApp\""
+param **.source_037.app[0].localAddress "\"\""
+param **.source_037.app[0].connectAddress "\"sink_037\""
+param **.source_037.app[0].connectPort 1100
+param **.source_037.app[0].startTime 0s
+param **.source_037.app[0].idleInterval 1000s
+param **.source_037.app[0].requestLength 1300B
+param **.source_037.app[0].replyLength 20B
+param **.source_037.app[0].thinkTime 0s
+param **.source_037.app[0].numRequestsPerSession 6
+param **.source_038.numApps 1
+param **.source_038.app[0].typename "\"TcpBasicClientApp\""
+param **.source_038.app[0].localAddress "\"\""
+param **.source_038.app[0].connectAddress "\"sink_038\""
+param **.source_038.app[0].connectPort 1100
+param **.source_038.app[0].startTime 0s
+param **.source_038.app[0].idleInterval 1000s
+param **.source_038.app[0].requestLength 1300B
+param **.source_038.app[0].replyLength 20B
+param **.source_038.app[0].thinkTime 0s
+param **.source_038.app[0].numRequestsPerSession 28
+param **.source_039.numApps 1
+param **.source_039.app[0].typename "\"TcpBasicClientApp\""
+param **.source_039.app[0].localAddress "\"\""
+param **.source_039.app[0].connectAddress "\"sink_039\""
+param **.source_039.app[0].connectPort 1100
+param **.source_039.app[0].startTime 0s
+param **.source_039.app[0].idleInterval 1000s
+param **.source_039.app[0].requestLength 1300B
+param **.source_039.app[0].replyLength 20B
+param **.source_039.app[0].thinkTime 0s
+param **.source_039.app[0].numRequestsPerSession 63
+param **.source_040.numApps 1
+param **.source_040.app[0].typename "\"TcpBasicClientApp\""
+param **.source_040.app[0].localAddress "\"\""
+param **.source_040.app[0].connectAddress "\"sink_040\""
+param **.source_040.app[0].connectPort 1100
+param **.source_040.app[0].startTime 0s
+param **.source_040.app[0].idleInterval 1000s
+param **.source_040.app[0].requestLength 1300B
+param **.source_040.app[0].replyLength 20B
+param **.source_040.app[0].thinkTime 0s
+param **.source_040.app[0].numRequestsPerSession 79
+param **.source_041.numApps 1
+param **.source_041.app[0].typename "\"TcpBasicClientApp\""
+param **.source_041.app[0].localAddress "\"\""
+param **.source_041.app[0].connectAddress "\"sink_041\""
+param **.source_041.app[0].connectPort 1100
+param **.source_041.app[0].startTime 0s
+param **.source_041.app[0].idleInterval 1000s
+param **.source_041.app[0].requestLength 1300B
+param **.source_041.app[0].replyLength 20B
+param **.source_041.app[0].thinkTime 0s
+param **.source_041.app[0].numRequestsPerSession 107
+param **.source_042.numApps 1
+param **.source_042.app[0].typename "\"TcpBasicClientApp\""
+param **.source_042.app[0].localAddress "\"\""
+param **.source_042.app[0].connectAddress "\"sink_042\""
+param **.source_042.app[0].connectPort 1100
+param **.source_042.app[0].startTime 0s
+param **.source_042.app[0].idleInterval 1000s
+param **.source_042.app[0].requestLength 1300B
+param **.source_042.app[0].replyLength 20B
+param **.source_042.app[0].thinkTime 0s
+param **.source_042.app[0].numRequestsPerSession 11
+param **.source_043.numApps 1
+param **.source_043.app[0].typename "\"TcpBasicClientApp\""
+param **.source_043.app[0].localAddress "\"\""
+param **.source_043.app[0].connectAddress "\"sink_043\""
+param **.source_043.app[0].connectPort 1100
+param **.source_043.app[0].startTime 0s
+param **.source_043.app[0].idleInterval 1000s
+param **.source_043.app[0].requestLength 1300B
+param **.source_043.app[0].replyLength 20B
+param **.source_043.app[0].thinkTime 0s
+param **.source_043.app[0].numRequestsPerSession 276
+param **.source_044.numApps 1
+param **.source_044.app[0].typename "\"TcpBasicClientApp\""
+param **.source_044.app[0].localAddress "\"\""
+param **.source_044.app[0].connectAddress "\"sink_044\""
+param **.source_044.app[0].connectPort 1100
+param **.source_044.app[0].startTime 0s
+param **.source_044.app[0].idleInterval 1000s
+param **.source_044.app[0].requestLength 1300B
+param **.source_044.app[0].replyLength 20B
+param **.source_044.app[0].thinkTime 0s
+param **.source_044.app[0].numRequestsPerSession 39
+param **.source_045.numApps 1
+param **.source_045.app[0].typename "\"TcpBasicClientApp\""
+param **.source_045.app[0].localAddress "\"\""
+param **.source_045.app[0].connectAddress "\"sink_045\""
+param **.source_045.app[0].connectPort 1100
+param **.source_045.app[0].startTime 0s
+param **.source_045.app[0].idleInterval 1000s
+param **.source_045.app[0].requestLength 1300B
+param **.source_045.app[0].replyLength 20B
+param **.source_045.app[0].thinkTime 0s
+param **.source_045.app[0].numRequestsPerSession 2
+param **.source_046.numApps 1
+param **.source_046.app[0].typename "\"TcpBasicClientApp\""
+param **.source_046.app[0].localAddress "\"\""
+param **.source_046.app[0].connectAddress "\"sink_046\""
+param **.source_046.app[0].connectPort 1100
+param **.source_046.app[0].startTime 0s
+param **.source_046.app[0].idleInterval 1000s
+param **.source_046.app[0].requestLength 1300B
+param **.source_046.app[0].replyLength 20B
+param **.source_046.app[0].thinkTime 0s
+param **.source_046.app[0].numRequestsPerSession 17
+param **.source_047.numApps 1
+param **.source_047.app[0].typename "\"TcpBasicClientApp\""
+param **.source_047.app[0].localAddress "\"\""
+param **.source_047.app[0].connectAddress "\"sink_047\""
+param **.source_047.app[0].connectPort 1100
+param **.source_047.app[0].startTime 0s
+param **.source_047.app[0].idleInterval 1000s
+param **.source_047.app[0].requestLength 1300B
+param **.source_047.app[0].replyLength 20B
+param **.source_047.app[0].thinkTime 0s
+param **.source_047.app[0].numRequestsPerSession 130
+param **.source_048.numApps 1
+param **.source_048.app[0].typename "\"TcpBasicClientApp\""
+param **.source_048.app[0].localAddress "\"\""
+param **.source_048.app[0].connectAddress "\"sink_048\""
+param **.source_048.app[0].connectPort 1100
+param **.source_048.app[0].startTime 0s
+param **.source_048.app[0].idleInterval 1000s
+param **.source_048.app[0].requestLength 1300B
+param **.source_048.app[0].replyLength 20B
+param **.source_048.app[0].thinkTime 0s
+param **.source_048.app[0].numRequestsPerSession 10
+param **.source_049.numApps 1
+param **.source_049.app[0].typename "\"TcpBasicClientApp\""
+param **.source_049.app[0].localAddress "\"\""
+param **.source_049.app[0].connectAddress "\"sink_049\""
+param **.source_049.app[0].connectPort 1100
+param **.source_049.app[0].startTime 0s
+param **.source_049.app[0].idleInterval 1000s
+param **.source_049.app[0].requestLength 1300B
+param **.source_049.app[0].replyLength 20B
+param **.source_049.app[0].thinkTime 0s
+param **.source_049.app[0].numRequestsPerSession 105
+param **.source_050.numApps 1
+param **.source_050.app[0].typename "\"TcpBasicClientApp\""
+param **.source_050.app[0].localAddress "\"\""
+param **.source_050.app[0].connectAddress "\"sink_050\""
+param **.source_050.app[0].connectPort 1100
+param **.source_050.app[0].startTime 0s
+param **.source_050.app[0].idleInterval 1000s
+param **.source_050.app[0].requestLength 1300B
+param **.source_050.app[0].replyLength 20B
+param **.source_050.app[0].thinkTime 0s
+param **.source_050.app[0].numRequestsPerSession 27
+param **.source_051.numApps 1
+param **.source_051.app[0].typename "\"TcpBasicClientApp\""
+param **.source_051.app[0].localAddress "\"\""
+param **.source_051.app[0].connectAddress "\"sink_051\""
+param **.source_051.app[0].connectPort 1100
+param **.source_051.app[0].startTime 0s
+param **.source_051.app[0].idleInterval 1000s
+param **.source_051.app[0].requestLength 1300B
+param **.source_051.app[0].replyLength 20B
+param **.source_051.app[0].thinkTime 0s
+param **.source_051.app[0].numRequestsPerSession 49
+param **.source_052.numApps 1
+param **.source_052.app[0].typename "\"TcpBasicClientApp\""
+param **.source_052.app[0].localAddress "\"\""
+param **.source_052.app[0].connectAddress "\"sink_052\""
+param **.source_052.app[0].connectPort 1100
+param **.source_052.app[0].startTime 0s
+param **.source_052.app[0].idleInterval 1000s
+param **.source_052.app[0].requestLength 1300B
+param **.source_052.app[0].replyLength 20B
+param **.source_052.app[0].thinkTime 0s
+param **.source_052.app[0].numRequestsPerSession 4
+param **.source_053.numApps 1
+param **.source_053.app[0].typename "\"TcpBasicClientApp\""
+param **.source_053.app[0].localAddress "\"\""
+param **.source_053.app[0].connectAddress "\"sink_053\""
+param **.source_053.app[0].connectPort 1100
+param **.source_053.app[0].startTime 0s
+param **.source_053.app[0].idleInterval 1000s
+param **.source_053.app[0].requestLength 1300B
+param **.source_053.app[0].replyLength 20B
+param **.source_053.app[0].thinkTime 0s
+param **.source_053.app[0].numRequestsPerSession 19
+param **.source_054.numApps 1
+param **.source_054.app[0].typename "\"TcpBasicClientApp\""
+param **.source_054.app[0].localAddress "\"\""
+param **.source_054.app[0].connectAddress "\"sink_054\""
+param **.source_054.app[0].connectPort 1100
+param **.source_054.app[0].startTime 0s
+param **.source_054.app[0].idleInterval 1000s
+param **.source_054.app[0].requestLength 1300B
+param **.source_054.app[0].replyLength 20B
+param **.source_054.app[0].thinkTime 0s
+param **.source_054.app[0].numRequestsPerSession 5
+param **.source_055.numApps 1
+param **.source_055.app[0].typename "\"TcpBasicClientApp\""
+param **.source_055.app[0].localAddress "\"\""
+param **.source_055.app[0].connectAddress "\"sink_055\""
+param **.source_055.app[0].connectPort 1100
+param **.source_055.app[0].startTime 0s
+param **.source_055.app[0].idleInterval 1000s
+param **.source_055.app[0].requestLength 1300B
+param **.source_055.app[0].replyLength 20B
+param **.source_055.app[0].thinkTime 0s
+param **.source_055.app[0].numRequestsPerSession 668
+param **.source_056.numApps 1
+param **.source_056.app[0].typename "\"TcpBasicClientApp\""
+param **.source_056.app[0].localAddress "\"\""
+param **.source_056.app[0].connectAddress "\"sink_056\""
+param **.source_056.app[0].connectPort 1100
+param **.source_056.app[0].startTime 0s
+param **.source_056.app[0].idleInterval 1000s
+param **.source_056.app[0].requestLength 1300B
+param **.source_056.app[0].replyLength 20B
+param **.source_056.app[0].thinkTime 0s
+param **.source_056.app[0].numRequestsPerSession 6
+param **.source_057.numApps 1
+param **.source_057.app[0].typename "\"TcpBasicClientApp\""
+param **.source_057.app[0].localAddress "\"\""
+param **.source_057.app[0].connectAddress "\"sink_057\""
+param **.source_057.app[0].connectPort 1100
+param **.source_057.app[0].startTime 0s
+param **.source_057.app[0].idleInterval 1000s
+param **.source_057.app[0].requestLength 1300B
+param **.source_057.app[0].replyLength 20B
+param **.source_057.app[0].thinkTime 0s
+param **.source_057.app[0].numRequestsPerSession 11
+param **.source_058.numApps 1
+param **.source_058.app[0].typename "\"TcpBasicClientApp\""
+param **.source_058.app[0].localAddress "\"\""
+param **.source_058.app[0].connectAddress "\"sink_058\""
+param **.source_058.app[0].connectPort 1100
+param **.source_058.app[0].startTime 0s
+param **.source_058.app[0].idleInterval 1000s
+param **.source_058.app[0].requestLength 1300B
+param **.source_058.app[0].replyLength 20B
+param **.source_058.app[0].thinkTime 0s
+param **.source_058.app[0].numRequestsPerSession 165
+param **.source_059.numApps 1
+param **.source_059.app[0].typename "\"TcpBasicClientApp\""
+param **.source_059.app[0].localAddress "\"\""
+param **.source_059.app[0].connectAddress "\"sink_059\""
+param **.source_059.app[0].connectPort 1100
+param **.source_059.app[0].startTime 0s
+param **.source_059.app[0].idleInterval 1000s
+param **.source_059.app[0].requestLength 1300B
+param **.source_059.app[0].replyLength 20B
+param **.source_059.app[0].thinkTime 0s
+param **.source_059.app[0].numRequestsPerSession 10
+param **.source_060.numApps 1
+param **.source_060.app[0].typename "\"TcpBasicClientApp\""
+param **.source_060.app[0].localAddress "\"\""
+param **.source_060.app[0].connectAddress "\"sink_060\""
+param **.source_060.app[0].connectPort 1100
+param **.source_060.app[0].startTime 0s
+param **.source_060.app[0].idleInterval 1000s
+param **.source_060.app[0].requestLength 1300B
+param **.source_060.app[0].replyLength 20B
+param **.source_060.app[0].thinkTime 0s
+param **.source_060.app[0].numRequestsPerSession 13
+param **.source_061.numApps 1
+param **.source_061.app[0].typename "\"TcpBasicClientApp\""
+param **.source_061.app[0].localAddress "\"\""
+param **.source_061.app[0].connectAddress "\"sink_061\""
+param **.source_061.app[0].connectPort 1100
+param **.source_061.app[0].startTime 0s
+param **.source_061.app[0].idleInterval 1000s
+param **.source_061.app[0].requestLength 1300B
+param **.source_061.app[0].replyLength 20B
+param **.source_061.app[0].thinkTime 0s
+param **.source_061.app[0].numRequestsPerSession 21
+param **.source_062.numApps 1
+param **.source_062.app[0].typename "\"TcpBasicClientApp\""
+param **.source_062.app[0].localAddress "\"\""
+param **.source_062.app[0].connectAddress "\"sink_062\""
+param **.source_062.app[0].connectPort 1100
+param **.source_062.app[0].startTime 0s
+param **.source_062.app[0].idleInterval 1000s
+param **.source_062.app[0].requestLength 1300B
+param **.source_062.app[0].replyLength 20B
+param **.source_062.app[0].thinkTime 0s
+param **.source_062.app[0].numRequestsPerSession 258
+param **.source_063.numApps 1
+param **.source_063.app[0].typename "\"TcpBasicClientApp\""
+param **.source_063.app[0].localAddress "\"\""
+param **.source_063.app[0].connectAddress "\"sink_063\""
+param **.source_063.app[0].connectPort 1100
+param **.source_063.app[0].startTime 0s
+param **.source_063.app[0].idleInterval 1000s
+param **.source_063.app[0].requestLength 1300B
+param **.source_063.app[0].replyLength 20B
+param **.source_063.app[0].thinkTime 0s
+param **.source_063.app[0].numRequestsPerSession 18
+param **.source_064.numApps 1
+param **.source_064.app[0].typename "\"TcpBasicClientApp\""
+param **.source_064.app[0].localAddress "\"\""
+param **.source_064.app[0].connectAddress "\"sink_064\""
+param **.source_064.app[0].connectPort 1100
+param **.source_064.app[0].startTime 0s
+param **.source_064.app[0].idleInterval 1000s
+param **.source_064.app[0].requestLength 1300B
+param **.source_064.app[0].replyLength 20B
+param **.source_064.app[0].thinkTime 0s
+param **.source_064.app[0].numRequestsPerSession 2
+param **.source_065.numApps 1
+param **.source_065.app[0].typename "\"TcpBasicClientApp\""
+param **.source_065.app[0].localAddress "\"\""
+param **.source_065.app[0].connectAddress "\"sink_065\""
+param **.source_065.app[0].connectPort 1100
+param **.source_065.app[0].startTime 0s
+param **.source_065.app[0].idleInterval 1000s
+param **.source_065.app[0].requestLength 1300B
+param **.source_065.app[0].replyLength 20B
+param **.source_065.app[0].thinkTime 0s
+param **.source_065.app[0].numRequestsPerSession 66
+param **.source_066.numApps 1
+param **.source_066.app[0].typename "\"TcpBasicClientApp\""
+param **.source_066.app[0].localAddress "\"\""
+param **.source_066.app[0].connectAddress "\"sink_066\""
+param **.source_066.app[0].connectPort 1100
+param **.source_066.app[0].startTime 0s
+param **.source_066.app[0].idleInterval 1000s
+param **.source_066.app[0].requestLength 1300B
+param **.source_066.app[0].replyLength 20B
+param **.source_066.app[0].thinkTime 0s
+param **.source_066.app[0].numRequestsPerSession 18
+param **.source_067.numApps 1
+param **.source_067.app[0].typename "\"TcpBasicClientApp\""
+param **.source_067.app[0].localAddress "\"\""
+param **.source_067.app[0].connectAddress "\"sink_067\""
+param **.source_067.app[0].connectPort 1100
+param **.source_067.app[0].startTime 0s
+param **.source_067.app[0].idleInterval 1000s
+param **.source_067.app[0].requestLength 1300B
+param **.source_067.app[0].replyLength 20B
+param **.source_067.app[0].thinkTime 0s
+param **.source_067.app[0].numRequestsPerSession 1
+param **.source_068.numApps 1
+param **.source_068.app[0].typename "\"TcpBasicClientApp\""
+param **.source_068.app[0].localAddress "\"\""
+param **.source_068.app[0].connectAddress "\"sink_068\""
+param **.source_068.app[0].connectPort 1100
+param **.source_068.app[0].startTime 0s
+param **.source_068.app[0].idleInterval 1000s
+param **.source_068.app[0].requestLength 1300B
+param **.source_068.app[0].replyLength 20B
+param **.source_068.app[0].thinkTime 0s
+param **.source_068.app[0].numRequestsPerSession 11
+param **.source_069.numApps 1
+param **.source_069.app[0].typename "\"TcpBasicClientApp\""
+param **.source_069.app[0].localAddress "\"\""
+param **.source_069.app[0].connectAddress "\"sink_069\""
+param **.source_069.app[0].connectPort 1100
+param **.source_069.app[0].startTime 0s
+param **.source_069.app[0].idleInterval 1000s
+param **.source_069.app[0].requestLength 1300B
+param **.source_069.app[0].replyLength 20B
+param **.source_069.app[0].thinkTime 0s
+param **.source_069.app[0].numRequestsPerSession 8
+param **.source_070.numApps 1
+param **.source_070.app[0].typename "\"TcpBasicClientApp\""
+param **.source_070.app[0].localAddress "\"\""
+param **.source_070.app[0].connectAddress "\"sink_070\""
+param **.source_070.app[0].connectPort 1100
+param **.source_070.app[0].startTime 0s
+param **.source_070.app[0].idleInterval 1000s
+param **.source_070.app[0].requestLength 1300B
+param **.source_070.app[0].replyLength 20B
+param **.source_070.app[0].thinkTime 0s
+param **.source_070.app[0].numRequestsPerSession 17
+param **.source_071.numApps 1
+param **.source_071.app[0].typename "\"TcpBasicClientApp\""
+param **.source_071.app[0].localAddress "\"\""
+param **.source_071.app[0].connectAddress "\"sink_071\""
+param **.source_071.app[0].connectPort 1100
+param **.source_071.app[0].startTime 0s
+param **.source_071.app[0].idleInterval 1000s
+param **.source_071.app[0].requestLength 1300B
+param **.source_071.app[0].replyLength 20B
+param **.source_071.app[0].thinkTime 0s
+param **.source_071.app[0].numRequestsPerSession 19
+param **.source_072.numApps 1
+param **.source_072.app[0].typename "\"TcpBasicClientApp\""
+param **.source_072.app[0].localAddress "\"\""
+param **.source_072.app[0].connectAddress "\"sink_072\""
+param **.source_072.app[0].connectPort 1100
+param **.source_072.app[0].startTime 0s
+param **.source_072.app[0].idleInterval 1000s
+param **.source_072.app[0].requestLength 1300B
+param **.source_072.app[0].replyLength 20B
+param **.source_072.app[0].thinkTime 0s
+param **.source_072.app[0].numRequestsPerSession 40
+param **.source_073.numApps 1
+param **.source_073.app[0].typename "\"TcpBasicClientApp\""
+param **.source_073.app[0].localAddress "\"\""
+param **.source_073.app[0].connectAddress "\"sink_073\""
+param **.source_073.app[0].connectPort 1100
+param **.source_073.app[0].startTime 0s
+param **.source_073.app[0].idleInterval 1000s
+param **.source_073.app[0].requestLength 1300B
+param **.source_073.app[0].replyLength 20B
+param **.source_073.app[0].thinkTime 0s
+param **.source_073.app[0].numRequestsPerSession 8
+param **.source_074.numApps 1
+param **.source_074.app[0].typename "\"TcpBasicClientApp\""
+param **.source_074.app[0].localAddress "\"\""
+param **.source_074.app[0].connectAddress "\"sink_074\""
+param **.source_074.app[0].connectPort 1100
+param **.source_074.app[0].startTime 0s
+param **.source_074.app[0].idleInterval 1000s
+param **.source_074.app[0].requestLength 1300B
+param **.source_074.app[0].replyLength 20B
+param **.source_074.app[0].thinkTime 0s
+param **.source_074.app[0].numRequestsPerSession 1
+param **.source_075.numApps 1
+param **.source_075.app[0].typename "\"TcpBasicClientApp\""
+param **.source_075.app[0].localAddress "\"\""
+param **.source_075.app[0].connectAddress "\"sink_075\""
+param **.source_075.app[0].connectPort 1100
+param **.source_075.app[0].startTime 0s
+param **.source_075.app[0].idleInterval 1000s
+param **.source_075.app[0].requestLength 1300B
+param **.source_075.app[0].replyLength 20B
+param **.source_075.app[0].thinkTime 0s
+param **.source_075.app[0].numRequestsPerSession 25
+param **.source_076.numApps 1
+param **.source_076.app[0].typename "\"TcpBasicClientApp\""
+param **.source_076.app[0].localAddress "\"\""
+param **.source_076.app[0].connectAddress "\"sink_076\""
+param **.source_076.app[0].connectPort 1100
+param **.source_076.app[0].startTime 0s
+param **.source_076.app[0].idleInterval 1000s
+param **.source_076.app[0].requestLength 1300B
+param **.source_076.app[0].replyLength 20B
+param **.source_076.app[0].thinkTime 0s
+param **.source_076.app[0].numRequestsPerSession 3
+param **.source_077.numApps 1
+param **.source_077.app[0].typename "\"TcpBasicClientApp\""
+param **.source_077.app[0].localAddress "\"\""
+param **.source_077.app[0].connectAddress "\"sink_077\""
+param **.source_077.app[0].connectPort 1100
+param **.source_077.app[0].startTime 0s
+param **.source_077.app[0].idleInterval 1000s
+param **.source_077.app[0].requestLength 1300B
+param **.source_077.app[0].replyLength 20B
+param **.source_077.app[0].thinkTime 0s
+param **.source_077.app[0].numRequestsPerSession 57
+param **.source_078.numApps 1
+param **.source_078.app[0].typename "\"TcpBasicClientApp\""
+param **.source_078.app[0].localAddress "\"\""
+param **.source_078.app[0].connectAddress "\"sink_078\""
+param **.source_078.app[0].connectPort 1100
+param **.source_078.app[0].startTime 0s
+param **.source_078.app[0].idleInterval 1000s
+param **.source_078.app[0].requestLength 1300B
+param **.source_078.app[0].replyLength 20B
+param **.source_078.app[0].thinkTime 0s
+param **.source_078.app[0].numRequestsPerSession 109
+param **.source_079.numApps 1
+param **.source_079.app[0].typename "\"TcpBasicClientApp\""
+param **.source_079.app[0].localAddress "\"\""
+param **.source_079.app[0].connectAddress "\"sink_079\""
+param **.source_079.app[0].connectPort 1100
+param **.source_079.app[0].startTime 0s
+param **.source_079.app[0].idleInterval 1000s
+param **.source_079.app[0].requestLength 1300B
+param **.source_079.app[0].replyLength 20B
+param **.source_079.app[0].thinkTime 0s
+param **.source_079.app[0].numRequestsPerSession 10
+param **.source_080.numApps 1
+param **.source_080.app[0].typename "\"TcpBasicClientApp\""
+param **.source_080.app[0].localAddress "\"\""
+param **.source_080.app[0].connectAddress "\"sink_080\""
+param **.source_080.app[0].connectPort 1100
+param **.source_080.app[0].startTime 0s
+param **.source_080.app[0].idleInterval 1000s
+param **.source_080.app[0].requestLength 1300B
+param **.source_080.app[0].replyLength 20B
+param **.source_080.app[0].thinkTime 0s
+param **.source_080.app[0].numRequestsPerSession 652
+param **.tcp.mss 1400
+param **.tcp.tcpAlgorithmClass "\"TcpReno\""
+param **.tcp.crcMode "\"computed\""
+param **.app[*].dataTransferMode "\"object\""
+
+vector 0 FatTree_4__fvj_dc_traffic_baseline_seed8.source_000.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 1 FatTree_4__fvj_dc_traffic_baseline_seed8.source_001.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 2 FatTree_4__fvj_dc_traffic_baseline_seed8.source_002.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 3 FatTree_4__fvj_dc_traffic_baseline_seed8.source_003.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 4 FatTree_4__fvj_dc_traffic_baseline_seed8.source_004.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 5 FatTree_4__fvj_dc_traffic_baseline_seed8.source_005.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 6 FatTree_4__fvj_dc_traffic_baseline_seed8.source_006.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 7 FatTree_4__fvj_dc_traffic_baseline_seed8.source_007.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 8 FatTree_4__fvj_dc_traffic_baseline_seed8.source_008.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 9 FatTree_4__fvj_dc_traffic_baseline_seed8.source_009.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 10 FatTree_4__fvj_dc_traffic_baseline_seed8.source_010.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 11 FatTree_4__fvj_dc_traffic_baseline_seed8.source_011.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 12 FatTree_4__fvj_dc_traffic_baseline_seed8.source_012.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 13 FatTree_4__fvj_dc_traffic_baseline_seed8.source_013.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 14 FatTree_4__fvj_dc_traffic_baseline_seed8.source_014.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 15 FatTree_4__fvj_dc_traffic_baseline_seed8.source_015.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 16 FatTree_4__fvj_dc_traffic_baseline_seed8.source_016.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 17 FatTree_4__fvj_dc_traffic_baseline_seed8.source_017.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 18 FatTree_4__fvj_dc_traffic_baseline_seed8.source_018.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 19 FatTree_4__fvj_dc_traffic_baseline_seed8.source_019.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 20 FatTree_4__fvj_dc_traffic_baseline_seed8.source_020.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 21 FatTree_4__fvj_dc_traffic_baseline_seed8.source_021.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 22 FatTree_4__fvj_dc_traffic_baseline_seed8.source_022.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 23 FatTree_4__fvj_dc_traffic_baseline_seed8.source_023.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 24 FatTree_4__fvj_dc_traffic_baseline_seed8.source_024.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 25 FatTree_4__fvj_dc_traffic_baseline_seed8.source_025.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 26 FatTree_4__fvj_dc_traffic_baseline_seed8.source_026.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 27 FatTree_4__fvj_dc_traffic_baseline_seed8.source_027.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 28 FatTree_4__fvj_dc_traffic_baseline_seed8.source_028.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 29 FatTree_4__fvj_dc_traffic_baseline_seed8.source_029.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 30 FatTree_4__fvj_dc_traffic_baseline_seed8.source_030.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 31 FatTree_4__fvj_dc_traffic_baseline_seed8.source_031.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 32 FatTree_4__fvj_dc_traffic_baseline_seed8.source_032.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 33 FatTree_4__fvj_dc_traffic_baseline_seed8.source_033.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 34 FatTree_4__fvj_dc_traffic_baseline_seed8.source_034.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 35 FatTree_4__fvj_dc_traffic_baseline_seed8.source_035.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 36 FatTree_4__fvj_dc_traffic_baseline_seed8.source_036.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 37 FatTree_4__fvj_dc_traffic_baseline_seed8.source_037.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 38 FatTree_4__fvj_dc_traffic_baseline_seed8.source_038.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 39 FatTree_4__fvj_dc_traffic_baseline_seed8.source_039.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 40 FatTree_4__fvj_dc_traffic_baseline_seed8.source_040.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 41 FatTree_4__fvj_dc_traffic_baseline_seed8.source_041.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 42 FatTree_4__fvj_dc_traffic_baseline_seed8.source_042.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 43 FatTree_4__fvj_dc_traffic_baseline_seed8.source_043.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 44 FatTree_4__fvj_dc_traffic_baseline_seed8.source_044.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 45 FatTree_4__fvj_dc_traffic_baseline_seed8.source_045.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 46 FatTree_4__fvj_dc_traffic_baseline_seed8.source_046.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 47 FatTree_4__fvj_dc_traffic_baseline_seed8.source_047.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 48 FatTree_4__fvj_dc_traffic_baseline_seed8.source_048.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 49 FatTree_4__fvj_dc_traffic_baseline_seed8.source_049.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 50 FatTree_4__fvj_dc_traffic_baseline_seed8.source_050.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 51 FatTree_4__fvj_dc_traffic_baseline_seed8.source_051.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 52 FatTree_4__fvj_dc_traffic_baseline_seed8.source_052.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 53 FatTree_4__fvj_dc_traffic_baseline_seed8.source_053.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 54 FatTree_4__fvj_dc_traffic_baseline_seed8.source_054.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 55 FatTree_4__fvj_dc_traffic_baseline_seed8.source_055.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 56 FatTree_4__fvj_dc_traffic_baseline_seed8.source_056.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 57 FatTree_4__fvj_dc_traffic_baseline_seed8.source_057.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 58 FatTree_4__fvj_dc_traffic_baseline_seed8.source_058.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 59 FatTree_4__fvj_dc_traffic_baseline_seed8.source_059.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 60 FatTree_4__fvj_dc_traffic_baseline_seed8.source_060.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 61 FatTree_4__fvj_dc_traffic_baseline_seed8.source_061.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 62 FatTree_4__fvj_dc_traffic_baseline_seed8.source_062.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 63 FatTree_4__fvj_dc_traffic_baseline_seed8.source_063.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 64 FatTree_4__fvj_dc_traffic_baseline_seed8.source_064.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 65 FatTree_4__fvj_dc_traffic_baseline_seed8.source_065.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 66 FatTree_4__fvj_dc_traffic_baseline_seed8.source_066.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 67 FatTree_4__fvj_dc_traffic_baseline_seed8.source_067.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 68 FatTree_4__fvj_dc_traffic_baseline_seed8.source_068.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 69 FatTree_4__fvj_dc_traffic_baseline_seed8.source_069.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 70 FatTree_4__fvj_dc_traffic_baseline_seed8.source_070.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 71 FatTree_4__fvj_dc_traffic_baseline_seed8.source_071.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 72 FatTree_4__fvj_dc_traffic_baseline_seed8.source_072.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 73 FatTree_4__fvj_dc_traffic_baseline_seed8.source_073.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 74 FatTree_4__fvj_dc_traffic_baseline_seed8.source_074.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 75 FatTree_4__fvj_dc_traffic_baseline_seed8.source_075.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 76 FatTree_4__fvj_dc_traffic_baseline_seed8.source_076.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 77 FatTree_4__fvj_dc_traffic_baseline_seed8.source_077.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 78 FatTree_4__fvj_dc_traffic_baseline_seed8.source_078.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 79 FatTree_4__fvj_dc_traffic_baseline_seed8.source_079.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 80 FatTree_4__fvj_dc_traffic_baseline_seed8.source_080.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 81 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_056.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 82 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_000.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 83 FatTree_4__fvj_dc_traffic_baseline_seed8.source_056.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 84 FatTree_4__fvj_dc_traffic_baseline_seed8.source_000.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 85 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_057.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 86 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_001.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 87 FatTree_4__fvj_dc_traffic_baseline_seed8.source_001.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 88 FatTree_4__fvj_dc_traffic_baseline_seed8.source_057.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 89 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_058.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 90 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_002.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 91 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_003.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 92 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_012.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 93 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_050.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 94 FatTree_4__fvj_dc_traffic_baseline_seed8.source_058.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 95 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_040.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 96 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_078.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 97 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_005.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 98 FatTree_4__fvj_dc_traffic_baseline_seed8.source_002.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 99 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_059.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 100 FatTree_4__fvj_dc_traffic_baseline_seed8.source_078.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 101 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_004.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 102 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_013.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 103 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_051.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 104 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_006.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 105 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_041.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 106 FatTree_4__fvj_dc_traffic_baseline_seed8.source_040.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 107 FatTree_4__fvj_dc_traffic_baseline_seed8.source_059.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 108 FatTree_4__fvj_dc_traffic_baseline_seed8.source_005.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 109 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_060.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 110 FatTree_4__fvj_dc_traffic_baseline_seed8.source_013.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 111 FatTree_4__fvj_dc_traffic_baseline_seed8.source_041.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 112 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_079.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 113 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_014.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 114 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_052.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 115 FatTree_4__fvj_dc_traffic_baseline_seed8.source_060.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 116 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_007.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 117 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_042.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 118 FatTree_4__fvj_dc_traffic_baseline_seed8.source_012.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 119 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_062.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 120 FatTree_4__fvj_dc_traffic_baseline_seed8.source_051.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 121 FatTree_4__fvj_dc_traffic_baseline_seed8.source_079.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 122 FatTree_4__fvj_dc_traffic_baseline_seed8.source_050.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 123 FatTree_4__fvj_dc_traffic_baseline_seed8.source_052.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 124 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_080.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 125 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_015.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 126 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_008.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 127 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_043.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 128 FatTree_4__fvj_dc_traffic_baseline_seed8.source_003.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 129 FatTree_4__fvj_dc_traffic_baseline_seed8.source_006.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 130 FatTree_4__fvj_dc_traffic_baseline_seed8.source_062.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 131 FatTree_4__fvj_dc_traffic_baseline_seed8.source_014.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 132 FatTree_4__fvj_dc_traffic_baseline_seed8.source_042.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 133 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_061.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 134 FatTree_4__fvj_dc_traffic_baseline_seed8.source_015.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 135 FatTree_4__fvj_dc_traffic_baseline_seed8.source_008.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 136 FatTree_4__fvj_dc_traffic_baseline_seed8.source_043.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 137 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_053.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 138 FatTree_4__fvj_dc_traffic_baseline_seed8.source_061.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 139 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_016.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 140 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_009.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 141 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_044.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 142 FatTree_4__fvj_dc_traffic_baseline_seed8.source_004.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 143 FatTree_4__fvj_dc_traffic_baseline_seed8.source_007.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 144 FatTree_4__fvj_dc_traffic_baseline_seed8.source_080.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 145 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_063.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 146 FatTree_4__fvj_dc_traffic_baseline_seed8.source_016.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 147 FatTree_4__fvj_dc_traffic_baseline_seed8.source_044.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 148 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_054.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 149 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_010.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 150 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_017.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 151 FatTree_4__fvj_dc_traffic_baseline_seed8.source_063.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 152 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_045.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 153 FatTree_4__fvj_dc_traffic_baseline_seed8.source_009.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 154 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_064.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 155 FatTree_4__fvj_dc_traffic_baseline_seed8.source_053.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 156 FatTree_4__fvj_dc_traffic_baseline_seed8.source_017.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 157 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_055.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 158 FatTree_4__fvj_dc_traffic_baseline_seed8.source_064.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 159 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_011.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 160 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_018.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 161 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_046.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 162 FatTree_4__fvj_dc_traffic_baseline_seed8.source_010.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 163 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_065.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 164 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_019.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 165 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_047.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 166 FatTree_4__fvj_dc_traffic_baseline_seed8.source_045.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 167 FatTree_4__fvj_dc_traffic_baseline_seed8.source_065.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 168 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_066.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 169 FatTree_4__fvj_dc_traffic_baseline_seed8.source_054.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 170 FatTree_4__fvj_dc_traffic_baseline_seed8.source_018.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 171 FatTree_4__fvj_dc_traffic_baseline_seed8.source_055.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 172 FatTree_4__fvj_dc_traffic_baseline_seed8.source_047.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 173 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_020.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 174 FatTree_4__fvj_dc_traffic_baseline_seed8.source_046.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 175 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_048.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 176 FatTree_4__fvj_dc_traffic_baseline_seed8.source_011.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 177 FatTree_4__fvj_dc_traffic_baseline_seed8.source_066.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 178 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_067.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 179 FatTree_4__fvj_dc_traffic_baseline_seed8.source_020.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 180 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_021.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 181 FatTree_4__fvj_dc_traffic_baseline_seed8.source_067.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 182 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_049.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 183 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_068.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 184 FatTree_4__fvj_dc_traffic_baseline_seed8.source_019.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 185 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_022.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 186 FatTree_4__fvj_dc_traffic_baseline_seed8.source_049.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 187 FatTree_4__fvj_dc_traffic_baseline_seed8.source_068.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 188 FatTree_4__fvj_dc_traffic_baseline_seed8.source_048.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 189 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_069.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 190 FatTree_4__fvj_dc_traffic_baseline_seed8.source_021.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 191 FatTree_4__fvj_dc_traffic_baseline_seed8.source_022.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 192 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_023.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 193 FatTree_4__fvj_dc_traffic_baseline_seed8.source_069.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 194 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_070.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 195 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_024.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 196 FatTree_4__fvj_dc_traffic_baseline_seed8.source_070.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 197 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_071.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 198 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_025.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 199 FatTree_4__fvj_dc_traffic_baseline_seed8.source_071.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 200 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_072.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 201 FatTree_4__fvj_dc_traffic_baseline_seed8.source_023.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 202 FatTree_4__fvj_dc_traffic_baseline_seed8.source_024.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 203 FatTree_4__fvj_dc_traffic_baseline_seed8.source_025.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 204 FatTree_4__fvj_dc_traffic_baseline_seed8.source_072.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 205 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_026.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 206 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_073.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 207 FatTree_4__fvj_dc_traffic_baseline_seed8.source_073.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 208 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_074.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 209 FatTree_4__fvj_dc_traffic_baseline_seed8.source_026.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 210 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_027.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 211 FatTree_4__fvj_dc_traffic_baseline_seed8.source_074.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 212 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_075.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 213 FatTree_4__fvj_dc_traffic_baseline_seed8.source_027.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 214 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_028.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 215 FatTree_4__fvj_dc_traffic_baseline_seed8.source_075.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 216 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_076.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 217 FatTree_4__fvj_dc_traffic_baseline_seed8.source_028.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 218 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_029.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 219 FatTree_4__fvj_dc_traffic_baseline_seed8.source_076.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 220 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_077.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 221 FatTree_4__fvj_dc_traffic_baseline_seed8.source_029.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 222 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_030.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 223 FatTree_4__fvj_dc_traffic_baseline_seed8.source_077.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 224 FatTree_4__fvj_dc_traffic_baseline_seed8.source_030.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 225 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_032.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 226 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_031.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 227 FatTree_4__fvj_dc_traffic_baseline_seed8.source_032.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 228 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_033.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 229 FatTree_4__fvj_dc_traffic_baseline_seed8.source_033.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 230 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_034.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 231 FatTree_4__fvj_dc_traffic_baseline_seed8.source_034.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 232 FatTree_4__fvj_dc_traffic_baseline_seed8.source_031.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 233 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_035.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 234 FatTree_4__fvj_dc_traffic_baseline_seed8.source_035.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 235 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_036.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 236 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_037.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 237 FatTree_4__fvj_dc_traffic_baseline_seed8.source_037.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 238 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_038.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 239 FatTree_4__fvj_dc_traffic_baseline_seed8.source_036.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 240 FatTree_4__fvj_dc_traffic_baseline_seed8.sink_039.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 241 FatTree_4__fvj_dc_traffic_baseline_seed8.source_038.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 242 FatTree_4__fvj_dc_traffic_baseline_seed8.source_039.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+0	109173 28 82 41701 0 0.073126 2 0 1 1 1
+1	109201 28 83 278111 0 0.66187 2 0 1 1 1
+2	109229 29 84 751967 0 4.415351 2 0 1 1 1
+3	109258 29 85 734950 0 4.133073 2 0 1 1 1
+4	109287 29 86 697069 0 3.624141 2 0 1 1 1
+5	109316 29 87 228204 0 0.507209 2 0 1 1 1
+6	109345 29 88 310517 0 0.779993 2 0 1 1 1
+7	109374 29 89 835120 0 6.333186 2 0 1 1 1
+8	109403 28 90 17166 0 0.026425 2 0 1 1 1
+9	109431 28 91 30479 0 0.051356 2 0 1 1 1
+10	109459 29 92 20659 0 0.03294 2 0 1 1 1
+11	109488 30 93 58062 0 0.105809 2 0 1 1 1
+12	109518 30 94 83231 0 0.158665 2 0 1 1 1
+13	109548 31 95 106256 0 0.211015 2 0 1 1 1
+14	109579 30 96 82496 0 0.157271 2 0 1 1 1
+15	109609 31 97 525261 0 1.930311 2 0 1 1 1
+16	109640 30 98 34154 0 0.057867 2 0 1 1 1
+17	109670 30 99 97181 0 0.190335 2 0 1 1 1
+18	109700 32 100 193214 0 0.417088 2 0 1 1 1
+19	109732 31 101 54889 0 0.099459 2 0 1 1 1
+20	109763 32 102 219629 0 0.484194 2 0 1 1 1
+21	109795 32 103 440297 0 1.367279 2 0 1 1 1
+22	109827 32 104 151560 0 0.313603 2 0 1 1 1
+23	109859 31 105 38994 0 0.067538 2 0 1 1 1
+24	109890 32 106 578527 0 2.365572 2 0 1 1 1
+25	109922 31 107 87630 0 0.168423 2 0 1 1 1
+26	109953 32 108 129410 0 0.262996 2 0 1 1 1
+27	109985 32 109 153378 0 0.317899 2 0 1 1 1
+28	110017 32 110 113071 0 0.225516 2 0 1 1 1
+29	110049 31 111 60877 0 0.111413 2 0 1 1 1
+30	110080 32 112 203935 0 0.443728 2 0 1 1 1
+31	110112 31 113 63788 0 0.117736 2 0 1 1 1
+32	110143 31 114 77303 0 0.146025 2 0 1 1 1
+33	110174 31 115 25467 0 0.042164 2 0 1 1 1
+34	110205 32 116 137500 0 0.281259 2 0 1 1 1
+35	110237 32 117 147566 0 0.303963 2 0 1 1 1
+36	110269 32 118 140176 0 0.288276 2 0 1 1 1
+37	110301 32 119 103921 0 0.205184 2 0 1 1 1
+38	110333 32 120 224654 0 0.497698 2 0 1 1 1
+39	110365 32 121 331385 0 0.863698 2 0 1 1 1
+40	110397 32 122 335858 0 0.882104 2 0 1 1 1
+41	110429 32 123 402178 0 1.172261 2 0 1 1 1
+42	110461 31 124 79387 0 0.150827 2 0 1 1 1
+43	110492 32 125 626460 0 2.830796 2 0 1 1 1
+44	110524 32 126 214223 0 0.470713 2 0 1 1 1
+45	110556 31 127 21940 0 0.035614 2 0 1 1 1
+46	110587 32 128 112574 0 0.224807 2 0 1 1 1
+47	110619 32 129 447532 0 1.406109 2 0 1 1 1
+48	110651 31 130 77596 0 0.146548 2 0 1 1 1
+49	110682 32 131 400351 0 1.166198 2 0 1 1 1
+50	110714 32 132 145357 0 0.299872 2 0 1 1 1
+51	110746 32 133 239401 0 0.540387 2 0 1 1 1
+52	110778 30 134 30932 0 0.05202 2 0 1 1 1
+53	110808 31 135 112950 0 0.22544 2 0 1 1 1
+54	110839 31 136 39920 0 0.069023 2 0 1 1 1
+55	110870 32 137 842271 0 6.647684 2 0 1 1 1
+56	110902 31 138 76272 0 0.143768 2 0 1 1 1
+57	110933 32 139 128196 0 0.259637 2 0 1 1 1
+58	110965 32 140 446457 0 1.401946 2 0 1 1 1
+59	110997 32 141 120564 0 0.241734 2 0 1 1 1
+60	111029 32 142 144469 0 0.297954 2 0 1 1 1
+61	111061 32 143 190985 0 0.411573 2 0 1 1 1
+62	111093 31 144 537725 0 2.02047 2 0 1 1 1
+63	111124 32 145 177698 0 0.378518 2 0 1 1 1
+64	111156 31 146 30591 0 0.051526 2 0 1 1 1
+65	111187 32 147 299253 0 0.735981 2 0 1 1 1
+66	111219 32 148 178746 0 0.381467 2 0 1 1 1
+67	111251 31 149 15225 0 0.023206 2 0 1 1 1
+68	111282 32 150 132305 0 0.269698 2 0 1 1 1
+69	111314 32 151 105301 0 0.208685 2 0 1 1 1
+70	111346 32 152 173138 0 0.367728 2 0 1 1 1
+71	111378 32 153 183527 0 0.393216 2 0 1 1 1
+72	111410 32 154 246293 0 0.561053 2 0 1 1 1
+73	111442 32 155 106118 0 0.210821 2 0 1 1 1
+74	111474 31 156 20849 0 0.033332 2 0 1 1 1
+75	111505 32 157 205068 0 0.447144 2 0 1 1 1
+76	111537 31 158 50981 0 0.091119 2 0 1 1 1
+77	111568 32 159 282392 0 0.676653 2 0 1 1 1
+78	111600 31 160 403021 0 1.17717 2 0 1 1 1
+79	111631 31 161 63861 0 0.117863 2 0 1 1 1
+80	111662 32 162 839757 0 6.488039 2 0 1 1 1
+81	111694 160 7343 75790 0.007043 0.143053 6 0.005835 0.030102 0.136032 0.003447177012
+82	111854 268 7364 41473 0.007047 0.072411 10 0.005835 0.005869 0.058384 0.000340870186
+83	112122 159 7612 76272 0.007758 0.143768 6 0.000715 0.002415 0.006528 9.316524e-06
+84	112281 269 7634 41701 0.007762 0.073126 10 0.000715 0.002576 0.01353 2.3203004e-05
+85	112550 295 7749 127150 0.008437 0.257784 11 0.007127 0.029781 0.247018 0.0058891028
+86	112845 2624 7770 277468 0.008441 0.660052 95 0.005835 0.007229 0.562296 0.003335717292
+87	115469 2608 8016 278111 0.009156 0.66187 95 0.000715 0.002106 0.098311 0.000119020193
+88	118077 298 8071 128196 0.009473 0.259637 11 0.000715 0.001853 0.011309 1.3071797e-05
+89	118375 4583 8116 446311 0.009831 1.401231 165 0.005835 0.030102 1.253992 0.012958341866
+90	122958 18574 8137 751862 0.009835 4.414636 665 0.005835 0.00847 3.8837309999999 0.022688952749
+91	141532 11488 8387 734810 0.010541 4.132024 412 0.008729 0.011034 3.618451 0.031802196801
+92	153020 134 8389 82681 0.010541 0.157616 5 0.008729 0.038545 0.147894 0.004958816708
+93	153154 734 8391 144827 0.010541 0.298823 27 0.008729 0.010791 0.24276 0.002190446854
+94	153888 4590 8436 446457 0.010546 1.401946 165 0.000715 0.002768 0.146593 0.000158937367
+95	158478 2177 8505 335394 0.010592 0.881055 79 0.008729 0.014191 0.772692 0.007646227662
+96	160655 3021 8507 402705 0.010592 1.176121 109 0.008729 0.010622 0.972425 0.008691754041
+97	163676 1322 8509 227742 0.010592 0.506109 48 0.008729 0.010009 0.435649 0.003965928003
+98	164998 18565 8654 751967 0.010828 4.415351 665 0.000715 0.002522 0.53025500000001 0.000472203273
+99	183563 268 8773 119645 0.011225 0.239568 10 0.009813 0.029781 0.226226 0.005381603054
+100	183831 3114 8859 403021 0.011641 1.17717 109 0.001049 0.005584 0.202882 0.000454654224
+101	186945 10343 9046 696937 0.011935 3.623092 359 0.008729 0.01006 3.145008 0.027563331696
+102	197288 194 9048 105710 0.011935 0.209805 7 0.010072 0.03788 0.200012 0.006265687402
+103	197482 1394 9081 238869 0.011939 0.538627 49 0.008729 0.010076 0.435074 0.003869668728
+104	198876 2093 9135 309858 0.011986 0.777436 73 0.008729 0.011383 0.644433 0.005700405421
+105	200969 3067 9221 401882 0.0121 1.171212 107 0.008729 0.015518 1.036391 0.010148928213
+106	204036 2264 9246 335858 0.012116 0.882104 79 0.001049 0.003598 0.107549 0.000166928771
+107	206300 282 9340 120564 0.012261 0.241734 10 0.000715 0.002166 0.014096 2.3279024e-05
+108	206582 1362 9425 228204 0.012478 0.507209 48 0.001049 0.002564 0.069697 0.000115624859
+109	207944 366 9486 144255 0.012619 0.297239 13 0.011105 0.030102 0.280735 0.006374388757
+110	208310 195 9583 106256 0.012993 0.211015 7 0.001049 0.002023 0.00914 1.2874e-05
+111	208505 3069 9652 402178 0.013149 1.172261 107 0.001049 0.003546 0.133956 0.00019025276
+112	211574 277 9770 62655 0.013282 0.115259 10 0.008729 0.011368 0.092696 0.000866433446
+113	211851 139 9815 81909 0.013329 0.156222 5 0.011415 0.038545 0.149374 0.00492600306
+114	211990 111 9839 29536 0.013333 0.049617 4 0.008729 0.011368 0.041442 0.000434111842
+115	212101 366 9860 144469 0.013334 0.297954 13 0.000715 0.002439 0.015705 2.3105529e-05
+116	212467 18372 9911 835027 0.01338 6.332137 635 0.008729 0.011415 5.553782 0.048591792406001
+117	230839 304 9988 77666 0.013494 0.146815 11 0.010201 0.012522 0.125319 0.001432728701
+118	231143 140 10114 83231 0.013722 0.158665 5 0.001049 0.003181 0.008959 2.0342125e-05
+119	231283 7454 10239 537570 0.014013 2.019755 258 0.005835 0.029714 1.794199 0.016222280759
+120	238737 1397 10329 239401 0.014241 0.540387 49 0.001049 0.004013 0.10345 0.000253448736
+121	240134 278 10369 63861 0.014342 0.117863 10 0.001049 0.005009 0.023253 6.9825609e-05
+122	240412 761 10391 145357 0.014355 0.299872 27 0.001049 0.004184 0.0553 0.00014496759
+123	241173 111 10439 30932 0.014469 0.05202 4 0.001136 0.003782 0.008613 2.3037693e-05
+124	241284 18775 10567 839683 0.014676 6.48699 652 0.008729 0.012711 5.777294 0.051302758500001
+125	260059 4931 10622 525122 0.014723 1.929262 171 0.008729 0.039283 1.707471 0.020364908159
+126	264990 56 10670 16360 0.014774 0.025188 2 0.009365 0.012758 0.022123 0.000250469789
+127	265046 7959 10783 626261 0.014888 2.829747 276 0.008729 0.013783 2.438674 0.021641773374
+128	273005 11870 10838 734950 0.014951 4.133073 412 0.001049 0.005292 0.51281 0.000740693372
+129	284875 2082 10927 310517 0.015065 0.779993 73 0.001049 0.004324 0.133646 0.000293502996
+130	286957 7455 11001 537725 0.015116 2.02047 258 0.000715 0.003049 0.224706 0.000241999162
+131	294412 139 11003 82496 0.015116 0.157271 5 0.001049 0.001787 0.005983 7.594973e-06
+132	294551 307 11052 79387 0.015179 0.150827 11 0.001049 0.004426 0.023543 6.4383185e-05
+133	294858 600 11167 190768 0.015407 0.410858 21 0.007891 0.030102 0.383331 0.007708448499
+134	295458 4923 11300 525261 0.015772 1.930311 171 0.001049 0.003629 0.220875 0.000324916681
+135	300381 56 11334 17166 0.015823 0.026425 2 0.001049 0.001237 0.002286 2.63057e-06
+136	300437 7948 11398 626460 0.015937 2.830796 276 0.001049 0.004343 0.390106 0.000667885334
+137	308385 533 11469 111552 0.016023 0.223017 19 0.008729 0.014007 0.181104 0.001759307766
+138	308918 595 11553 190985 0.016122 0.411573 21 0.000715 0.002587 0.026626 4.0295308e-05
+139	309513 56 11589 33357 0.016164 0.056496 2 0.014148 0.039283 0.053431 0.001743319993
+140	309569 112 11645 29690 0.016215 0.049941 4 0.008729 0.014148 0.041564 0.00045171855
+141	309681 1104 11679 213671 0.016235 0.469664 39 0.008729 0.014191 0.405598 0.004286801184
+142	310785 10357 11763 697069 0.016345 3.624141 359 0.001049 0.005522 0.477258 0.000772674456
+143	321142 18211 11955 835120 0.016644 6.333186 635 0.001049 0.004885 0.777439 0.001104475629
+144	339353 18842 12050 839757 0.016785 6.488039 652 0.001049 0.005792 0.70878 0.000827367884
+145	358195 510 12077 177060 0.016801 0.376791 18 0.013339 0.029941 0.354971 0.007467033005
+146	358705 56 12220 34154 0.017213 0.057867 2 0.001049 0.001371 0.00242 2.980042e-06
+147	358761 1113 12256 214223 0.017284 0.470713 39 0.001049 0.003063 0.063048 0.000116321302
+148	359874 139 12336 37608 0.017417 0.065045 5 0.008729 0.01535 0.05325 0.000596951576
+149	360013 55 12438 18649 0.017609 0.029417 2 0.01017 0.015491 0.025661 0.000343399981
+150	360068 166 12462 96556 0.017625 0.188707 6 0.015558 0.039129 0.176532 0.005556525412
+151	360234 511 12483 177698 0.01763 0.378518 18 0.000715 0.002217 0.02188 3.3289704e-05
+152	360745 56 12527 20107 0.017743 0.031797 2 0.011226 0.015625 0.026851 0.000370163701
+153	360801 111 12675 30479 0.018065 0.051356 4 0.001402 0.003058 0.007725 1.6741693e-05
+154	360912 56 12728 29183 0.018195 0.048965 2 0.016477 0.030055 0.046532 0.001174794554
+155	360968 532 12800 112950 0.018423 0.22544 19 0.001049 0.003911 0.04232 0.000112873706
+156	361500 168 12922 97181 0.018761 0.190335 6 0.001049 0.003091 0.011736 2.6271132e-05
+157	361668 19328 12944 842201 0.018764 6.646635 668 0.008729 0.016646 5.855365 0.051409673213001
+158	380996 55 13042 30591 0.01891 0.051526 2 0.000715 0.002561 0.003276 7.069946e-06
+159	381051 224 13085 56988 0.018956 0.103487 8 0.008729 0.016787 0.080591 0.000865849581
+160	381275 596 13109 192674 0.018972 0.416039 21 0.008729 0.037889 0.378995 0.008559332069
+161	381871 472 13182 111903 0.01909 0.223751 17 0.008729 0.016921 0.188776 0.002152304302
+162	382343 55 13274 20659 0.019247 0.03294 2 0.001638 0.003523 0.005161 1.5094573e-05
+163	382398 1888 13431 299083 0.019636 0.735266 66 0.005835 0.029828 0.663274 0.009522671506
+164	384286 82 13641 54270 0.020366 0.09841 3 0.018146 0.03807 0.09125 0.003005983372
+165	384368 3725 13725 447254 0.020484 1.40506 130 0.008729 0.018217 1.223502 0.011671821444
+166	388093 56 13770 21940 0.020571 0.035614 2 0.002828 0.003817 0.006645 2.2567073e-05
+167	388149 1902 13835 299253 0.020672 0.735981 66 0.000715 0.002596 0.070938 9.091309e-05
+168	390051 511 14048 178100 0.021097 0.37972 18 0.014088 0.029761 0.358014 0.007505640534
+169	390562 139 14152 39920 0.021288 0.069023 5 0.001113 0.003978 0.013706 4.3342712e-05
+170	390701 600 14185 193214 0.021348 0.417088 21 0.001049 0.003962 0.035932 7.3804178e-05
+171	391301 19225 14210 842271 0.021355 6.647684 668 0.001049 0.004682 0.790201 0.001065307675
+172	410526 3731 14366 447532 0.021659 1.406109 130 0.001049 0.003703 0.18034 0.000290543936
+173	414257 771 14431 219266 0.02176 0.483145 27 0.008957 0.037728 0.443657 0.009347580391
+174	415028 475 14506 112574 0.021918 0.224807 17 0.001049 0.003965 0.033862 8.5019172e-05
+175	415503 280 14540 76995 0.021972 0.145421 10 0.008921 0.019654 0.118538 0.00148915699
+176	415783 224 14603 58062 0.022082 0.105809 8 0.002309 0.003824 0.023049 6.8778749e-05
+177	416007 511 14647 178746 0.022133 0.381467 18 0.000715 0.00182 0.021633 2.8215093e-05
+178	416518 27 14832 14832 0.022491 0.022491 1 0.02062 0.02062 0.02062 0.0004251844
+179	416545 772 14999 219629 0.022903 0.484194 27 0.001049 0.003568 0.038266 6.8023602e-05
+180	417317 3249 15157 440018 0.023107 1.36623 113 0.008729 0.037842 1.23344 0.016579543966
+181	420566 28 15225 15225 0.023206 0.023206 1 0.000715 0.000715 0.000715 5.11225e-07
+182	420594 3014 15318 400045 0.023366 1.164561 105 0.008729 0.020997 0.984798 0.009444993358
+183	423608 311 15571 131930 0.023885 0.268983 11 0.017729 0.028688 0.251388 0.005833502136
+184	423919 84 15596 54889 0.023908 0.099459 3 0.001049 0.003542 0.005989 1.5600569e-05
+185	424003 341 15900 151061 0.024501 0.312554 12 0.013095 0.039169 0.293823 0.007886721955
+186	424344 3015 15930 400351 0.024529 1.166198 105 0.001049 0.003723 0.179031 0.000355788791
+187	427359 306 15986 132305 0.0246 0.269698 11 0.000715 0.0026 0.016388 2.9228392e-05
+188	427665 279 16054 77596 0.024706 0.146548 10 0.001127 0.005039 0.025692 8.0882868e-05
+189	427944 224 16436 104195 0.025279 0.205924 8 0.021757 0.028481 0.192486 0.004664663824
+190	428168 3259 16586 440297 0.02553 1.367279 113 0.001049 0.002682 0.131517 0.000165664531
+191	431427 341 16641 151560 0.025597 0.313603 12 0.001049 0.003868 0.017407 3.2375837e-05
+192	431768 55 16964 38213 0.026103 0.06616 2 0.023679 0.036401 0.06008 0.001885727842
+193	431823 225 17053 105301 0.026201 0.208685 8 0.000922 0.002761 0.014226 2.758523e-05
+194	432048 483 17325 172695 0.026673 0.365686 17 0.01264 0.028414 0.342182 0.007287194932
+195	432531 6183 17783 578250 0.027497 2.364523 214 0.008729 0.037681 2.073757 0.023421015405
+196	438714 483 17901 173138 0.027662 0.367728 17 0.000715 0.002694 0.023522 3.998328e-05
+197	439197 533 18138 183248 0.028102 0.392501 19 0.010672 0.0283 0.371617 0.007790517007
+198	439730 139 18403 87194 0.028938 0.167374 5 0.026412 0.039008 0.159497 0.005183279373
+199	439869 538 18504 183527 0.02917 0.393216 19 0.000715 0.001995 0.019524 2.3424712e-05
+200	440407 1144 18731 246098 0.029496 0.560338 40 0.005835 0.028653 0.508495 0.008635217791
+201	441551 56 18874 38994 0.029759 0.067538 2 0.001378 0.003656 0.005034 1.526522e-05
+202	441607 6173 18959 578527 0.029873 2.365572 214 0.001049 0.004744 0.28934 0.000456998708
+203	447780 138 19071 87630 0.029987 0.168423 5 0.001049 0.00213 0.0064 9.099232e-06
+204	447918 1145 19196 246293 0.030211 0.561053 40 0.000715 0.00346 0.050432 8.1644448e-05
+205	449063 252 19289 128628 0.030332 0.2606 9 0.015856 0.037775 0.242168 0.006902596916
+206	449315 222 19594 105837 0.03089 0.210106 8 0.02303 0.028713 0.201522 0.005113622388
+207	449537 225 20078 106118 0.031766 0.210821 8 0.000715 0.001783 0.007122 7.291134e-06
+208	449762 28 20252 20252 0.032284 0.032284 1 0.030056 0.030056 0.030056 0.000903363136
+209	449790 254 20393 129410 0.032614 0.262996 9 0.001049 0.003848 0.018251 4.3557055e-05
+210	450044 341 20494 152247 0.032751 0.315389 12 0.014426 0.037983 0.290721 0.007733386493
+211	450385 28 20849 20849 0.033332 0.033332 1 0.001048 0.001048 0.001048 1.098304e-06
+212	450413 717 20973 204594 0.033678 0.445802 25 0.006315 0.031399 0.416579 0.008245064381
+213	451130 336 21062 153378 0.0338 0.317899 12 0.001049 0.003478 0.02455 5.9012274e-05
+214	451466 197 21194 111979 0.034145 0.223839 7 0.022582 0.037983 0.21132 0.006547405958
+215	451663 711 21445 205068 0.034554 0.447144 25 0.000715 0.002482 0.028286 4.1188218e-05
+216	452374 83 21668 50315 0.035072 0.089893 3 0.024573 0.032742 0.084429 0.002411039889
+217	452457 196 21708 113071 0.035194 0.225516 7 0.001049 0.003951 0.011517 2.5484673e-05
+218	452653 84 21881 59927 0.035539 0.109703 3 0.032809 0.037983 0.104875 0.003680789659
+219	452737 82 22221 50981 0.036026 0.091119 3 0.000954 0.00218 0.00436 7.165592e-06
+220	452819 1635 22459 282205 0.036466 0.675938 57 0.005835 0.034085 0.618221 0.009585563029
+221	454454 82 22521 60877 0.036588 0.111413 3 0.001049 0.00171 0.003808 5.124902e-06
+222	454536 657 22701 202915 0.036886 0.441426 23 0.008729 0.038124 0.404631 0.009084465295
+223	455193 1637 22952 282392 0.037181 0.676653 57 0.000715 0.002788 0.056051 7.0406433e-05
+224	456830 658 23336 203935 0.037935 0.443728 23 0.001049 0.002577 0.036316 6.5223356e-05
+225	457488 112 23558 76785 0.038327 0.144976 4 0.031356 0.037187 0.137866 0.004770300314
+226	457600 83 24150 62718 0.039721 0.115326 3 0.03369 0.036838 0.10713 0.003831760748
+227	457683 110 24418 77303 0.040266 0.146025 4 0.001049 0.001939 0.005327 7.610895e-06
+228	457793 28 24816 24816 0.041115 0.041115 1 0.038181 0.038181 0.038181 0.001457788761
+229	457821 28 25467 25467 0.042164 0.042164 1 0.001049 0.001049 0.001049 1.100401e-06
+230	457849 284 25679 137047 0.042509 0.28021 10 0.015773 0.039524 0.263403 0.007507976697
+231	458133 283 26210 137500 0.043558 0.281259 10 0.001049 0.00369 0.014871 2.9689391e-05
+232	458416 83 26291 63788 0.043686 0.117736 3 0.001348 0.003965 0.007723 2.3346429e-05
+233	458499 311 26411 146934 0.043903 0.302749 11 0.014987 0.040867 0.285424 0.008151082794
+234	458810 309 27023 147566 0.04516 0.303963 11 0.001049 0.003417 0.015503 2.6715523e-05
+235	459119 284 27114 139794 0.045297 0.287227 10 0.017167 0.04221 0.27065 0.00795989295
+236	459403 168 27824 103413 0.046644 0.204135 6 0.024372 0.043506 0.194633 0.006540845181
+237	459571 169 28524 103921 0.047693 0.205184 6 0.001049 0.002168 0.007413 1.0202229e-05
+238	459740 801 28736 223912 0.048038 0.495597 28 0.008729 0.044849 0.457223 0.010085174107
+239	460541 282 29146 140176 0.048934 0.288276 10 0.001049 0.003637 0.014539 2.8331077e-05
+240	460823 1809 29412 331114 0.049432 0.862649 63 0.008729 0.046192 0.774312 0.013069139554
+241	462632 805 29435 224654 0.049456 0.497698 28 0.001049 0.002316 0.037286 5.454801e-05
+242	463437 1810 30063 331385 0.050481 0.863698 63 0.001049 0.00314 0.086146 0.00013664304
+

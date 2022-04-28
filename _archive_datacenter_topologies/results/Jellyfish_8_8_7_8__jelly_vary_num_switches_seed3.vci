@@ -1,0 +1,1808 @@
+file 250281 1651094317                                          
+version 2
+run General-0-20220427-21:18:28-22285
+attr configname General
+attr datetime 20220427-21:18:28
+attr experiment General
+attr inifile Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3
+attr processid 22285
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.ppp[*].ppp.queue.typename "\"DropTailQueue\""
+param **.ppp[*].ppp.queue.packetCapacity 100
+param *.configurator.config "xmldoc(\"Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.xml\")"
+param **.sink_000.numApps 1
+param **.sink_000.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_000.app[0].localAddress "\"\""
+param **.sink_000.app[0].localPort 1100
+param **.sink_000.app[0].replyDelay 0s
+param **.sink_001.numApps 1
+param **.sink_001.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_001.app[0].localAddress "\"\""
+param **.sink_001.app[0].localPort 1100
+param **.sink_001.app[0].replyDelay 0s
+param **.sink_002.numApps 1
+param **.sink_002.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_002.app[0].localAddress "\"\""
+param **.sink_002.app[0].localPort 1100
+param **.sink_002.app[0].replyDelay 0s
+param **.sink_003.numApps 1
+param **.sink_003.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_003.app[0].localAddress "\"\""
+param **.sink_003.app[0].localPort 1100
+param **.sink_003.app[0].replyDelay 0s
+param **.sink_004.numApps 1
+param **.sink_004.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_004.app[0].localAddress "\"\""
+param **.sink_004.app[0].localPort 1100
+param **.sink_004.app[0].replyDelay 0s
+param **.sink_005.numApps 1
+param **.sink_005.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_005.app[0].localAddress "\"\""
+param **.sink_005.app[0].localPort 1100
+param **.sink_005.app[0].replyDelay 0s
+param **.sink_006.numApps 1
+param **.sink_006.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_006.app[0].localAddress "\"\""
+param **.sink_006.app[0].localPort 1100
+param **.sink_006.app[0].replyDelay 0s
+param **.sink_007.numApps 1
+param **.sink_007.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_007.app[0].localAddress "\"\""
+param **.sink_007.app[0].localPort 1100
+param **.sink_007.app[0].replyDelay 0s
+param **.sink_008.numApps 1
+param **.sink_008.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_008.app[0].localAddress "\"\""
+param **.sink_008.app[0].localPort 1100
+param **.sink_008.app[0].replyDelay 0s
+param **.sink_009.numApps 1
+param **.sink_009.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_009.app[0].localAddress "\"\""
+param **.sink_009.app[0].localPort 1100
+param **.sink_009.app[0].replyDelay 0s
+param **.sink_010.numApps 1
+param **.sink_010.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_010.app[0].localAddress "\"\""
+param **.sink_010.app[0].localPort 1100
+param **.sink_010.app[0].replyDelay 0s
+param **.sink_011.numApps 1
+param **.sink_011.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_011.app[0].localAddress "\"\""
+param **.sink_011.app[0].localPort 1100
+param **.sink_011.app[0].replyDelay 0s
+param **.sink_012.numApps 1
+param **.sink_012.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_012.app[0].localAddress "\"\""
+param **.sink_012.app[0].localPort 1100
+param **.sink_012.app[0].replyDelay 0s
+param **.sink_013.numApps 1
+param **.sink_013.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_013.app[0].localAddress "\"\""
+param **.sink_013.app[0].localPort 1100
+param **.sink_013.app[0].replyDelay 0s
+param **.sink_014.numApps 1
+param **.sink_014.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_014.app[0].localAddress "\"\""
+param **.sink_014.app[0].localPort 1100
+param **.sink_014.app[0].replyDelay 0s
+param **.sink_015.numApps 1
+param **.sink_015.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_015.app[0].localAddress "\"\""
+param **.sink_015.app[0].localPort 1100
+param **.sink_015.app[0].replyDelay 0s
+param **.sink_016.numApps 1
+param **.sink_016.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_016.app[0].localAddress "\"\""
+param **.sink_016.app[0].localPort 1100
+param **.sink_016.app[0].replyDelay 0s
+param **.sink_017.numApps 1
+param **.sink_017.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_017.app[0].localAddress "\"\""
+param **.sink_017.app[0].localPort 1100
+param **.sink_017.app[0].replyDelay 0s
+param **.sink_018.numApps 1
+param **.sink_018.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_018.app[0].localAddress "\"\""
+param **.sink_018.app[0].localPort 1100
+param **.sink_018.app[0].replyDelay 0s
+param **.sink_019.numApps 1
+param **.sink_019.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_019.app[0].localAddress "\"\""
+param **.sink_019.app[0].localPort 1100
+param **.sink_019.app[0].replyDelay 0s
+param **.sink_020.numApps 1
+param **.sink_020.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_020.app[0].localAddress "\"\""
+param **.sink_020.app[0].localPort 1100
+param **.sink_020.app[0].replyDelay 0s
+param **.sink_021.numApps 1
+param **.sink_021.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_021.app[0].localAddress "\"\""
+param **.sink_021.app[0].localPort 1100
+param **.sink_021.app[0].replyDelay 0s
+param **.sink_022.numApps 1
+param **.sink_022.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_022.app[0].localAddress "\"\""
+param **.sink_022.app[0].localPort 1100
+param **.sink_022.app[0].replyDelay 0s
+param **.sink_023.numApps 1
+param **.sink_023.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_023.app[0].localAddress "\"\""
+param **.sink_023.app[0].localPort 1100
+param **.sink_023.app[0].replyDelay 0s
+param **.sink_024.numApps 1
+param **.sink_024.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_024.app[0].localAddress "\"\""
+param **.sink_024.app[0].localPort 1100
+param **.sink_024.app[0].replyDelay 0s
+param **.sink_025.numApps 1
+param **.sink_025.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_025.app[0].localAddress "\"\""
+param **.sink_025.app[0].localPort 1100
+param **.sink_025.app[0].replyDelay 0s
+param **.sink_026.numApps 1
+param **.sink_026.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_026.app[0].localAddress "\"\""
+param **.sink_026.app[0].localPort 1100
+param **.sink_026.app[0].replyDelay 0s
+param **.sink_027.numApps 1
+param **.sink_027.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_027.app[0].localAddress "\"\""
+param **.sink_027.app[0].localPort 1100
+param **.sink_027.app[0].replyDelay 0s
+param **.sink_028.numApps 1
+param **.sink_028.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_028.app[0].localAddress "\"\""
+param **.sink_028.app[0].localPort 1100
+param **.sink_028.app[0].replyDelay 0s
+param **.sink_029.numApps 1
+param **.sink_029.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_029.app[0].localAddress "\"\""
+param **.sink_029.app[0].localPort 1100
+param **.sink_029.app[0].replyDelay 0s
+param **.sink_030.numApps 1
+param **.sink_030.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_030.app[0].localAddress "\"\""
+param **.sink_030.app[0].localPort 1100
+param **.sink_030.app[0].replyDelay 0s
+param **.sink_031.numApps 1
+param **.sink_031.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_031.app[0].localAddress "\"\""
+param **.sink_031.app[0].localPort 1100
+param **.sink_031.app[0].replyDelay 0s
+param **.sink_032.numApps 1
+param **.sink_032.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_032.app[0].localAddress "\"\""
+param **.sink_032.app[0].localPort 1100
+param **.sink_032.app[0].replyDelay 0s
+param **.sink_033.numApps 1
+param **.sink_033.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_033.app[0].localAddress "\"\""
+param **.sink_033.app[0].localPort 1100
+param **.sink_033.app[0].replyDelay 0s
+param **.sink_034.numApps 1
+param **.sink_034.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_034.app[0].localAddress "\"\""
+param **.sink_034.app[0].localPort 1100
+param **.sink_034.app[0].replyDelay 0s
+param **.sink_035.numApps 1
+param **.sink_035.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_035.app[0].localAddress "\"\""
+param **.sink_035.app[0].localPort 1100
+param **.sink_035.app[0].replyDelay 0s
+param **.sink_036.numApps 1
+param **.sink_036.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_036.app[0].localAddress "\"\""
+param **.sink_036.app[0].localPort 1100
+param **.sink_036.app[0].replyDelay 0s
+param **.sink_037.numApps 1
+param **.sink_037.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_037.app[0].localAddress "\"\""
+param **.sink_037.app[0].localPort 1100
+param **.sink_037.app[0].replyDelay 0s
+param **.sink_038.numApps 1
+param **.sink_038.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_038.app[0].localAddress "\"\""
+param **.sink_038.app[0].localPort 1100
+param **.sink_038.app[0].replyDelay 0s
+param **.sink_039.numApps 1
+param **.sink_039.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_039.app[0].localAddress "\"\""
+param **.sink_039.app[0].localPort 1100
+param **.sink_039.app[0].replyDelay 0s
+param **.sink_040.numApps 1
+param **.sink_040.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_040.app[0].localAddress "\"\""
+param **.sink_040.app[0].localPort 1100
+param **.sink_040.app[0].replyDelay 0s
+param **.sink_041.numApps 1
+param **.sink_041.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_041.app[0].localAddress "\"\""
+param **.sink_041.app[0].localPort 1100
+param **.sink_041.app[0].replyDelay 0s
+param **.sink_042.numApps 1
+param **.sink_042.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_042.app[0].localAddress "\"\""
+param **.sink_042.app[0].localPort 1100
+param **.sink_042.app[0].replyDelay 0s
+param **.sink_043.numApps 1
+param **.sink_043.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_043.app[0].localAddress "\"\""
+param **.sink_043.app[0].localPort 1100
+param **.sink_043.app[0].replyDelay 0s
+param **.sink_044.numApps 1
+param **.sink_044.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_044.app[0].localAddress "\"\""
+param **.sink_044.app[0].localPort 1100
+param **.sink_044.app[0].replyDelay 0s
+param **.sink_045.numApps 1
+param **.sink_045.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_045.app[0].localAddress "\"\""
+param **.sink_045.app[0].localPort 1100
+param **.sink_045.app[0].replyDelay 0s
+param **.sink_046.numApps 1
+param **.sink_046.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_046.app[0].localAddress "\"\""
+param **.sink_046.app[0].localPort 1100
+param **.sink_046.app[0].replyDelay 0s
+param **.sink_047.numApps 1
+param **.sink_047.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_047.app[0].localAddress "\"\""
+param **.sink_047.app[0].localPort 1100
+param **.sink_047.app[0].replyDelay 0s
+param **.sink_048.numApps 1
+param **.sink_048.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_048.app[0].localAddress "\"\""
+param **.sink_048.app[0].localPort 1100
+param **.sink_048.app[0].replyDelay 0s
+param **.sink_049.numApps 1
+param **.sink_049.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_049.app[0].localAddress "\"\""
+param **.sink_049.app[0].localPort 1100
+param **.sink_049.app[0].replyDelay 0s
+param **.sink_050.numApps 1
+param **.sink_050.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_050.app[0].localAddress "\"\""
+param **.sink_050.app[0].localPort 1100
+param **.sink_050.app[0].replyDelay 0s
+param **.sink_051.numApps 1
+param **.sink_051.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_051.app[0].localAddress "\"\""
+param **.sink_051.app[0].localPort 1100
+param **.sink_051.app[0].replyDelay 0s
+param **.sink_052.numApps 1
+param **.sink_052.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_052.app[0].localAddress "\"\""
+param **.sink_052.app[0].localPort 1100
+param **.sink_052.app[0].replyDelay 0s
+param **.sink_053.numApps 1
+param **.sink_053.app[0].typename "\"TcpGenericServerApp\""
+param **.sink_053.app[0].localAddress "\"\""
+param **.sink_053.app[0].localPort 1100
+param **.sink_053.app[0].replyDelay 0s
+param **.source_000.numApps 1
+param **.source_000.app[0].typename "\"TcpBasicClientApp\""
+param **.source_000.app[0].localAddress "\"\""
+param **.source_000.app[0].connectAddress "\"sink_000\""
+param **.source_000.app[0].connectPort 1100
+param **.source_000.app[0].startTime 0s
+param **.source_000.app[0].idleInterval 1000s
+param **.source_000.app[0].requestLength 1300B
+param **.source_000.app[0].replyLength 20B
+param **.source_000.app[0].thinkTime 0s
+param **.source_000.app[0].numRequestsPerSession 473
+param **.source_001.numApps 1
+param **.source_001.app[0].typename "\"TcpBasicClientApp\""
+param **.source_001.app[0].localAddress "\"\""
+param **.source_001.app[0].connectAddress "\"sink_001\""
+param **.source_001.app[0].connectPort 1100
+param **.source_001.app[0].startTime 0s
+param **.source_001.app[0].idleInterval 1000s
+param **.source_001.app[0].requestLength 1300B
+param **.source_001.app[0].replyLength 20B
+param **.source_001.app[0].thinkTime 0s
+param **.source_001.app[0].numRequestsPerSession 22
+param **.source_002.numApps 1
+param **.source_002.app[0].typename "\"TcpBasicClientApp\""
+param **.source_002.app[0].localAddress "\"\""
+param **.source_002.app[0].connectAddress "\"sink_002\""
+param **.source_002.app[0].connectPort 1100
+param **.source_002.app[0].startTime 0s
+param **.source_002.app[0].idleInterval 1000s
+param **.source_002.app[0].requestLength 1300B
+param **.source_002.app[0].replyLength 20B
+param **.source_002.app[0].thinkTime 0s
+param **.source_002.app[0].numRequestsPerSession 10
+param **.source_003.numApps 1
+param **.source_003.app[0].typename "\"TcpBasicClientApp\""
+param **.source_003.app[0].localAddress "\"\""
+param **.source_003.app[0].connectAddress "\"sink_003\""
+param **.source_003.app[0].connectPort 1100
+param **.source_003.app[0].startTime 0s
+param **.source_003.app[0].idleInterval 1000s
+param **.source_003.app[0].requestLength 1300B
+param **.source_003.app[0].replyLength 20B
+param **.source_003.app[0].thinkTime 0s
+param **.source_003.app[0].numRequestsPerSession 5
+param **.source_004.numApps 1
+param **.source_004.app[0].typename "\"TcpBasicClientApp\""
+param **.source_004.app[0].localAddress "\"\""
+param **.source_004.app[0].connectAddress "\"sink_004\""
+param **.source_004.app[0].connectPort 1100
+param **.source_004.app[0].startTime 0s
+param **.source_004.app[0].idleInterval 1000s
+param **.source_004.app[0].requestLength 1300B
+param **.source_004.app[0].replyLength 20B
+param **.source_004.app[0].thinkTime 0s
+param **.source_004.app[0].numRequestsPerSession 4
+param **.source_005.numApps 1
+param **.source_005.app[0].typename "\"TcpBasicClientApp\""
+param **.source_005.app[0].localAddress "\"\""
+param **.source_005.app[0].connectAddress "\"sink_005\""
+param **.source_005.app[0].connectPort 1100
+param **.source_005.app[0].startTime 0s
+param **.source_005.app[0].idleInterval 1000s
+param **.source_005.app[0].requestLength 1300B
+param **.source_005.app[0].replyLength 20B
+param **.source_005.app[0].thinkTime 0s
+param **.source_005.app[0].numRequestsPerSession 7
+param **.source_006.numApps 1
+param **.source_006.app[0].typename "\"TcpBasicClientApp\""
+param **.source_006.app[0].localAddress "\"\""
+param **.source_006.app[0].connectAddress "\"sink_006\""
+param **.source_006.app[0].connectPort 1100
+param **.source_006.app[0].startTime 0s
+param **.source_006.app[0].idleInterval 1000s
+param **.source_006.app[0].requestLength 1300B
+param **.source_006.app[0].replyLength 20B
+param **.source_006.app[0].thinkTime 0s
+param **.source_006.app[0].numRequestsPerSession 2
+param **.source_007.numApps 1
+param **.source_007.app[0].typename "\"TcpBasicClientApp\""
+param **.source_007.app[0].localAddress "\"\""
+param **.source_007.app[0].connectAddress "\"sink_007\""
+param **.source_007.app[0].connectPort 1100
+param **.source_007.app[0].startTime 0s
+param **.source_007.app[0].idleInterval 1000s
+param **.source_007.app[0].requestLength 1300B
+param **.source_007.app[0].replyLength 20B
+param **.source_007.app[0].thinkTime 0s
+param **.source_007.app[0].numRequestsPerSession 7
+param **.source_008.numApps 1
+param **.source_008.app[0].typename "\"TcpBasicClientApp\""
+param **.source_008.app[0].localAddress "\"\""
+param **.source_008.app[0].connectAddress "\"sink_008\""
+param **.source_008.app[0].connectPort 1100
+param **.source_008.app[0].startTime 0s
+param **.source_008.app[0].idleInterval 1000s
+param **.source_008.app[0].requestLength 1300B
+param **.source_008.app[0].replyLength 20B
+param **.source_008.app[0].thinkTime 0s
+param **.source_008.app[0].numRequestsPerSession 3
+param **.source_009.numApps 1
+param **.source_009.app[0].typename "\"TcpBasicClientApp\""
+param **.source_009.app[0].localAddress "\"\""
+param **.source_009.app[0].connectAddress "\"sink_009\""
+param **.source_009.app[0].connectPort 1100
+param **.source_009.app[0].startTime 0s
+param **.source_009.app[0].idleInterval 1000s
+param **.source_009.app[0].requestLength 1300B
+param **.source_009.app[0].replyLength 20B
+param **.source_009.app[0].thinkTime 0s
+param **.source_009.app[0].numRequestsPerSession 59
+param **.source_010.numApps 1
+param **.source_010.app[0].typename "\"TcpBasicClientApp\""
+param **.source_010.app[0].localAddress "\"\""
+param **.source_010.app[0].connectAddress "\"sink_010\""
+param **.source_010.app[0].connectPort 1100
+param **.source_010.app[0].startTime 0s
+param **.source_010.app[0].idleInterval 1000s
+param **.source_010.app[0].requestLength 1300B
+param **.source_010.app[0].replyLength 20B
+param **.source_010.app[0].thinkTime 0s
+param **.source_010.app[0].numRequestsPerSession 59
+param **.source_011.numApps 1
+param **.source_011.app[0].typename "\"TcpBasicClientApp\""
+param **.source_011.app[0].localAddress "\"\""
+param **.source_011.app[0].connectAddress "\"sink_011\""
+param **.source_011.app[0].connectPort 1100
+param **.source_011.app[0].startTime 0s
+param **.source_011.app[0].idleInterval 1000s
+param **.source_011.app[0].requestLength 1300B
+param **.source_011.app[0].replyLength 20B
+param **.source_011.app[0].thinkTime 0s
+param **.source_011.app[0].numRequestsPerSession 124
+param **.source_012.numApps 1
+param **.source_012.app[0].typename "\"TcpBasicClientApp\""
+param **.source_012.app[0].localAddress "\"\""
+param **.source_012.app[0].connectAddress "\"sink_012\""
+param **.source_012.app[0].connectPort 1100
+param **.source_012.app[0].startTime 0s
+param **.source_012.app[0].idleInterval 1000s
+param **.source_012.app[0].requestLength 1300B
+param **.source_012.app[0].replyLength 20B
+param **.source_012.app[0].thinkTime 0s
+param **.source_012.app[0].numRequestsPerSession 9
+param **.source_013.numApps 1
+param **.source_013.app[0].typename "\"TcpBasicClientApp\""
+param **.source_013.app[0].localAddress "\"\""
+param **.source_013.app[0].connectAddress "\"sink_013\""
+param **.source_013.app[0].connectPort 1100
+param **.source_013.app[0].startTime 0s
+param **.source_013.app[0].idleInterval 1000s
+param **.source_013.app[0].requestLength 1300B
+param **.source_013.app[0].replyLength 20B
+param **.source_013.app[0].thinkTime 0s
+param **.source_013.app[0].numRequestsPerSession 4
+param **.source_014.numApps 1
+param **.source_014.app[0].typename "\"TcpBasicClientApp\""
+param **.source_014.app[0].localAddress "\"\""
+param **.source_014.app[0].connectAddress "\"sink_014\""
+param **.source_014.app[0].connectPort 1100
+param **.source_014.app[0].startTime 0s
+param **.source_014.app[0].idleInterval 1000s
+param **.source_014.app[0].requestLength 1300B
+param **.source_014.app[0].replyLength 20B
+param **.source_014.app[0].thinkTime 0s
+param **.source_014.app[0].numRequestsPerSession 3
+param **.source_015.numApps 1
+param **.source_015.app[0].typename "\"TcpBasicClientApp\""
+param **.source_015.app[0].localAddress "\"\""
+param **.source_015.app[0].connectAddress "\"sink_015\""
+param **.source_015.app[0].connectPort 1100
+param **.source_015.app[0].startTime 0s
+param **.source_015.app[0].idleInterval 1000s
+param **.source_015.app[0].requestLength 1300B
+param **.source_015.app[0].replyLength 20B
+param **.source_015.app[0].thinkTime 0s
+param **.source_015.app[0].numRequestsPerSession 74
+param **.source_016.numApps 1
+param **.source_016.app[0].typename "\"TcpBasicClientApp\""
+param **.source_016.app[0].localAddress "\"\""
+param **.source_016.app[0].connectAddress "\"sink_016\""
+param **.source_016.app[0].connectPort 1100
+param **.source_016.app[0].startTime 0s
+param **.source_016.app[0].idleInterval 1000s
+param **.source_016.app[0].requestLength 1300B
+param **.source_016.app[0].replyLength 20B
+param **.source_016.app[0].thinkTime 0s
+param **.source_016.app[0].numRequestsPerSession 5
+param **.source_017.numApps 1
+param **.source_017.app[0].typename "\"TcpBasicClientApp\""
+param **.source_017.app[0].localAddress "\"\""
+param **.source_017.app[0].connectAddress "\"sink_017\""
+param **.source_017.app[0].connectPort 1100
+param **.source_017.app[0].startTime 0s
+param **.source_017.app[0].idleInterval 1000s
+param **.source_017.app[0].requestLength 1300B
+param **.source_017.app[0].replyLength 20B
+param **.source_017.app[0].thinkTime 0s
+param **.source_017.app[0].numRequestsPerSession 236
+param **.source_018.numApps 1
+param **.source_018.app[0].typename "\"TcpBasicClientApp\""
+param **.source_018.app[0].localAddress "\"\""
+param **.source_018.app[0].connectAddress "\"sink_018\""
+param **.source_018.app[0].connectPort 1100
+param **.source_018.app[0].startTime 0s
+param **.source_018.app[0].idleInterval 1000s
+param **.source_018.app[0].requestLength 1300B
+param **.source_018.app[0].replyLength 20B
+param **.source_018.app[0].thinkTime 0s
+param **.source_018.app[0].numRequestsPerSession 14
+param **.source_019.numApps 1
+param **.source_019.app[0].typename "\"TcpBasicClientApp\""
+param **.source_019.app[0].localAddress "\"\""
+param **.source_019.app[0].connectAddress "\"sink_019\""
+param **.source_019.app[0].connectPort 1100
+param **.source_019.app[0].startTime 0s
+param **.source_019.app[0].idleInterval 1000s
+param **.source_019.app[0].requestLength 1300B
+param **.source_019.app[0].replyLength 20B
+param **.source_019.app[0].thinkTime 0s
+param **.source_019.app[0].numRequestsPerSession 2
+param **.source_020.numApps 1
+param **.source_020.app[0].typename "\"TcpBasicClientApp\""
+param **.source_020.app[0].localAddress "\"\""
+param **.source_020.app[0].connectAddress "\"sink_020\""
+param **.source_020.app[0].connectPort 1100
+param **.source_020.app[0].startTime 0s
+param **.source_020.app[0].idleInterval 1000s
+param **.source_020.app[0].requestLength 1300B
+param **.source_020.app[0].replyLength 20B
+param **.source_020.app[0].thinkTime 0s
+param **.source_020.app[0].numRequestsPerSession 33
+param **.source_021.numApps 1
+param **.source_021.app[0].typename "\"TcpBasicClientApp\""
+param **.source_021.app[0].localAddress "\"\""
+param **.source_021.app[0].connectAddress "\"sink_021\""
+param **.source_021.app[0].connectPort 1100
+param **.source_021.app[0].startTime 0s
+param **.source_021.app[0].idleInterval 1000s
+param **.source_021.app[0].requestLength 1300B
+param **.source_021.app[0].replyLength 20B
+param **.source_021.app[0].thinkTime 0s
+param **.source_021.app[0].numRequestsPerSession 6
+param **.source_022.numApps 1
+param **.source_022.app[0].typename "\"TcpBasicClientApp\""
+param **.source_022.app[0].localAddress "\"\""
+param **.source_022.app[0].connectAddress "\"sink_022\""
+param **.source_022.app[0].connectPort 1100
+param **.source_022.app[0].startTime 0s
+param **.source_022.app[0].idleInterval 1000s
+param **.source_022.app[0].requestLength 1300B
+param **.source_022.app[0].replyLength 20B
+param **.source_022.app[0].thinkTime 0s
+param **.source_022.app[0].numRequestsPerSession 2
+param **.source_023.numApps 1
+param **.source_023.app[0].typename "\"TcpBasicClientApp\""
+param **.source_023.app[0].localAddress "\"\""
+param **.source_023.app[0].connectAddress "\"sink_023\""
+param **.source_023.app[0].connectPort 1100
+param **.source_023.app[0].startTime 0s
+param **.source_023.app[0].idleInterval 1000s
+param **.source_023.app[0].requestLength 1300B
+param **.source_023.app[0].replyLength 20B
+param **.source_023.app[0].thinkTime 0s
+param **.source_023.app[0].numRequestsPerSession 5
+param **.source_024.numApps 1
+param **.source_024.app[0].typename "\"TcpBasicClientApp\""
+param **.source_024.app[0].localAddress "\"\""
+param **.source_024.app[0].connectAddress "\"sink_024\""
+param **.source_024.app[0].connectPort 1100
+param **.source_024.app[0].startTime 0s
+param **.source_024.app[0].idleInterval 1000s
+param **.source_024.app[0].requestLength 1300B
+param **.source_024.app[0].replyLength 20B
+param **.source_024.app[0].thinkTime 0s
+param **.source_024.app[0].numRequestsPerSession 43
+param **.source_025.numApps 1
+param **.source_025.app[0].typename "\"TcpBasicClientApp\""
+param **.source_025.app[0].localAddress "\"\""
+param **.source_025.app[0].connectAddress "\"sink_025\""
+param **.source_025.app[0].connectPort 1100
+param **.source_025.app[0].startTime 0s
+param **.source_025.app[0].idleInterval 1000s
+param **.source_025.app[0].requestLength 1300B
+param **.source_025.app[0].replyLength 20B
+param **.source_025.app[0].thinkTime 0s
+param **.source_025.app[0].numRequestsPerSession 340
+param **.source_026.numApps 1
+param **.source_026.app[0].typename "\"TcpBasicClientApp\""
+param **.source_026.app[0].localAddress "\"\""
+param **.source_026.app[0].connectAddress "\"sink_026\""
+param **.source_026.app[0].connectPort 1100
+param **.source_026.app[0].startTime 0s
+param **.source_026.app[0].idleInterval 1000s
+param **.source_026.app[0].requestLength 1300B
+param **.source_026.app[0].replyLength 20B
+param **.source_026.app[0].thinkTime 0s
+param **.source_026.app[0].numRequestsPerSession 2
+param **.source_027.numApps 1
+param **.source_027.app[0].typename "\"TcpBasicClientApp\""
+param **.source_027.app[0].localAddress "\"\""
+param **.source_027.app[0].connectAddress "\"sink_027\""
+param **.source_027.app[0].connectPort 1100
+param **.source_027.app[0].startTime 0s
+param **.source_027.app[0].idleInterval 1000s
+param **.source_027.app[0].requestLength 1300B
+param **.source_027.app[0].replyLength 20B
+param **.source_027.app[0].thinkTime 0s
+param **.source_027.app[0].numRequestsPerSession 2
+param **.source_028.numApps 1
+param **.source_028.app[0].typename "\"TcpBasicClientApp\""
+param **.source_028.app[0].localAddress "\"\""
+param **.source_028.app[0].connectAddress "\"sink_028\""
+param **.source_028.app[0].connectPort 1100
+param **.source_028.app[0].startTime 0s
+param **.source_028.app[0].idleInterval 1000s
+param **.source_028.app[0].requestLength 1300B
+param **.source_028.app[0].replyLength 20B
+param **.source_028.app[0].thinkTime 0s
+param **.source_028.app[0].numRequestsPerSession 1
+param **.source_029.numApps 1
+param **.source_029.app[0].typename "\"TcpBasicClientApp\""
+param **.source_029.app[0].localAddress "\"\""
+param **.source_029.app[0].connectAddress "\"sink_029\""
+param **.source_029.app[0].connectPort 1100
+param **.source_029.app[0].startTime 0s
+param **.source_029.app[0].idleInterval 1000s
+param **.source_029.app[0].requestLength 1300B
+param **.source_029.app[0].replyLength 20B
+param **.source_029.app[0].thinkTime 0s
+param **.source_029.app[0].numRequestsPerSession 103
+param **.source_030.numApps 1
+param **.source_030.app[0].typename "\"TcpBasicClientApp\""
+param **.source_030.app[0].localAddress "\"\""
+param **.source_030.app[0].connectAddress "\"sink_030\""
+param **.source_030.app[0].connectPort 1100
+param **.source_030.app[0].startTime 0s
+param **.source_030.app[0].idleInterval 1000s
+param **.source_030.app[0].requestLength 1300B
+param **.source_030.app[0].replyLength 20B
+param **.source_030.app[0].thinkTime 0s
+param **.source_030.app[0].numRequestsPerSession 6
+param **.source_031.numApps 1
+param **.source_031.app[0].typename "\"TcpBasicClientApp\""
+param **.source_031.app[0].localAddress "\"\""
+param **.source_031.app[0].connectAddress "\"sink_031\""
+param **.source_031.app[0].connectPort 1100
+param **.source_031.app[0].startTime 0s
+param **.source_031.app[0].idleInterval 1000s
+param **.source_031.app[0].requestLength 1300B
+param **.source_031.app[0].replyLength 20B
+param **.source_031.app[0].thinkTime 0s
+param **.source_031.app[0].numRequestsPerSession 35
+param **.source_032.numApps 1
+param **.source_032.app[0].typename "\"TcpBasicClientApp\""
+param **.source_032.app[0].localAddress "\"\""
+param **.source_032.app[0].connectAddress "\"sink_032\""
+param **.source_032.app[0].connectPort 1100
+param **.source_032.app[0].startTime 0s
+param **.source_032.app[0].idleInterval 1000s
+param **.source_032.app[0].requestLength 1300B
+param **.source_032.app[0].replyLength 20B
+param **.source_032.app[0].thinkTime 0s
+param **.source_032.app[0].numRequestsPerSession 4
+param **.source_033.numApps 1
+param **.source_033.app[0].typename "\"TcpBasicClientApp\""
+param **.source_033.app[0].localAddress "\"\""
+param **.source_033.app[0].connectAddress "\"sink_033\""
+param **.source_033.app[0].connectPort 1100
+param **.source_033.app[0].startTime 0s
+param **.source_033.app[0].idleInterval 1000s
+param **.source_033.app[0].requestLength 1300B
+param **.source_033.app[0].replyLength 20B
+param **.source_033.app[0].thinkTime 0s
+param **.source_033.app[0].numRequestsPerSession 2
+param **.source_034.numApps 1
+param **.source_034.app[0].typename "\"TcpBasicClientApp\""
+param **.source_034.app[0].localAddress "\"\""
+param **.source_034.app[0].connectAddress "\"sink_034\""
+param **.source_034.app[0].connectPort 1100
+param **.source_034.app[0].startTime 0s
+param **.source_034.app[0].idleInterval 1000s
+param **.source_034.app[0].requestLength 1300B
+param **.source_034.app[0].replyLength 20B
+param **.source_034.app[0].thinkTime 0s
+param **.source_034.app[0].numRequestsPerSession 2
+param **.source_035.numApps 1
+param **.source_035.app[0].typename "\"TcpBasicClientApp\""
+param **.source_035.app[0].localAddress "\"\""
+param **.source_035.app[0].connectAddress "\"sink_035\""
+param **.source_035.app[0].connectPort 1100
+param **.source_035.app[0].startTime 0s
+param **.source_035.app[0].idleInterval 1000s
+param **.source_035.app[0].requestLength 1300B
+param **.source_035.app[0].replyLength 20B
+param **.source_035.app[0].thinkTime 0s
+param **.source_035.app[0].numRequestsPerSession 2
+param **.source_036.numApps 1
+param **.source_036.app[0].typename "\"TcpBasicClientApp\""
+param **.source_036.app[0].localAddress "\"\""
+param **.source_036.app[0].connectAddress "\"sink_036\""
+param **.source_036.app[0].connectPort 1100
+param **.source_036.app[0].startTime 0s
+param **.source_036.app[0].idleInterval 1000s
+param **.source_036.app[0].requestLength 1300B
+param **.source_036.app[0].replyLength 20B
+param **.source_036.app[0].thinkTime 0s
+param **.source_036.app[0].numRequestsPerSession 9
+param **.source_037.numApps 1
+param **.source_037.app[0].typename "\"TcpBasicClientApp\""
+param **.source_037.app[0].localAddress "\"\""
+param **.source_037.app[0].connectAddress "\"sink_037\""
+param **.source_037.app[0].connectPort 1100
+param **.source_037.app[0].startTime 0s
+param **.source_037.app[0].idleInterval 1000s
+param **.source_037.app[0].requestLength 1300B
+param **.source_037.app[0].replyLength 20B
+param **.source_037.app[0].thinkTime 0s
+param **.source_037.app[0].numRequestsPerSession 5
+param **.source_038.numApps 1
+param **.source_038.app[0].typename "\"TcpBasicClientApp\""
+param **.source_038.app[0].localAddress "\"\""
+param **.source_038.app[0].connectAddress "\"sink_038\""
+param **.source_038.app[0].connectPort 1100
+param **.source_038.app[0].startTime 0s
+param **.source_038.app[0].idleInterval 1000s
+param **.source_038.app[0].requestLength 1300B
+param **.source_038.app[0].replyLength 20B
+param **.source_038.app[0].thinkTime 0s
+param **.source_038.app[0].numRequestsPerSession 80
+param **.source_039.numApps 1
+param **.source_039.app[0].typename "\"TcpBasicClientApp\""
+param **.source_039.app[0].localAddress "\"\""
+param **.source_039.app[0].connectAddress "\"sink_039\""
+param **.source_039.app[0].connectPort 1100
+param **.source_039.app[0].startTime 0s
+param **.source_039.app[0].idleInterval 1000s
+param **.source_039.app[0].requestLength 1300B
+param **.source_039.app[0].replyLength 20B
+param **.source_039.app[0].thinkTime 0s
+param **.source_039.app[0].numRequestsPerSession 55
+param **.source_040.numApps 1
+param **.source_040.app[0].typename "\"TcpBasicClientApp\""
+param **.source_040.app[0].localAddress "\"\""
+param **.source_040.app[0].connectAddress "\"sink_040\""
+param **.source_040.app[0].connectPort 1100
+param **.source_040.app[0].startTime 0s
+param **.source_040.app[0].idleInterval 1000s
+param **.source_040.app[0].requestLength 1300B
+param **.source_040.app[0].replyLength 20B
+param **.source_040.app[0].thinkTime 0s
+param **.source_040.app[0].numRequestsPerSession 99
+param **.source_041.numApps 1
+param **.source_041.app[0].typename "\"TcpBasicClientApp\""
+param **.source_041.app[0].localAddress "\"\""
+param **.source_041.app[0].connectAddress "\"sink_041\""
+param **.source_041.app[0].connectPort 1100
+param **.source_041.app[0].startTime 0s
+param **.source_041.app[0].idleInterval 1000s
+param **.source_041.app[0].requestLength 1300B
+param **.source_041.app[0].replyLength 20B
+param **.source_041.app[0].thinkTime 0s
+param **.source_041.app[0].numRequestsPerSession 102
+param **.source_042.numApps 1
+param **.source_042.app[0].typename "\"TcpBasicClientApp\""
+param **.source_042.app[0].localAddress "\"\""
+param **.source_042.app[0].connectAddress "\"sink_042\""
+param **.source_042.app[0].connectPort 1100
+param **.source_042.app[0].startTime 0s
+param **.source_042.app[0].idleInterval 1000s
+param **.source_042.app[0].requestLength 1300B
+param **.source_042.app[0].replyLength 20B
+param **.source_042.app[0].thinkTime 0s
+param **.source_042.app[0].numRequestsPerSession 237
+param **.source_043.numApps 1
+param **.source_043.app[0].typename "\"TcpBasicClientApp\""
+param **.source_043.app[0].localAddress "\"\""
+param **.source_043.app[0].connectAddress "\"sink_043\""
+param **.source_043.app[0].connectPort 1100
+param **.source_043.app[0].startTime 0s
+param **.source_043.app[0].idleInterval 1000s
+param **.source_043.app[0].requestLength 1300B
+param **.source_043.app[0].replyLength 20B
+param **.source_043.app[0].thinkTime 0s
+param **.source_043.app[0].numRequestsPerSession 33
+param **.source_044.numApps 1
+param **.source_044.app[0].typename "\"TcpBasicClientApp\""
+param **.source_044.app[0].localAddress "\"\""
+param **.source_044.app[0].connectAddress "\"sink_044\""
+param **.source_044.app[0].connectPort 1100
+param **.source_044.app[0].startTime 0s
+param **.source_044.app[0].idleInterval 1000s
+param **.source_044.app[0].requestLength 1300B
+param **.source_044.app[0].replyLength 20B
+param **.source_044.app[0].thinkTime 0s
+param **.source_044.app[0].numRequestsPerSession 2
+param **.source_045.numApps 1
+param **.source_045.app[0].typename "\"TcpBasicClientApp\""
+param **.source_045.app[0].localAddress "\"\""
+param **.source_045.app[0].connectAddress "\"sink_045\""
+param **.source_045.app[0].connectPort 1100
+param **.source_045.app[0].startTime 0s
+param **.source_045.app[0].idleInterval 1000s
+param **.source_045.app[0].requestLength 1300B
+param **.source_045.app[0].replyLength 20B
+param **.source_045.app[0].thinkTime 0s
+param **.source_045.app[0].numRequestsPerSession 86
+param **.source_046.numApps 1
+param **.source_046.app[0].typename "\"TcpBasicClientApp\""
+param **.source_046.app[0].localAddress "\"\""
+param **.source_046.app[0].connectAddress "\"sink_046\""
+param **.source_046.app[0].connectPort 1100
+param **.source_046.app[0].startTime 0s
+param **.source_046.app[0].idleInterval 1000s
+param **.source_046.app[0].requestLength 1300B
+param **.source_046.app[0].replyLength 20B
+param **.source_046.app[0].thinkTime 0s
+param **.source_046.app[0].numRequestsPerSession 166
+param **.source_047.numApps 1
+param **.source_047.app[0].typename "\"TcpBasicClientApp\""
+param **.source_047.app[0].localAddress "\"\""
+param **.source_047.app[0].connectAddress "\"sink_047\""
+param **.source_047.app[0].connectPort 1100
+param **.source_047.app[0].startTime 0s
+param **.source_047.app[0].idleInterval 1000s
+param **.source_047.app[0].requestLength 1300B
+param **.source_047.app[0].replyLength 20B
+param **.source_047.app[0].thinkTime 0s
+param **.source_047.app[0].numRequestsPerSession 5
+param **.source_048.numApps 1
+param **.source_048.app[0].typename "\"TcpBasicClientApp\""
+param **.source_048.app[0].localAddress "\"\""
+param **.source_048.app[0].connectAddress "\"sink_048\""
+param **.source_048.app[0].connectPort 1100
+param **.source_048.app[0].startTime 0s
+param **.source_048.app[0].idleInterval 1000s
+param **.source_048.app[0].requestLength 1300B
+param **.source_048.app[0].replyLength 20B
+param **.source_048.app[0].thinkTime 0s
+param **.source_048.app[0].numRequestsPerSession 458
+param **.source_049.numApps 1
+param **.source_049.app[0].typename "\"TcpBasicClientApp\""
+param **.source_049.app[0].localAddress "\"\""
+param **.source_049.app[0].connectAddress "\"sink_049\""
+param **.source_049.app[0].connectPort 1100
+param **.source_049.app[0].startTime 0s
+param **.source_049.app[0].idleInterval 1000s
+param **.source_049.app[0].requestLength 1300B
+param **.source_049.app[0].replyLength 20B
+param **.source_049.app[0].thinkTime 0s
+param **.source_049.app[0].numRequestsPerSession 2
+param **.source_050.numApps 1
+param **.source_050.app[0].typename "\"TcpBasicClientApp\""
+param **.source_050.app[0].localAddress "\"\""
+param **.source_050.app[0].connectAddress "\"sink_050\""
+param **.source_050.app[0].connectPort 1100
+param **.source_050.app[0].startTime 0s
+param **.source_050.app[0].idleInterval 1000s
+param **.source_050.app[0].requestLength 1300B
+param **.source_050.app[0].replyLength 20B
+param **.source_050.app[0].thinkTime 0s
+param **.source_050.app[0].numRequestsPerSession 11
+param **.source_051.numApps 1
+param **.source_051.app[0].typename "\"TcpBasicClientApp\""
+param **.source_051.app[0].localAddress "\"\""
+param **.source_051.app[0].connectAddress "\"sink_051\""
+param **.source_051.app[0].connectPort 1100
+param **.source_051.app[0].startTime 0s
+param **.source_051.app[0].idleInterval 1000s
+param **.source_051.app[0].requestLength 1300B
+param **.source_051.app[0].replyLength 20B
+param **.source_051.app[0].thinkTime 0s
+param **.source_051.app[0].numRequestsPerSession 11
+param **.source_052.numApps 1
+param **.source_052.app[0].typename "\"TcpBasicClientApp\""
+param **.source_052.app[0].localAddress "\"\""
+param **.source_052.app[0].connectAddress "\"sink_052\""
+param **.source_052.app[0].connectPort 1100
+param **.source_052.app[0].startTime 0s
+param **.source_052.app[0].idleInterval 1000s
+param **.source_052.app[0].requestLength 1300B
+param **.source_052.app[0].replyLength 20B
+param **.source_052.app[0].thinkTime 0s
+param **.source_052.app[0].numRequestsPerSession 22
+param **.source_053.numApps 1
+param **.source_053.app[0].typename "\"TcpBasicClientApp\""
+param **.source_053.app[0].localAddress "\"\""
+param **.source_053.app[0].connectAddress "\"sink_053\""
+param **.source_053.app[0].connectPort 1100
+param **.source_053.app[0].startTime 0s
+param **.source_053.app[0].idleInterval 1000s
+param **.source_053.app[0].requestLength 1300B
+param **.source_053.app[0].replyLength 20B
+param **.source_053.app[0].thinkTime 0s
+param **.source_053.app[0].numRequestsPerSession 9
+param **.tcp.mss 1400
+param **.tcp.tcpAlgorithmClass "\"TcpReno\""
+param **.tcp.crcMode "\"computed\""
+param **.app[*].dataTransferMode "\"object\""
+
+vector 0 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_000.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 1 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_001.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 2 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_002.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 3 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_003.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 4 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_004.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 5 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_005.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 6 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_006.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 7 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_007.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 8 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_008.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 9 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_009.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 10 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_010.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 11 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_011.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 12 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_012.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 13 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_013.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 14 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_014.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 15 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_015.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 16 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_016.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 17 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_017.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 18 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_018.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 19 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_019.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 20 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_020.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 21 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_021.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 22 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_022.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 23 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_023.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 24 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_024.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 25 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_025.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 26 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_026.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 27 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_027.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 28 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_028.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 29 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_029.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 30 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_030.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 31 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_031.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 32 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_032.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 33 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_033.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 34 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_034.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 35 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_035.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 36 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_036.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 37 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_037.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 38 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_038.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 39 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_039.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 40 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_040.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 41 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_041.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 42 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_042.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 43 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_043.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 44 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_044.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 45 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_045.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 46 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_046.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 47 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_047.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 48 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_048.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 49 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_049.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 50 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_050.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 51 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_051.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 52 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_052.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 53 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_053.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 54 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_015.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 55 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_015.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 56 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_002.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 57 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_002.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 58 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_022.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 59 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_030.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 60 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_044.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 61 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_022.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 62 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_030.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 63 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_044.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 64 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_026.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 65 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_000.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 66 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_016.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 67 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_045.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 68 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_016.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 69 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_026.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 70 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_000.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 71 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_045.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 72 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_003.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 73 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_027.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 74 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_018.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 75 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_046.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 76 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_003.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 77 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_027.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 78 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_018.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 79 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_046.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 80 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_001.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 81 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_029.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 82 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_012.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 83 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_048.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 84 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_001.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 85 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_029.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 86 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_012.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 87 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_048.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 88 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_006.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 89 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_031.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 90 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_047.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 91 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_031.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 92 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_006.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 93 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_004.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 94 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_013.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 95 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_047.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 96 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_013.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 97 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_004.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 98 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_050.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 99 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_028.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 100 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_014.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 101 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_050.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 102 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_028.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 103 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_014.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 104 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_005.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 105 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_032.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 106 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_017.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 107 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_051.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 108 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_032.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 109 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_017.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 110 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_051.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 111 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_005.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 112 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_007.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 113 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_033.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 114 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_052.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 115 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_021.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 116 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_021.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 117 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_033.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 118 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_052.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 119 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_007.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 120 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_010.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 121 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_035.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 122 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_049.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 123 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_019.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 124 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_010.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 125 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_035.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 126 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_049.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 127 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_019.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 128 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_034.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 129 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_053.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 130 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_009.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 131 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_020.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 132 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_034.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 133 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_053.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 134 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_009.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 135 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_020.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 136 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_038.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 137 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_025.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 138 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_025.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 139 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_038.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 140 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_036.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 141 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_008.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 142 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_036.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 143 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_008.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 144 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_011.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 145 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_041.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 146 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_023.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 147 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_041.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 148 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_011.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 149 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_023.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 150 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_037.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 151 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_037.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 152 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_039.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 153 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_024.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 154 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_039.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 155 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_024.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 156 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_042.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 157 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_040.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 158 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_042.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 159 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_040.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 160 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.sink_043.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 161 Jellyfish_8_8_7_8__jelly_vary_num_switches_seed3.source_043.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+0	74307 29 55 379913 0 3.863542 2 0 1 1 1
+1	74336 28 56 78552 0 0.230118 2 0 1 1 1
+2	74364 28 57 43959 0 0.116093 2 0 1 1 1
+3	74392 28 58 27934 0 0.072489 2 0 1 1 1
+4	74420 28 59 25147 0 0.065418 2 0 1 1 1
+5	74448 28 60 39041 0 0.103432 2 0 1 1 1
+6	74476 28 61 12339 0 0.031727 2 0 1 1 1
+7	74504 28 62 39572 0 0.104826 2 0 1 1 1
+8	74532 28 63 22986 0 0.059795 2 0 1 1 1
+9	74560 29 64 156274 0 0.543277 2 0 1 1 1
+10	74589 31 65 155430 0 0.539373 2 0 1 1 1
+11	74620 31 66 239793 0 1.079359 2 0 1 1 1
+12	74651 30 67 50815 0 0.136019 2 0 1 1 1
+13	74681 30 68 27965 0 0.072584 2 0 1 1 1
+14	74711 30 69 21398 0 0.055715 2 0 1 1 1
+15	74741 31 70 145141 0 0.492418 2 0 1 1 1
+16	74772 30 71 32580 0 0.084937 2 0 1 1 1
+17	74802 31 72 312201 0 1.978299 2 0 1 1 1
+18	74833 30 73 55562 0 0.151541 2 0 1 1 1
+19	74863 30 74 16051 0 0.041634 2 0 1 1 1
+20	74893 31 75 110351 0 0.352119 2 0 1 1 1
+21	74924 30 76 39509 0 0.104641 2 0 1 1 1
+22	74954 30 77 11351 0 0.028754 2 0 1 1 1
+23	74984 30 78 36646 0 0.096564 2 0 1 1 1
+24	75014 31 79 132401 0 0.439541 2 0 1 1 1
+25	75045 31 80 349513 0 2.812728 2 0 1 1 1
+26	75076 30 81 14326 0 0.037142 2 0 1 1 1
+27	75106 30 82 15293 0 0.039745 2 0 1 1 1
+28	75136 28 83 7613 0 0.01784 2 0 1 1 1
+29	75164 31 84 233995 0 1.027903 2 0 1 1 1
+30	75195 30 85 40155 0 0.106435 2 0 1 1 1
+31	75225 31 86 140199 0 0.472274 2 0 1 1 1
+32	75256 30 87 31665 0 0.082643 2 0 1 1 1
+33	75286 30 88 17103 0 0.044253 2 0 1 1 1
+34	75316 30 89 18585 0 0.048341 2 0 1 1 1
+35	75346 30 90 17679 0 0.045767 2 0 1 1 1
+36	75376 30 91 58063 0 0.159736 2 0 1 1 1
+37	75406 30 92 40625 0 0.107876 2 0 1 1 1
+38	75436 30 93 199596 0 0.78948 2 0 1 1 1
+39	75466 31 94 164253 0 0.585496 2 0 1 1 1
+40	75497 31 95 231681 0 1.009675 2 0 1 1 1
+41	75528 31 96 226018 0 0.966668 2 0 1 1 1
+42	75559 30 97 306368 0 1.88249 2 0 1 1 1
+43	75589 31 98 125166 0 0.411011 2 0 1 1 1
+44	75620 29 99 9950 0 0.024596 2 0 1 1 1
+45	75649 32 100 189778 0 0.728611 2 0 1 1 1
+46	75681 32 101 268230 0 1.387208 2 0 1 1 1
+47	75713 31 102 25185 0 0.065565 2 0 1 1 1
+48	75744 32 103 378404 0 3.772556 2 0 1 1 1
+49	75776 31 104 13946 0 0.036056 2 0 1 1 1
+50	75807 31 105 46963 0 0.124181 2 0 1 1 1
+51	75838 31 106 47410 0 0.125575 2 0 1 1 1
+52	75869 31 107 74148 0 0.214936 2 0 1 1 1
+53	75900 31 108 41622 0 0.110267 2 0 1 1 1
+54	75931 2010 4357 144915 0.005749 0.491536 74 0.004388 0.018787 0.425755 0.002954640103
+55	77941 2022 4474 145141 0.006631 0.492418 74 0.000882 0.000916 0.065302 5.7627508e-05
+56	79963 265 4568 43629 0.007145 0.115378 10 0.005835 0.016156 0.107633 0.001260959271
+57	80228 267 4666 43959 0.00786 0.116093 10 0.000715 0.000715 0.00715 5.11225e-06
+58	80495 53 4772 11197 0.008537 0.028206 2 0.007074 0.019121 0.026195 0.000415654117
+59	80548 158 4818 39940 0.008588 0.10572 6 0.007127 0.02573 0.100684 0.001919759306
+60	80706 52 4864 9694 0.008641 0.023881 2 0.007282 0.014525 0.021807 0.000264003149
+61	80758 53 4985 11351 0.009085 0.028754 2 0.000548 0.000548 0.001096 6.00608e-07
+62	80811 161 5031 40155 0.009303 0.106435 6 0.000715 0.000715 0.00429 3.06735e-06
+63	80972 52 5053 9950 0.009356 0.024596 2 0.000715 0.000715 0.00143 1.02245e-06
+64	81024 52 5175 14053 0.009982 0.036427 2 0.008623 0.02573 0.034353 0.000736389029
+65	81076 13165 5197 379859 0.009986 3.862827 473 0.007282 0.018797 3.523986 0.026605007292
+66	94241 134 5238 32324 0.010037 0.084389 5 0.008625 0.021756 0.080785 0.001395970559
+67	94375 2355 5270 189591 0.010082 0.727896 86 0.007282 0.014525 0.665711 0.005256734965
+68	96730 134 5430 32580 0.010585 0.084937 5 0.000548 0.000548 0.00274 1.50152e-06
+69	96864 53 5465 14326 0.010697 0.037142 2 0.000715 0.000715 0.00143 1.02245e-06
+70	96917 13161 5487 379913 0.010701 3.863542 473 0.000715 0.000715 0.338195 0.000241809425
+71	110078 2367 5509 189778 0.010797 0.728611 86 0.000715 0.000715 0.06149 4.396535e-05
+72	112445 132 5612 27574 0.011333 0.0716 5 0.009768 0.015889 0.065312 0.000874936154
+73	112577 53 5674 14588 0.011429 0.037868 2 0.009868 0.025557 0.035425 0.000750537673
+74	112630 373 5695 55280 0.011431 0.150659 14 0.004788 0.018681 0.137628 0.001549467912
+75	113003 4581 5720 268108 0.011476 1.386326 166 0.007282 0.014358 1.238185 0.009341136087
+76	117584 134 5928 27934 0.012215 0.072489 5 0.000882 0.002077 0.005612 7.438022e-06
+77	117718 53 5951 15293 0.012311 0.039745 2 0.000882 0.001877 0.002759 4.301053e-06
+78	117771 373 5973 55562 0.012313 0.151541 14 0.000882 0.000882 0.012348 1.0890936e-05
+79	118144 4574 5995 268230 0.012358 1.387208 166 0.000882 0.00176 0.147407 0.000131668027
+80	122718 587 6092 78355 0.012727 0.229403 22 0.007282 0.01875 0.212925 0.002276360653
+81	123305 2846 6167 233894 0.012823 1.027188 103 0.007282 0.025677 0.952588 0.009747588404
+82	126151 241 6188 50517 0.012825 0.135137 9 0.01027 0.020075 0.12656 0.001886769308
+83	126392 12695 6221 378338 0.01287 3.771674 458 0.007282 0.014358 3.366886 0.024872594982
+84	139087 589 6404 78552 0.013442 0.230118 22 0.000715 0.000715 0.01573 1.124695e-05
+85	139676 2847 6432 233995 0.013538 1.027903 103 0.000715 0.000742 0.073703 5.2740469e-05
+86	142523 240 6476 50815 0.013707 0.136019 9 0.000882 0.000889 0.007945 7.013713e-06
+87	142763 12681 6498 378404 0.013752 3.772556 458 0.000882 0.000882 0.403956 0.000356289192
+88	155444 53 6600 12050 0.014168 0.030845 2 0.012501 0.015795 0.028296 0.000405757026
+89	155497 948 6647 140033 0.014217 0.471559 35 0.00909 0.025677 0.445586 0.006015583266
+90	156445 134 6649 24853 0.014217 0.064683 5 0.010364 0.013278 0.058263 0.000685409569
+91	156579 957 6802 140199 0.014932 0.472274 35 0.000715 0.000715 0.025025 1.7892875e-05
+92	157536 52 6825 12339 0.01505 0.031727 2 0.000882 0.000882 0.001764 1.555848e-06
+93	157588 106 6980 24783 0.015611 0.064536 4 0.013893 0.017173 0.060158 0.000911104028
+94	157694 107 7001 27654 0.015613 0.071702 4 0.013997 0.018681 0.06744 0.00114909851
+95	157801 134 7140 25185 0.016226 0.065565 5 0.000882 0.002009 0.005537 7.147777e-06
+96	157935 107 7191 27965 0.016495 0.072584 4 0.000882 0.000882 0.003528 3.111696e-06
+97	158042 107 7213 25147 0.016507 0.065418 4 0.000882 0.000896 0.003542 3.136588e-06
+98	158149 292 7356 46727 0.016958 0.123466 11 0.00779 0.015142 0.1145 0.001240490068
+99	158441 26 7358 7358 0.016958 0.016958 1 0.015244 0.015244 0.015244 0.000232379536
+100	158467 81 7414 20984 0.017007 0.054833 3 0.01534 0.018681 0.051402 0.000886394522
+101	158548 304 7572 46963 0.017673 0.124181 11 0.000715 0.000715 0.007865 5.623475e-06
+102	158852 26 7613 7613 0.01784 0.01784 1 0.000882 0.000882 0.000882 7.77924e-07
+103	158878 83 7634 21398 0.017889 0.055715 3 0.000882 0.000882 0.002646 2.333772e-06
+104	158961 192 7747 38740 0.018299 0.10255 7 0.009624 0.01653 0.092294 0.001270407782
+105	159153 111 7827 31466 0.018399 0.081928 4 0.016634 0.023077 0.078018 0.00154724053
+106	159264 6788 7848 312139 0.018401 1.977584 236 0.007282 0.018895 1.807841 0.014386305659
+107	166052 303 7879 47122 0.018446 0.12486 11 0.007696 0.016579 0.115843 0.001284386315
+108	166355 111 8050 31665 0.019114 0.082643 4 0.000715 0.000715 0.00286 2.0449e-06
+109	166466 6786 8072 312201 0.019116 1.978299 236 0.000715 0.000715 0.16874 0.0001206491
+110	173252 307 8094 47410 0.019161 0.125575 11 0.000715 0.000715 0.007865 5.623475e-06
+111	173559 194 8116 39041 0.019181 0.103432 7 0.000882 0.00181 0.009369 1.3696963e-05
+112	173753 193 8234 39235 0.01974 0.103944 7 0.01027 0.017873 0.096778 0.001390900162
+113	173946 54 8262 16720 0.019746 0.043538 2 0.01793 0.023077 0.041007 0.000854032829
+114	174000 611 8291 73899 0.019793 0.214221 22 0.007282 0.017824 0.197204 0.001911146548
+115	174611 166 8312 39316 0.019795 0.104093 6 0.013533 0.019109 0.099584 0.001685345494
+116	174777 166 8459 39509 0.020343 0.104641 6 0.000548 0.000548 0.003288 1.801824e-06
+117	174943 55 8495 17103 0.020461 0.044253 2 0.000715 0.000715 0.00143 1.02245e-06
+118	174998 614 8524 74148 0.020508 0.214936 22 0.000715 0.000748 0.015763 1.1295229e-05
+119	175612 194 8547 39572 0.020622 0.104826 7 0.000882 0.000889 0.006181 5.457865e-06
+120	175806 1666 8660 155181 0.021087 0.538658 59 0.007282 0.019167 0.495268 0.004488393794
+121	177472 54 8682 17314 0.021093 0.044885 2 0.019175 0.02291 0.042085 0.000892548725
+122	177526 54 8739 13666 0.02114 0.035174 2 0.013152 0.019222 0.032374 0.000542460388
+123	177580 55 8794 15723 0.021189 0.040752 2 0.018681 0.019322 0.038003 0.000722319445
+124	177635 1672 8975 155430 0.021802 0.539373 59 0.000715 0.000715 0.042185 3.0162275e-05
+125	179307 55 9032 17679 0.021975 0.045767 2 0.000882 0.000882 0.001764 1.555848e-06
+126	179362 55 9054 13946 0.022022 0.036056 2 0.000882 0.000882 0.001764 1.555848e-06
+127	179417 55 9076 16051 0.022071 0.041634 2 0.000882 0.000882 0.001764 1.555848e-06
+128	179472 54 9164 18255 0.02244 0.047626 2 0.020573 0.024471 0.045044 0.00102207817
+129	179526 250 9230 41240 0.022534 0.109385 9 0.008876 0.020463 0.100258 0.001229921436
+130	179776 1668 9266 156049 0.022575 0.542394 59 0.007282 0.020504 0.489167 0.004435863591
+131	181444 924 9302 110030 0.022583 0.351237 33 0.007282 0.020665 0.321068 0.00354218907
+132	182368 55 9474 18585 0.023155 0.048341 2 0.000715 0.000715 0.00143 1.02245e-06
+133	182423 250 9540 41622 0.023416 0.110267 9 0.000882 0.000882 0.007938 7.001316e-06
+134	182673 1667 9562 156274 0.023457 0.543277 59 0.000882 0.000883 0.052039 4.5899281e-05
+135	184340 928 9584 110351 0.023465 0.352119 33 0.000882 0.000909 0.029133 2.5719849e-05
+136	185268 2281 9740 199438 0.023928 0.788598 80 0.006088 0.021908 0.716892 0.007108510876
+137	187549 9783 9802 349451 0.024024 2.812013 340 0.007282 0.022002 2.567606 0.020062916194
+138	197332 9795 10020 349513 0.024739 2.812728 340 0.000715 0.000715 0.2431 0.0001738165
+139	207127 2281 10042 199596 0.02481 0.78948 80 0.000882 0.00089 0.070568 6.2248096e-05
+140	209408 249 10149 57891 0.025275 0.159021 9 0.01216 0.023306 0.151332 0.00267667476
+141	209657 83 10224 22481 0.025363 0.058913 3 0.015846 0.023343 0.055129 0.001050074965
+142	209740 251 10422 58063 0.02599 0.159736 9 0.000715 0.000715 0.006435 4.601025e-06
+143	209991 84 10494 22986 0.026245 0.059795 3 0.000882 0.000882 0.002646 2.333772e-06
+144	210075 3551 10623 239698 0.02671 1.078477 124 0.007282 0.024588 0.967013 0.008032867227
+145	213626 2906 10654 225885 0.026716 0.965953 102 0.005835 0.024594 0.891616 0.008662673164
+146	216532 139 10728 36293 0.026812 0.095682 5 0.014593 0.024739 0.090081 0.001699398151
+147	216671 2918 10897 226018 0.027431 0.966668 102 0.000715 0.000715 0.07293 5.214495e-05
+148	219589 3558 10946 239793 0.027592 1.079359 124 0.000882 0.001616 0.110224 9.8518144e-05
+149	223147 140 10991 36646 0.027694 0.096564 5 0.000882 0.000882 0.00441 3.88962e-06
+150	223287 139 11133 40417 0.02811 0.107161 5 0.016201 0.026039 0.10223 0.002170836326
+151	223426 139 11378 40625 0.028825 0.107876 5 0.000715 0.000715 0.003575 2.556125e-06
+152	223565 1552 11543 164101 0.029457 0.584614 55 0.006088 0.027284 0.534749 0.005895776755
+153	225117 1210 11653 132149 0.029553 0.438659 43 0.007282 0.02738 0.399424 0.004338663878
+154	226327 1570 11908 164253 0.030339 0.585496 55 0.000882 0.000917 0.048574 4.2900782e-05
+155	227897 1214 11960 132401 0.030453 0.439541 43 0.000882 0.0009 0.037944 3.3482808e-05
+156	229111 6816 12133 306222 0.030945 1.881608 237 0.005835 0.02867 1.670305 0.013146327735
+157	235927 2835 12536 231618 0.032292 1.00896 99 0.007282 0.030068 0.936666 0.010076655098
+158	238762 6824 12748 306368 0.032681 1.88249 237 0.000882 0.001736 0.20991 0.000186642828
+159	245586 2837 12876 231681 0.033007 1.009675 99 0.000715 0.000715 0.070785 5.0611275e-05
+160	248423 925 13049 124928 0.033686 0.410129 33 0.008636 0.031309 0.377071 0.004943929511
+161	249348 932 13446 125166 0.034568 0.411011 33 0.000882 0.001326 0.031563 3.0901347e-05
+
